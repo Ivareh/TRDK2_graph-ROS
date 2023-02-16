@@ -2,15 +2,22 @@ const formEvent = document.querySelector(".form");
 
 formEvent.addEventListener("submit", event => {
     event.preventDefault();
+
+    //take in form data, and convert it to a format fitting json
     const formData = new FormData(formEvent);
     var object = {};
     formData.forEach((value, key) => object[key] = value);
     object["integrations"] = object["integrations"].split(",").map(s => s.trim())
+
+    //make filename
     var filename = object["name"]+".json";
+
+    //convert to jaon string and save it to download
     var json = JSON.stringify(object)
     saveTextToFile(json,filename)
 });
 
+// Source: https://gist.github.com/clucle/8f6bb67f1f38ac5bb595f43a4efb8e0c
 function saveTextToFile(text, name) {
 
   // file setting
