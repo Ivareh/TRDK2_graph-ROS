@@ -84,7 +84,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AudioConsole -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AudioConsole">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#OverordnetSystem"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf"/>
@@ -98,7 +98,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Helseplattformen -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Helseplattformen">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#OverordnetSystem"/>
     </owl:Class>
     
 
@@ -139,6 +139,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Organisasjon">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Virksomhetsområde"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#OverordnetSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#OverordnetSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
     </owl:Class>
     
 
