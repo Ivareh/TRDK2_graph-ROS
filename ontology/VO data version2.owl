@@ -543,7 +543,9 @@
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+    </owl:Class>
     
 
 
