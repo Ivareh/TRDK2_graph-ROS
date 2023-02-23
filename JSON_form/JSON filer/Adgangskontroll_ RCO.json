@@ -1,0 +1,1 @@
+{"name":"Adgangskontroll: RCO","description":"RCO er et system for styring av adgangskontroll og alarmer. Tjenesten benyttes for nyere bygg. ","integrations":["R-Card","Intern Citrix-farm","R-Card MS webadmin","Citrix netscaler","Adgangskontrollsystem"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
