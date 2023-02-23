@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <form action="" class="form">
+        <input type="text" name="name" placeholder="name of service"> <br> <br>
+        <label for="description">Description (copy paste from document)</label> <br>
+        <input type="text" name="description" placeholder="description of service" id="description"> <br> <br>
+        <label for="integrations">Integrations</label> <br>
+        <input type="text" name="integrations" placeholder="comma separated list of integrations" id="integrations"> <br> <br>
+        <label for="VO">Hvilket virksomhetsområde er det del av:</label>
+        <select id="VO" name="Virksomhetsområde">
+          <option value="Annet">Annet</option>
+          <option value="Helse og velferd">Helse og velferd</option>
+          <option value="Oppvekst og utvikling">Oppvekst og utvikling</option>
+          <option value="Organisasjon">Organisasjon</option>
+          <option value="Byutvikling">Byutvikling</option>
+          <option value="Kultur og idrett">Kultur og idrett</option>
+          <option value="Næring, sammferdel, klima og miljø">Næring, sammferdsel, kilma og miljø</option>
+        </select> <br> <br>
+        <label for="klasse">Hva slags ting er det:</label>
+        <select name="klasse" id="klasse">
+          <option value="Annet">Annet</option>
+          <option value="Overordnet system">Overordnet system</option>
+          <option value="Delsystem">Delsystem</option>
+        </select> <br> <br>
+        <label for="delsystem">Hvis delsystem, hvordan delsystem:</label>
+        <select name="delsystem type" id="delsystem">
+          <option value="NA">Ikke delsystem</option>
+          <option value="Usikkert">Vet ikke</option>
+          <option value="Eksternt">Eksternt</option>
+          <option value="Internt">Internt</option>
+        </select> <br>
+        <button type="submit">Submit</button>
+    </form>
+  <script src="form.js"></script>
+</body>
+</html>
