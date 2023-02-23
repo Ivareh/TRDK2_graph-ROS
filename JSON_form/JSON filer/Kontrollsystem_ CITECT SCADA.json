@@ -1,1 +1,9 @@
-{"name":"Kontrollsystem: CITECT SCADA","description":"CITECT SCADA (Supervisory Control and Data Acquisition) er et HMI (Human-Machine Interface) for driftskontroll av VIVA – vannbehandlingsanlegg på Jonsvatnet, Kolstad pumpestasjon og vannbehandlingsanlegget på Benna. Tjenesten er ikke tilknyttet TK-nett. Servere driftes on-site av Bydrift, OneCo og underleverandører til OneCo.   ","integrations":["Ingen"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "Kontrollsystem: CITECT SCADA",
+  "description": "CITECT SCADA (Supervisory Control and Data Acquisition) er et HMI (Human-Machine Interface) for driftskontroll av VIVA – vannbehandlingsanlegg på Jonsvatnet, Kolstad pumpestasjon og vannbehandlingsanlegget på Benna. Tjenesten er ikke tilknyttet TK-nett. Servere driftes on-site av Bydrift, OneCo og underleverandører til OneCo.   ",
+  "integrations": [ "Ingen" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}

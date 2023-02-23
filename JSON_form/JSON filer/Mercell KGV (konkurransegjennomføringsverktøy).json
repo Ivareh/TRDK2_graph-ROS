@@ -1,1 +1,9 @@
-{"name":"Mercell KGV (konkurransegjennomføringsverktøy)","description":"Mercell KGV er et konkurransegjennomføringsverktøy som benyttes for å effektivisere anskaffelsesprosesser. Det tilfredsstiller til enhver tid krav i anskaffelsesregelverket i Norge og EU, og støtter full dokumentasjon av hele anbudsprosessen, som sikrer etterprøvbarhet. Når et konkurransegrunnlag er ferdig, publiseres det på Doffin/TED og grunnlaget lagres på opprettet sak i TK-sak. Når konkurransen er gjennomført arkiveres relevante dokumenter i TK-sak. Konkurransen markeres som arkivert i KGV, men dette påvirker kun søkbarheten i verktøyet (dokumentene er fortsatt lagret der). Løsningen er en SaaS-løsning levert av Mercell.","integrations":["Doffin/TED","ESPD-skjema","TK-sak Kontraktsadministrasjonsverktøy"],"Virksomhetsområde":"Næring, sammferdel, klima og miljø","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "Mercell KGV (konkurransegjennomføringsverktøy)",
+  "description": "Mercell KGV er et konkurransegjennomføringsverktøy som benyttes for å effektivisere anskaffelsesprosesser. Det tilfredsstiller til enhver tid krav i anskaffelsesregelverket i Norge og EU, og støtter full dokumentasjon av hele anbudsprosessen, som sikrer etterprøvbarhet. Når et konkurransegrunnlag er ferdig, publiseres det på Doffin/TED og grunnlaget lagres på opprettet sak i TK-sak. Når konkurransen er gjennomført arkiveres relevante dokumenter i TK-sak. Konkurransen markeres som arkivert i KGV, men dette påvirker kun søkbarheten i verktøyet (dokumentene er fortsatt lagret der). Løsningen er en SaaS-løsning levert av Mercell.",
+  "integrations": [ "Doffin/TED", "ESPD-skjema", "TK-sak Kontraktsadministrasjonsverktøy" ],
+  "Virksomhetsområde": "Næring, sammferdel, klima og miljø",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}

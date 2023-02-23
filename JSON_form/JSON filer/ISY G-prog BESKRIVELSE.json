@@ -1,1 +1,8 @@
-{"name":"ISY G-prog BESKRIVELSE","description":"ISY G-prog beskrivelse er en tjeneste som i all hovedsak brukes for å kunne lese mengdebeskrivelser som er en del av anbudsgrunnlaget som går ut til entreprenører. ","integrations":["Ingen"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "ISY G-prog BESKRIVELSE",
+  "description": "ISY G-prog beskrivelse er en tjeneste som i all hovedsak brukes for å kunne lese mengdebeskrivelser som er en del av anbudsgrunnlaget som går ut til entreprenører. ",
+  "integrations": [ "Ingen" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Usikkert"
+}

@@ -1,1 +1,8 @@
-{"name":"BOEI","description":"BOEI er et fagprogram for behandling av søknader knyttet til kommunale boliger. Systemet inneholder alt fra søknader om kommunal bolig til oppfølging av leietakere inkludert fakturering, samt historikk over alle leietakere i Trondheim kommune datert tilbake til 2006. Per i dag har systemet ca 3200 aktive leietakere.","integrations":["LIFT","Bank","Intrum","ESA"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "BOEI",
+  "description": "BOEI er et fagprogram for behandling av søknader knyttet til kommunale boliger. Systemet inneholder alt fra søknader om kommunal bolig til oppfølging av leietakere inkludert fakturering, samt historikk over alle leietakere i Trondheim kommune datert tilbake til 2006. Per i dag har systemet ca 3200 aktive leietakere.",
+  "integrations": [ "LIFT", "Bank", "Intrum", "ESA" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

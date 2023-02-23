@@ -1,1 +1,8 @@
-{"name":"TILSKUDDSBASEN","description":"Tilskuddsbasen ble opprettet i 2015, samtidig som Bookingbasen og Aktørbasen. Tjenesten benyttes som saksbehandlingsverktøy i forbindelse med søknader om tilskudd. Tjenesten inneholder både søknader, godkjent/avslått vedtak, rapporter og eventuelle klager. Siden 2015 har Tilskuddsbasen behandlet ca 14000 saker og får inn ca 3000 søknader i året. I 2021 var det i underkant av 60 millioner kroner som ble delt ut gjennom søknader til Tilskuddsbasen. ","integrations":["LIFT","TK-sak","Aktørbasen","Genererer e-post mot postmottak som sender ut epost"],"Virksomhetsområde":"Kultur og idrett","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "TILSKUDDSBASEN",
+  "description": "Tilskuddsbasen ble opprettet i 2015, samtidig som Bookingbasen og Aktørbasen. Tjenesten benyttes som saksbehandlingsverktøy i forbindelse med søknader om tilskudd. Tjenesten inneholder både søknader, godkjent/avslått vedtak, rapporter og eventuelle klager. Siden 2015 har Tilskuddsbasen behandlet ca 14000 saker og får inn ca 3000 søknader i året. I 2021 var det i underkant av 60 millioner kroner som ble delt ut gjennom søknader til Tilskuddsbasen. ",
+  "integrations": [ "LIFT", "TK-sak", "Aktørbasen", "Genererer e-post mot postmottak som sender ut epost" ],
+  "Virksomhetsområde": "Kultur og idrett",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

@@ -1,1 +1,9 @@
-{"name":"Kontrollsystem: DATEK","description":"Datek er en skybasert løsning der man kan styre gatelys ved å styre tennskap. I tjenesten kan man styre hvert enkelt tennskap i kommunen. Signalet går med mobildata ut til tennskap, via 2G og 4G. Kommunen har nå omtrent 4-500 noder med 2G som må byttes, men dette er en stor økonomisk kostand. Man får også feilmeldinger via tennskapene i Datek og får automatisk beskjed om jordfeil. Dette skjer kun gjennom dette systemet. Dersom jordfeilen blir for stor så logger systemet ut på egen hånd.  Loggføring av jordfeil skjer i Datek. Entreprenøren skal undersøke ved gjentatte feil og entreprenøren har rutine på å sjekke hver morgen for nye feil. Entreprenør tar tak i feil, for eksempel sikringer som er lagt ut i løpet av dagen, og på grunn av dette har man behov for god oppetid fordi entreprenøren trenger tilgang til denne dataen. ","integrations":["ingen"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "Kontrollsystem: DATEK",
+  "description": "Datek er en skybasert løsning der man kan styre gatelys ved å styre tennskap. I tjenesten kan man styre hvert enkelt tennskap i kommunen. Signalet går med mobildata ut til tennskap, via 2G og 4G. Kommunen har nå omtrent 4-500 noder med 2G som må byttes, men dette er en stor økonomisk kostand. Man får også feilmeldinger via tennskapene i Datek og får automatisk beskjed om jordfeil. Dette skjer kun gjennom dette systemet. Dersom jordfeilen blir for stor så logger systemet ut på egen hånd.  Loggføring av jordfeil skjer i Datek. Entreprenøren skal undersøke ved gjentatte feil og entreprenøren har rutine på å sjekke hver morgen for nye feil. Entreprenør tar tak i feil, for eksempel sikringer som er lagt ut i løpet av dagen, og på grunn av dette har man behov for god oppetid fordi entreprenøren trenger tilgang til denne dataen. ",
+  "integrations": [ "ingen" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Usikkert"
+
+}

@@ -1,1 +1,9 @@
-{"name":"RoSy RAMS","description":"RoSy RAMS (Road Asset Management System) er et fagprogram for vedlikehold av veier. Tjenesten benyttes av kommunene for å kartlegge tilstand på veinettverket der det ligger forhåndsberegnede parameter i systemet. Dette sier noe om hva som må gjøres i form av tiltak og hva konsekvensene blir hvis man ikke fullfører tiltaket.  RoSy RAMS består av ulike moduler der kommunen benytter modulene RoSy MAP og RoSy PLAN.  RoSy Plan – Innlegging av endringer og korrigeringer etter gjennomførte tiltak, endringer i gata osv. Det gjennomføres manuell gjennomgang i tillegg.  RoSy Map – Kartvisning som gjenspeiler det som ligger i RoSy Plan. ","integrations":["Uspesifisert API"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "RoSy RAMS",
+  "description": "RoSy RAMS (Road Asset Management System) er et fagprogram for vedlikehold av veier. Tjenesten benyttes av kommunene for å kartlegge tilstand på veinettverket der det ligger forhåndsberegnede parameter i systemet. Dette sier noe om hva som må gjøres i form av tiltak og hva konsekvensene blir hvis man ikke fullfører tiltaket.  RoSy RAMS består av ulike moduler der kommunen benytter modulene RoSy MAP og RoSy PLAN.  RoSy Plan – Innlegging av endringer og korrigeringer etter gjennomførte tiltak, endringer i gata osv. Det gjennomføres manuell gjennomgang i tillegg.  RoSy Map – Kartvisning som gjenspeiler det som ligger i RoSy Plan. ",
+  "integrations": [ "Uspesifisert API" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+
+}

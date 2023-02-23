@@ -1,1 +1,8 @@
-{"name":"ISY PARK","description":"Tjenesten ISY PARK er et forvaltning-, drift- og vedlikeholdssystem for idrettsanlegg og grøntanlegg. Tjenesten har et anleggsregister og et treregister. Tjenesten muliggjør utsending av arbeidsordrer og bidrar til en forbedret arbeidsflyt for utedrift som gjennomfører arbeidsordre. ","integrations":["kartdata fra Norconsult"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "ISY PARK",
+  "description": "Tjenesten ISY PARK er et forvaltning-, drift- og vedlikeholdssystem for idrettsanlegg og grøntanlegg. Tjenesten har et anleggsregister og et treregister. Tjenesten muliggjør utsending av arbeidsordrer og bidrar til en forbedret arbeidsflyt for utedrift som gjennomfører arbeidsordre.",
+  "integrations": [ "kartdata fra Norconsult" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

@@ -1,1 +1,8 @@
-{"name":"WINMAP","description":"Winmap er et fagprogram for å redigere kartdata. Applikasjonen er koblet mot databaseserver DBgeomedia. På databaseserver ligger det en rekke databaser de kan redigere med Winmap, disse er listet på modellen som ligger under punktet integrasjoner. Winmap er grunnlag for all byggesaksbehandling, felles kartdatabase og LMK – lokal matrikkelkopi i kommunen.     Viktigste oppgaver i Winmap:  Legge inn nye eiendomsgrenser  Legge inn nye bygg  Legge inn nye adresser  Redigerer veikart","integrations":["GeoInnsyn","Sentral matrikkel","Norgeskart","WinMAP","ESA"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "WINMAP",
+  "description": "Winmap er et fagprogram for å redigere kartdata. Applikasjonen er koblet mot databaseserver DBgeomedia. På databaseserver ligger det en rekke databaser de kan redigere med Winmap, disse er listet på modellen som ligger under punktet integrasjoner. Winmap er grunnlag for all byggesaksbehandling, felles kartdatabase og LMK – lokal matrikkelkopi i kommunen.     Viktigste oppgaver i Winmap:  Legge inn nye eiendomsgrenser  Legge inn nye bygg  Legge inn nye adresser  Redigerer veikart",
+  "integrations": [ "GeoInnsyn", "Sentral matrikkel", "Norgeskart", "WinMAP", "ESA" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

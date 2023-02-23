@@ -1,1 +1,9 @@
-{"name":"SD-anlegg: Ecostruxture (TAC-Vista)","description":"Ecostruxture er en tjeneste for styring av SD-anlegg levert av Schneider. Alt som var på THC er på Ecostruxture nå. ","integrations":["OPENMUC"],"Virksomhetsområde":"Byutvikling","klasse":"Annet","delsystem type":"NA"}
+{
+  "name": "SD-anlegg: Ecostruxture (TAC-Vista)",
+  "description": "Ecostruxture er en tjeneste for styring av SD-anlegg levert av Schneider. Alt som var på THC er på Ecostruxture nå. ",
+  "integrations": [ "OPENMUC" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}
