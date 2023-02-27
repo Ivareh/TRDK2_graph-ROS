@@ -24,10 +24,8 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#hasIntegrasjon -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#hasIntegrasjon">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon"/>
     </owl:ObjectProperty>
     
 
@@ -37,6 +35,17 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#hasSystem">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isSystemOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Virksomhetsområde"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#hasSystemIntegrasjon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#hasSystemIntegrasjon">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isSystemIntegrasjonOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
     </owl:ObjectProperty>
     
@@ -64,6 +73,16 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isSystemIntegrasjonOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isSystemIntegrasjonOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
     </owl:ObjectProperty>
@@ -561,33 +580,19 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IntTranWin">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#NamedSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Folkeregisteret"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IntegrasjonSystem -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IntegrasjonSystem">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#System"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Integrasjon"/>
     
 
 
