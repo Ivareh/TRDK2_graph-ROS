@@ -145,7 +145,19 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HELSEPLATTFORMEN"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Systemet benyttes på Øya legesenter. Det har integrasjon (opplasting av filer) med Helseplattformen.</rdfs:comment>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AudioConsole"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#isIntegrasjonOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HELSEPLATTFORMEN"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opplasting av filer</rdfs:comment>
+    </owl:Axiom>
     
 
 
@@ -185,6 +197,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BARTENDER">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#NamedSystem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tjenesten er et etikettprogram som brukes for å merke mat i poser som skal ut til blant andre sykehjem.</rdfs:comment>
     </owl:Class>
     
 
@@ -217,6 +230,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BOFINANS">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#NamedSystem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bofinans er en historisk base utviklet i Microsoft Access som inneholder opplysninger om alt som har med boligfinansiering å gjøre: alle som har fått lån, tilskudd eller avslag på søknad om startlån og boligtilskudd hos Trondheim kommune. Tjenesten har gjennomsnittlig behandlet 1200 søknader per år.</rdfs:comment>
     </owl:Class>
     
 
@@ -1003,6 +1017,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UsikkerMål -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UsikkerMål"/>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VIEW -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VIEW">
@@ -1428,11 +1448,180 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UsikkerIntegrasjon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UsikkerIntegrasjon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UsikkerMål"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Næring,_samferdsel,_klima_og_miljø -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Næring,_samferdsel,_klima_og_miljø">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Virksomhetsområde"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ACOS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AKTØRBASEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ARC-GIS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ASTA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AUTOCAD_og_NOVAPOINT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AV_ÅPEN_KOMMUNAL_DESKTOP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#AudioConsole"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Azure_AD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Azure_Traffic_Manager"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Azure_plattform"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BARTENDER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BIBLIOFIL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BILDEARKIV"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BOEI"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BOFINANS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BOMGAR"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BOOKINGBASEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Brukeradministrasjon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#CIM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#CITRIX_terminalserver"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Checkpoint"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#DNS_DOCUMASTER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#DRONER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Digitale_læremidler_OU"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Digitale_læremidler_TROVO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#EBYGGESAK_og_EBYGGESØKNAD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ELASTICSEARCH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ELEVPASSORD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#EPISERVER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#EXTENSOR"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Everbridge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#FEIDE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#FILTJENESTE_-_INTERN_SONE_og_FILTJENESTE_-_SIKRET_SONE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#FJERNTILGANG_FOR_EKSTERNE_og_FJERNTILGANG_SIKRET_SONE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#FURST_FORUM_-_ØYA_LEGESENTER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GADS_for_TKA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GAPS_for_TKA_og_TKE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GAT-TRONDHEIM-HOSPITAL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GAT-TRONDHEIM-KOMMUNE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GEODATA-GPS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HELSEPLATTFORMEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HP_JASM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HP_WJA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#INFORMASJON_OM_PERSONER_PÅ_SPERRET_ADRESSE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#INTRANETT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ISY_G-prog_BESKRIVELSE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ISY_PARK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ISY_Prosjekt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ISY_Prosjektøkonomi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IT_Brukerhjelp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IkkeDigitaleInnbyggere"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#IntTranWin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Intune"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#JUPITER_INNSYN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#KOMTEK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Katalogtjeneste_for_TKA_og_TKE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#LOCUS_CARE_ALARM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#LOCUS_MOBILE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Logger_til_drift-_og_sikkerhetsformål"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MEDRAVE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MEDTECH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MPS-PRINT-FLEET"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MS-SQL_INTERN_SONE_og_SIKKER_SONE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Meglerpakken"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MinSide"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#NETSCALER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#NETWORK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Nasjonale_fellesløsninger"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#OPENMUC"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ORACLE_-_INTERN_SONE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#PAPERCUT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#PAVA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#RPA_og_RPA_SIKKER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#RoSy_RAMS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#RÅDGIVER-PM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SAFEMATE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SECURITY"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SIKKER_FILOVERFØRING"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SKJENKEBASEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SMALLWORLD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SMTP_GATEWAY"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SOMA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SPSS_og_SPSS-SIKKER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SSL-sertifikater"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Server_og_applikasjonsdrift"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ServiceNow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SolarWinds"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Sosiale_medier"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TELEFONI_DTA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TI-METODEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TILSKUDDSBASEN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TIP_og_TIP_sikker"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TKweb_DMZ_og_TKweb_sikker"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TKweb_Intern"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TQM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#TRANSMED"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Trondheim_Parkering"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Tsplus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UNTIS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VIEW"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VISMA_FLYKTNING_OG_VOKSENOPPLÆRING_og_SQL_REPORTING_-_FLYVO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VISMA_FLYT_PPT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VISMA_SAMHANDLING_ARKIV"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#VISMA_VELFERD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Varsling_24"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#WINCAN"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#WINMAP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Adgangskontroll:_RCO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Adgangskontroll:_SiPASS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#BRAARKIV_–_BYUTVIKLING"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#CARDIOPERFECT_–_FENGSEL,_FLYKTNING,_LEGEVAKT,_ØYA_LEGESENTER"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#DIGITAL_ARBEIDSFLATE_(Intune)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#DNS_(Domain_Name_Services)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#ESA_–_ESA,_ESA_KK,_ESA-MIDLERTIDIG,_ESA-SIKKER_(TK-SAK)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Ekstern_sertifikattjeneste_(Buypass)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#FTP_(Filoverføring_for_leverandører)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GEMINI-VA,_Portal,_Oppfølging,_Privat_utslipp,_Privat_Slam,_Privat_Indsys_og_Privat_Tilbakeslagssikring_Vann,_Melding"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GSB_–_Google_Suite_for_Business_(Google_workspace)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GSE_–_Google_suite_for_education"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#GST_(TROVO)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#HR-portalen_(Visma_Multi)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Kontrollsystem:_CITECT_SCADA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Kontrollsystem:_DATEK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Kontrollsystem:_EA_DRIFTSKONTROLL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Kontrollsystem:_IGSS_SCADA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Lift_(Løsning_Innkjøp_Finans_Trondheim_kommune)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MIKE-URBAN/MIKE_+"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#MIM_(Microsoft_Identity_Manager)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Mercell_KAV_(kontraktsadministrasjonsverktøy)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Mercell_KGV_(konkurransegjennomføringsverktøy)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Nasjonal_Portal_for_Bekymringsmeldinger_(NPB)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#PIE_(Person_–_Inventar_–_Enhet)_/_Aksessforvaltning"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#PIXEDIT_SERVER_–_Sikker_skanning"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_DESIGO_CC_og_Insight"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_EBI"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_HOIST"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_METASYS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_Trend"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SD-anlegg:_Ecostruxture_(TAC-Vista)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SFTP_(Filoverføring_mellom_soner_–_sikret_sone)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#SIKT_–_Sikker_Infrastruktur_Kommunikasjon_Trondheim_kommune"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Sentral_PKI-plattform_(intern)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#UNIFLOW_(AIRPRINT)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#Vigilo/OAS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/1.0.0#XENAPP_-_INTERN_SONE_OG_XENAPP_–_SIKRET_SONE"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
