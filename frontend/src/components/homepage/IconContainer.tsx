@@ -10,7 +10,7 @@ import { MotionBox } from "../../types/react/componentTypes"; */
 /* 
 type IconContainerProps = {
   businessAreaNode: BusinessArea;
-  onClick: (sdg: BusinessArea) => void;
+  onClick: (ba: BusinessArea) => void;
 };
 
 const IconContainer: React.FC<IconContainerProps> = ({
@@ -38,6 +38,7 @@ const IconContainer: React.FC<IconContainerProps> = ({
 const IconContainer: React.FC = () => {
   return (
     <Stack align="center" spacing="20">
+      {/* Et eksempelbilde for å vise i UI at det IconContainer fungerer */}
       <Image
         src={
           "https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-vector-house-icon-png-image_695726.jpg"

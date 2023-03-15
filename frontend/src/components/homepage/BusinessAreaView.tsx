@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SimpleGrid, Stack } from "@chakra-ui/react";
+import { Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 /* import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getBusinessAreas } from '../../api/ontologies';
@@ -7,7 +7,7 @@ import { mapBusinessAreaToNode } from '../../common/node';
 import { setError } from '../../state/reducers/apiErrorReducer';
 import { selectNode } from '../../state/reducers/ontologyReducer';
 import { BusinessArea } from '../../types/ontologyTypes'; */
-import IconContainer from "../components/homepage/IconContainer";
+import IconContainer from "./IconContainer";
 
 /**
  *
@@ -18,17 +18,17 @@ const BusinessAreaView: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();*/
 
-  const loadSustainabilityGoals = async () => {
+  const loadBusinessAreas = async () => {
     /*     const data = await getBusinessAreas();
     getBusinessAreas(data); */
   };
 
   useEffect(() => {
-    loadSustainabilityGoals();
+    loadBusinessAreas();
   }, []);
 
-  /*   const onClickSDG = (sdg: BusinessArea) => {
-    const node = mapBusinessAreaToNode(sdg);
+  /*   const onClickBA = (ba: BusinessArea) => {
+    const node = mapBusinessAreaToNode(ba);
     if (!node) {
       dispatch(setError(new Error("Could not map business area to node")));
       return;
@@ -38,19 +38,21 @@ const BusinessAreaView: React.FC = () => {
 
   return (
     <Stack align="center" spacing="20">
+      <Text>BAView: her skal alle IconContainers vises i en grid:</Text>
       <SimpleGrid columns={[2, 2, 3, null, 4]} spacing={10}>
         {/*         {businessAreas &&
-          businessAreas.map((sdg) => (
+          businessAreas.map((ba) => (
             <IconContainer
-              key={sdg.instancesOf}
+              key={ba.instancesOf}
               onClick={() => {
-                onClickSDG(sdg);
+                onClickBA(ba);
                 window.scrollTo(0, 0);
                 history.push("/ontology");
               }}
-              businessAreaNode={sdg}
+              businessAreaNode={ba}
             />
           ))} */}
+        <IconContainer />
       </SimpleGrid>
     </Stack>
   );
