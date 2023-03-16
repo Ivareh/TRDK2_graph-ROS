@@ -49,7 +49,7 @@ const BusinessAreaView: React.FC = () => {
   return (
     <Stack align="center" spacing="20">
       {/* BAView: her skal alle IconContainers vises i en grid: */}
-      <SimpleGrid columns={[2, 2, 3, null, 4]} spacing={20}>
+      <SimpleGrid columns={3} spacing={20}>
         {businessAreas &&
           businessAreas.map((ba) => (
             <IconContainer

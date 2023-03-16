@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Center, Image, Stack, Text } from "@chakra-ui/react";
 import DummyData from "../../dummyTypes/DummyData";
 /* import { BusinessArea } from "../../types/ontologyTypes";
 import { MotionBox } from "../../types/react/componentTypes"; */
@@ -50,19 +50,21 @@ const IconContainer: React.FC<IconContainerProps> = ({
   label,
   icon,
 }: IconContainerProps) => (
-  <Stack align="center" spacing="20px">
-    <Image
-      src={icon}
-      borderRadius="lg"
-      overflow="hidden"
-      alt={"icon"}
-      boxSize="250"
-      object-fit="cover"
-    />
-    <Text fontSize="2xl" color="darkgrey">
-      {label}
-    </Text>
-  </Stack>
+  <Center bg={"#EDE7E0"} boxSize="250" borderRadius={"10%"}>
+    <Stack align="center" spacing="20px">
+      <Image
+        src={icon}
+        borderRadius="lg"
+        overflow="hidden"
+        alt={"icon"}
+        boxSize="150"
+        object-fit="cover"
+      />
+      <Text fontSize="2xl" color="darkgrey">
+        {label}
+      </Text>
+    </Stack>
+  </Center>
 );
 
 export default IconContainer;

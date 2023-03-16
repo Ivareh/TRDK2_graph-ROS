@@ -29,6 +29,24 @@ function DummyData() {
         icon: "https://cdn-icons-png.flaticon.com/512/2674/2674995.png",
     })
 
+    DD.push({
+        instancesOf:"",
+        label: "Oppvekst og utdanning",
+        icon: "https://cdn-icons-png.flaticon.com/512/3819/3819378.png",
+    })
+
+    DD.push({
+        instancesOf:"",
+        label: "Kultur og idrett",
+        icon: "https://cdn-icons-png.flaticon.com/512/1198/1198416.png",
+    })
+
+    DD.push({
+        instancesOf:"",
+        label: "Miljø og klima",
+        icon: "https://cdn-icons-png.flaticon.com/512/2961/2961643.png",
+    })
+
     return DD;
 }
 

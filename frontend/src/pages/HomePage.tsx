@@ -1,5 +1,14 @@
 import React from "react";
-import { Heading, Stack, Image, Flex, Box, Text } from "@chakra-ui/react";
+import {
+  Heading,
+  Stack,
+  Image,
+  Flex,
+  Box,
+  Text,
+  VStack,
+  HStack,
+} from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
 /* import SustainabilityGoals from '../molecules/SustainabilityGoalsList'; 
 må opprettes:*/
@@ -19,18 +28,20 @@ const HomePage: React.FC = () => (
       h="250px"
       backgroundColor="#B0C5D6"
     >
-      <Stack spacing="10">
+      <HStack spacing="10">
         <Heading size="sm" color="white">
           Søk blant integrasjoner
         </Heading>
         <Text>*søkefelt her*</Text>
         {/* <SearchBar limit={5} /> */}
-      </Stack>
+      </HStack>
     </Flex>
-    <Heading size="lg" color="#B0C5D6" textAlign={"center"}>
-      Virksomhetsområder
-    </Heading>
-    <BusinessAreaView />
+    <VStack spacing={50}>
+      <Heading size="lg" color="#B0C5D6" textAlign={"center"}>
+        Virksomhetsområder
+      </Heading>
+      <BusinessAreaView />
+    </VStack>
   </Stack>
 );
 
