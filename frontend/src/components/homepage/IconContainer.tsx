@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Stack } from "@chakra-ui/react";
+import DummyData from "../../dummyTypes/DummyData";
 /* import { BusinessArea } from "../../types/ontologyTypes";
 import { MotionBox } from "../../types/react/componentTypes"; */
 
@@ -35,22 +36,32 @@ const IconContainer: React.FC<IconContainerProps> = ({
     />
   </MotionBox>
 ); */
-const IconContainer: React.FC = () => {
-  return (
-    <Stack align="center" spacing="20">
-      {/* Et eksempelbilde for å vise i UI at det IconContainer fungerer */}
-      <Image
-        src={
-          "https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-vector-house-icon-png-image_695726.jpg"
-        }
-        borderRadius="lg"
-        overflow="hidden"
-        alt={"bilde"}
-        boxSize="250"
-        object-fit="cover"
-      />
-    </Stack>
-  );
+type IconContainerProps = {
+  instancesOf: string;
+  icon: string;
+  label: string;
 };
+
+const IconContainer: React.FC<IconContainerProps> = ({
+  instancesOf,
+  label,
+  icon,
+}: IconContainerProps) => (
+  /* const DD = DummyData();
+  console.log("dummy data:", DD[0]); */
+
+  <Stack align="center" spacing="20">
+    {/* Et eksempelbilde for å vise i UI at det IconContainer fungerer */}
+    <Image
+      src={icon}
+      borderRadius="lg"
+      overflow="hidden"
+      alt={"bilde"}
+      boxSize="250"
+      object-fit="cover"
+      border={"medium"}
+    />
+  </Stack>
+);
 
 export default IconContainer;

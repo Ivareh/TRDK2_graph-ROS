@@ -7,7 +7,7 @@ import BusinessAreaView from "../components/homepage/BusinessAreaView";
 
 /**
  * This is the front page that meets you once the website loads.
- * Includes Searchbar and overview of all Business Areas
+ * Should include Navbar, Searchbar and overview of all Business Areas
  */
 
 const HomePage: React.FC = () => (
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => (
       align="center"
       justify="center"
       justifyContent="space-evenly"
-      h="350px"
+      h="250px"
       backgroundColor="#B0C5D6"
     >
       <Stack spacing="10">

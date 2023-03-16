@@ -8,24 +8,31 @@ import { setError } from '../../state/reducers/apiErrorReducer';
 import { selectNode } from '../../state/reducers/ontologyReducer';
 import { BusinessArea } from '../../types/ontologyTypes'; */
 import IconContainer from "./IconContainer";
+import DummyData from "../../dummyTypes/DummyData";
+import { MunicipalityEntity } from "../../dummyTypes/OntologyTypes";
 
 /**
  *
  * @returns Hentet fra SustainabilityGoalView, justert navn til vårt prosjekt:
  */
 const BusinessAreaView: React.FC = () => {
-  /* const [businessAreas, setBusinessAreas] = useState<Array<BusinessArea>>(); 
-  const dispatch = useDispatch();
+  const DD: Array<MunicipalityEntity> = DummyData();
+  const [businessAreas, setBusinessAreas] = useState(DD);
+  /* const [businessAreas, setBusinessAreas] =
+    useState<Array<MunicipalityEntity>>(); */
+
+  /* const dispatch = useDispatch();
   const history = useHistory();*/
 
+  /*
   const loadBusinessAreas = async () => {
-    /*     const data = await getBusinessAreas();
-    getBusinessAreas(data); */
+        const data = await getBusinessAreas();
+    getBusinessAreas(data); 
   };
 
   useEffect(() => {
     loadBusinessAreas();
-  }, []);
+  }, []);*/
 
   /*   const onClickBA = (ba: BusinessArea) => {
     const node = mapBusinessAreaToNode(ba);
@@ -40,19 +47,21 @@ const BusinessAreaView: React.FC = () => {
     <Stack align="center" spacing="20">
       <Text>BAView: her skal alle IconContainers vises i en grid:</Text>
       <SimpleGrid columns={[2, 2, 3, null, 4]} spacing={10}>
-        {/*         {businessAreas &&
+        {businessAreas &&
           businessAreas.map((ba) => (
             <IconContainer
-              key={ba.instancesOf}
-              onClick={() => {
+              icon={ba.icon}
+              instancesOf={ba.instancesOf}
+              label={ba.label}
+              /* onClick={() => {
                 onClickBA(ba);
                 window.scrollTo(0, 0);
-                history.push("/ontology");
-              }}
-              businessAreaNode={ba}
+                history.push("/ontology"); 
+              }} */
+              /*  businessAreaNode={ba} */
             />
-          ))} */}
-        <IconContainer />
+          ))}
+        {/*  <IconContainer /> */}
       </SimpleGrid>
     </Stack>
   );

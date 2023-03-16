@@ -9,21 +9,21 @@ import { MunicipalityEntity } from "./OntologyTypes";
  */
 
 function DummyData() {
-    const DummyData = Array<MunicipalityEntity>();
+    const DD = Array<MunicipalityEntity>();
 
-    DummyData.push({
+    DD.push({
         instancesOf: "",
         label: "Byutvikling",
         icon: "https://cdn-icons-png.flaticon.com/512/209/209474.png",
     })
 
-    DummyData.push({
+    DD.push({
         instancesOf: "",
         label: "Helse og velferd",
         icon: "https://cdn-icons-png.flaticon.com/512/687/687529.png",
     })
 
-    return DummyData;
+    return DD;
 }
 
 export default DummyData;
