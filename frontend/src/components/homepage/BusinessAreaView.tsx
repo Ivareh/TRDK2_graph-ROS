@@ -13,9 +13,12 @@ import { MunicipalityEntity } from "../../dummyTypes/OntologyTypes";
 
 /**
  *
- * @returns Hentet fra SustainabilityGoalView, justert navn til vårt prosjekt:
+ * @returns Hentet fra SustainabilityGoalView i SGD, justert navn til vårt prosjekt:
  */
 const BusinessAreaView: React.FC = () => {
+  /**
+   * Temporary hook using DummyData. Original code is commented out below.
+   */
   const DD: Array<MunicipalityEntity> = DummyData();
   const [businessAreas, setBusinessAreas] = useState(DD);
   /* const [businessAreas, setBusinessAreas] =
@@ -45,8 +48,8 @@ const BusinessAreaView: React.FC = () => {
 
   return (
     <Stack align="center" spacing="20">
-      <Text>BAView: her skal alle IconContainers vises i en grid:</Text>
-      <SimpleGrid columns={[2, 2, 3, null, 4]} spacing={10}>
+      {/* BAView: her skal alle IconContainers vises i en grid: */}
+      <SimpleGrid columns={[2, 2, 3, null, 4]} spacing={20}>
         {businessAreas &&
           businessAreas.map((ba) => (
             <IconContainer
@@ -61,7 +64,6 @@ const BusinessAreaView: React.FC = () => {
               /*  businessAreaNode={ba} */
             />
           ))}
-        {/*  <IconContainer /> */}
       </SimpleGrid>
     </Stack>
   );

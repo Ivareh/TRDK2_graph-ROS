@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Stack } from "@chakra-ui/react";
+import { Image, Stack, Text } from "@chakra-ui/react";
 import DummyData from "../../dummyTypes/DummyData";
 /* import { BusinessArea } from "../../types/ontologyTypes";
 import { MotionBox } from "../../types/react/componentTypes"; */
@@ -7,7 +7,10 @@ import { MotionBox } from "../../types/react/componentTypes"; */
 /**
  * Hentet fra SDG-ontology-visualizer, justert navn og plasseringer.
  * Ettersom disse omhandler annen data enn vi har, kan det være dette må gjøres om på.
+ * Henter per nå inn duy data med verdier for ikon, label og instancesOf.
+ * Original kode er kommentert ut.
  */
+
 /* 
 type IconContainerProps = {
   businessAreaNode: BusinessArea;
@@ -47,20 +50,18 @@ const IconContainer: React.FC<IconContainerProps> = ({
   label,
   icon,
 }: IconContainerProps) => (
-  /* const DD = DummyData();
-  console.log("dummy data:", DD[0]); */
-
-  <Stack align="center" spacing="20">
-    {/* Et eksempelbilde for å vise i UI at det IconContainer fungerer */}
+  <Stack align="center" spacing="20px">
     <Image
       src={icon}
       borderRadius="lg"
       overflow="hidden"
-      alt={"bilde"}
+      alt={"icon"}
       boxSize="250"
       object-fit="cover"
-      border={"medium"}
     />
+    <Text fontSize="2xl" color="darkgrey">
+      {label}
+    </Text>
   </Stack>
 );
 

@@ -23,6 +23,12 @@ function DummyData() {
         icon: "https://cdn-icons-png.flaticon.com/512/687/687529.png",
     })
 
+    DD.push({
+        instancesOf:"",
+        label: "Organisasjon",
+        icon: "https://cdn-icons-png.flaticon.com/512/2674/2674995.png",
+    })
+
     return DD;
 }
 

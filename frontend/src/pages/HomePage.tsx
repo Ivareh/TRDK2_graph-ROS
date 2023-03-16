@@ -20,14 +20,14 @@ const HomePage: React.FC = () => (
       backgroundColor="#B0C5D6"
     >
       <Stack spacing="10">
-        <Heading size="lg" color="white">
+        <Heading size="sm" color="white">
           Søk blant integrasjoner
         </Heading>
         <Text>*søkefelt her*</Text>
         {/* <SearchBar limit={5} /> */}
       </Stack>
     </Flex>
-    <Heading size="lg" color="#B0C5D6">
+    <Heading size="lg" color="#B0C5D6" textAlign={"center"}>
       Virksomhetsområder
     </Heading>
     <BusinessAreaView />
