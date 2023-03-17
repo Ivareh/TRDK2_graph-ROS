@@ -13,7 +13,7 @@ import { MunicipalityEntity } from "../../dummyTypes/OntologyTypes";
 
 /**
  *
- * @returns Hentet fra SustainabilityGoalView i SGD, justert navn til vårt prosjekt:
+ * Hentet fra SustainabilityGoalView i SGD, justert navn til vårt prosjekt:
  */
 const BusinessAreaView: React.FC = () => {
   /**
@@ -49,7 +49,7 @@ const BusinessAreaView: React.FC = () => {
   return (
     <Stack align="center" spacing="20">
       {/* BAView: her skal alle IconContainers vises i en grid: */}
-      <SimpleGrid columns={3} spacing={20}>
+      <SimpleGrid columns={3} spacing={20} marginBottom={150} marginTop={25}>
         {businessAreas &&
           businessAreas.map((ba) => (
             <IconContainer
@@ -68,4 +68,5 @@ const BusinessAreaView: React.FC = () => {
     </Stack>
   );
 };
+
 export default BusinessAreaView;
