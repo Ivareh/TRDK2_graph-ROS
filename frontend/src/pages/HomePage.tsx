@@ -13,9 +13,11 @@ import SearchBar from "../components/SearchBar";
 /* import SustainabilityGoals from '../molecules/SustainabilityGoalsList'; 
 må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
+import Navbar from "../components/Navbar";
 
 const HomePage: React.FC = () => (
   <Stack spacing="10" backgroundColor="#F5F9FF">
+    <Navbar />
     <Flex
       align="center"
       justify="center"
