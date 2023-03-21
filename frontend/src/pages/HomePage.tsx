@@ -13,14 +13,11 @@ import SearchBar from "../components/SearchBar";
 /* import SustainabilityGoals from '../molecules/SustainabilityGoalsList'; 
 må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
-
-/**
- * This is the front page that meets you once the website loads.
- * Should include Navbar, Searchbar and overview of all Business Areas
- */
+import Navbar from "../components/Navbar";
 
 const HomePage: React.FC = () => (
   <Stack spacing="10" backgroundColor="#F5F9FF">
+    <Navbar />
     <Flex
       align="center"
       justify="center"
