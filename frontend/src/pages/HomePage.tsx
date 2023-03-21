@@ -32,8 +32,7 @@ const HomePage: React.FC = () => (
         <Heading size="sm" color="white">
           Søk blant integrasjoner
         </Heading>
-        <Text>*søkefelt her*</Text>
-        {/* <SearchBar limit={5} /> */}
+        <SearchBar limit={5} />
       </HStack>
     </Flex>
     <VStack spacing={50}>
