@@ -15,6 +15,7 @@ må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
 import Navbar from "../components/Navbar";
 
+
 const HomePage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
     <Stack>
@@ -42,5 +43,6 @@ const HomePage: React.FC = () => (
     </VStack>
   </Stack>
 );
+
 
 export default HomePage;
