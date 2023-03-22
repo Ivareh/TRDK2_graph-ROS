@@ -6,6 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://schema.org/"
      xmlns:ontologies="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023"/>
     
@@ -22,17 +23,57 @@
     
 
 
+    <!-- http://schema.org/image -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty"/>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyPercent -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount -->
 
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyPercent">
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#percent"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These annotations only apply to uncertainty in one entity. These uncertainties is not relational uncertainty between two entities, like the &quot;hasUncertainty&quot; object properties</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#integrations -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#integrations">
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of the integrations in a system</ontologies:entitydescription>
     </owl:AnnotationProperty>
     
 
@@ -40,6 +81,38 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/entitydescription -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/entitydescription"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#percent -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#percent">
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A float between 0 to 100</ontologies:entitydescription>
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
     
 
 
@@ -64,8 +137,9 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasSubSystem">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isSubSystemOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/MultipleComponentSystem"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Used when a system has a subsystem.</ontologies:entitydescription>
     </owl:ObjectProperty>
     
 
@@ -73,7 +147,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty">
-        <ontologies:entitydescription>Relational uncertainty between entities</ontologies:entitydescription>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relational uncertainty between entities. For uncertainties that applies to self entity, these are instead annotations.</ontologies:entitydescription>
     </owl:ObjectProperty>
     
 
@@ -106,6 +180,15 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If two entities has similar names but there are uncertainty if they are the same entity. Note that this relation is symmetric.</ontologies:entitydescription>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainDatasetTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainDatasetTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
     </owl:ObjectProperty>
     
 
@@ -148,25 +231,6 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/isSystemOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/isSystemOf"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyAmount -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyAmount">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -252,6 +316,17 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/MultipleComponentSystem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/MultipleComponentSystem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasSubSystem"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
     </owl:Class>
     
@@ -293,10 +368,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Autentiseringstjenester -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Autentiseringstjenester">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+        <hasSubSystem rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Azure_AD"/>
+        <hasSubSystem rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/GADS_for_TKA"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Azure_AD -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Azure_AD">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azure AD brukes svært aktivt og det gjennomføres autentisering av 27 ulike tjenester (SaaS eller driftet av Sopra Steria). Identity Governance brukes for autentisering av tjenesteleverandører/leverandører til servere. Access management styres av TK; tilgang til servere styres av Sopra Steria. Det er grensesnitt mellom TK, Sopra Steria og tredjepart. Tjenesten bukes også til provisjonering av 8-10 tjenester. Målet er at Azure pålogging skal være default, også mot Google med føderasjon mot Google i bakgrunnen.
+
+On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
     </owl:NamedIndividual>
     
 
@@ -305,9 +393,15 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DNS_fake_questionable">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+        <hasUncertainty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/DNS_(Domain_Name_Services)"/>
         <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/DNS_(Domain_Name_Services)"/>
-        <hasUncertaintyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">535533</hasUncertaintyAmount>
     </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DNS_fake_questionable"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/DNS_(Domain_Name_Services)"/>
+        <UncertaintyAmount rdf:datatype="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#percent">85</UncertaintyAmount>
+    </owl:Axiom>
     
 
 
@@ -315,6 +409,17 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset_overview_-_2018">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#GADS_for_TKA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#GADS_for_TKA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+        <belongsToAttachement rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Vedlegg_A"/>
+        <schema:image rdf:resource="file:///D:/NTNU/2023/IT2901/repo/TRDK2_graph-ROS/ontology/images/GADSforTKAdescription.png"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Google Apps Directory Sync (GADS) er et verktøy som automatisk legger til, modifiserer og sletter brukere, grupper og OUer (organizational units) i G-Suite basert på informasjon fra AD.</description>
     </owl:NamedIndividual>
     
 
@@ -381,15 +486,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Autentiseringstjenester -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Autentiseringstjenester">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/MultipleComponentSystem"/>
-        <hasSubSystem rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Azure_AD"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Azure_AD -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Azure_AD"/>
@@ -450,7 +546,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Organisasjon">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Business_area"/>
-        <ontologies:hasSystem rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Autentiseringstjenester"/>
     </owl:NamedIndividual>
     
 
@@ -479,7 +574,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/&apos;Vigilo/Vigilo/OAS">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
-        <ontologies:isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Autentiseringstjenester"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OAS</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vigilo</rdfs:label>
     </owl:NamedIndividual>
