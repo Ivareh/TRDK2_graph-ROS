@@ -22,7 +22,7 @@ export default function Navbar() {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <RouterLink to="/">
             <Box>
-              <img src={Logo} style={{ height: 55, width: 230 }} />
+              <img src={Logo} style={{ height: 55, width: 240 }} />
             </Box>
           </RouterLink>
 
