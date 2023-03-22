@@ -13,9 +13,11 @@ function EntityPage() {
       gridTemplateColumns={'150px 1fr'}
       gap='1'
       bg='#F5F9FF'
+      pl='4'
+      pr='4'
     >
       <GridItem pl='2' area={'header'} w='100%' paddingTop='20px' >
-        <Text m='0 auto' textAlign='center'>
+        <Text m='0 auto' textAlign='center' fontSize='28'>
           Byutvikling
         </Text>
       </GridItem>
