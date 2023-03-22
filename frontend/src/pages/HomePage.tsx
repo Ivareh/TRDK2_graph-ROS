@@ -16,8 +16,10 @@ import BusinessAreaView from "../components/homepage/BusinessAreaView";
 import Navbar from "../components/Navbar";
 
 const HomePage: React.FC = () => (
-  <Stack spacing="10" backgroundColor="#F5F9FF">
-    <Navbar />
+  <Stack spacing="3" backgroundColor="#F5F9FF">
+    <Stack>
+      <Navbar />
+    </Stack>
     <Flex
       align="center"
       justify="center"
@@ -25,7 +27,7 @@ const HomePage: React.FC = () => (
       h="250px"
       backgroundColor="#B0C5D6"
     >
-      <HStack spacing="10">
+      <HStack>
         <Heading size="sm" color="white">
           Søk blant integrasjoner
         </Heading>

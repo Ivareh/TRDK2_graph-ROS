@@ -1,113 +1,75 @@
-import { ReactNode } from "react";
 import {
-  Box,
-  Image,
-  Flex,
   Avatar,
-  HStack,
-  Link,
-  IconButton,
+  Box,
   Button,
+  Center,
+  Flex,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   MenuDivider,
-  useDisclosure,
-  useColorModeValue,
+  MenuItem,
+  MenuList,
   Stack,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
+import { useContext } from "react";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import Logo from "./Images/brand-logo.png";
 
-//const Links = ["Hjem", "Projects", "Team"];
-
-/*Component highly inspired by a chakra navbar template*/
-
-const NavBar = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
-
-export default function withAction() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+export default function Navbar() {
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box backgroundColor={"#F5F9FF"} px={10} id={"navbar"} marginTop="3">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box> TRONDHEIM KOMMUNE </Box>
-            {/*<HStack
-              as={"nav"}
-              spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
-              {Links.map((link) => (
-                <NavBar key={link}>{link}</NavBar>
-              ))}
-              </HStack>*/}
-          </HStack>
-          <Flex alignItems={"center"}>
-            <Button
-              variant={"solid"}
-              colorScheme={"teal"}
-              size={"sm"}
-              mr={4}
-              leftIcon={<AddIcon />}
-            >
-              Legg
-            </Button>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
+          <RouterLink to="/">
+            <Box>
+              <img src={Logo} style={{ height: 55, width: 230 }} />
+            </Box>
+          </RouterLink>
+
+          <Flex id={"idButton"} alignItems={"center"}>
+            <Stack direction={"row"} spacing={7}>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={"full"}
+                  variant={"link"}
+                  cursor={"pointer"}
+                  minW={0}
+                >
+                  <Avatar size={"md"} src={"image.png"} />
+                </MenuButton>
+                <MenuList alignItems={"center"}>
+                  <br />
+                  <Center>
+                    <Avatar size={"2xl"} src={"image.png"} />
+                  </Center>
+                  <br />
+
+                  {/* if user is logged in, show email, if not show Guest */}
+                  {/* {user ? (
+                    <Center>
+                      <p>{user.email}</p>
+                    </Center>
+                  ) : (
+                    <Center>
+                      <p>Guest</p>
+                    </Center>
+                  )}
+                  <br />
+                  <MenuDivider />
+                  */}
+
+                  {/* if user exists, show logout button */}
+                  {/*{user ? (
+                    <MenuItem onClick={onLogout}>Logout</MenuItem>
+                  ) : (
+                    <MenuItem onClick={onLogin}>Login</MenuItem>
+                  )} */}
+                </MenuList>
+              </Menu>
+            </Stack>
           </Flex>
         </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavBar key={link}>{link}</NavBar>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
       </Box>
     </>
   );
