@@ -15,6 +15,8 @@ import { useContext } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Logo from "./Images/brand-logo.png";
 
+/*Component reworked from chakra navigation component*/
+
 export default function Navbar() {
   return (
     <>
