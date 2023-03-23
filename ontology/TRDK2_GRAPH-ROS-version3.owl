@@ -32,8 +32,17 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#BusinessMeaning -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#BusinessMeaning">
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simply, what is the data about?</ontologies:entitydescription>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAnnotation"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Comments -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Comments">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAnnotation"/>
     </owl:AnnotationProperty>
     
 
@@ -66,12 +75,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#HasAPI -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#HasAPI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard">
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</ontologies:entitydescription>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#URLofAPI -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#URLofAPI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAnnotation"/>
     </owl:AnnotationProperty>
     
 
@@ -193,6 +218,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#getsUpdated -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#getsUpdated">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Updated"/>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;How often does it get updated? 
+(realtime, hourly, daily, Weekly, 
+monthly, yearly, unknown)&quot;</ontologies:entitydescription>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasADGroup -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasADGroup">
@@ -217,7 +255,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The rest of the dataset attributes are in annotation properties for dataset</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The rest of the dataset attributes are in annotation properties for dataset.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -236,6 +274,24 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasMunicipalityOperator">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasOpenessDegree -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasOpenessDegree">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#OpennessDegree"/>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Openness Degree
+(Open, 
+public access, 
+group access, 
+specified access, 
+closed)</ontologies:entitydescription>
     </owl:ObjectProperty>
     
 
@@ -244,6 +300,23 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasOwner">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasPreciseness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasPreciseness">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Precise"/>
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;How precise 
+(reliable) is it?
+
+(High, Med, Low, 
+Unknown)&quot;</ontologies:entitydescription>
     </owl:ObjectProperty>
     
 
@@ -338,6 +411,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#storedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType"/>
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How is it stored?
 (excel, csv, db, 
 word, etc.)</ontologies:entitydescription>
@@ -349,6 +424,8 @@ word, etc.)</ontologies:entitydescription>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#whereStored">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasDatasetAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreLocation"/>
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Where is it? 
 
 (Local PC, 
@@ -418,7 +495,9 @@ Public Cloud)</ontologies:entitydescription>
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAttributes"/>
+    </owl:Class>
     
 
 
@@ -442,6 +521,24 @@ Public Cloud)</ontologies:entitydescription>
             </owl:Class>
         </owl:equivalentClass>
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contains all integrations in the ontology. Both a system and normal integrations can be an integration. This defined class gathers both of these types of integrations. See inferred description hierarchy</ontologies:entitydescription>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllUncertainties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllUncertainties">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -506,9 +603,41 @@ Public Cloud)</ontologies:entitydescription>
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#OpennessDegree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#OpennessDegree">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Precise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Precise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
     
 
 
@@ -568,6 +697,22 @@ Public Cloud)</ontologies:entitydescription>
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoredType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoredType"/>
@@ -589,6 +734,14 @@ Public Cloud)</ontologies:entitydescription>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Updated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Updated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#DatasetAttributes"/>
     </owl:Class>
     
 
@@ -641,7 +794,7 @@ Public Cloud)</ontologies:entitydescription>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Municipality">
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class for municipalities in Norway</ontologies:entitydescription>
-        <rdfs:comment xml:lang="no">Kommune</rdfs:comment>
+        <rdfs:label xml:lang="no">Kommune</rdfs:label>
     </owl:Class>
     
 
@@ -665,10 +818,218 @@ Public Cloud)</ontologies:entitydescription>
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Acos_AS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Acos_AS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byantikvaren -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byantikvaren">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byplan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byplan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ESIKT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ESIKT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Eierskapsenheten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Eierskapsenheten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#External -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#External">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Fagenhet_for_oppvekst_og_utdanning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Fagenhet_for_oppvekst_og_utdanning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Justisdepartementet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Justisdepartementet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Kart_og_oppmåling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Kart_og_oppmåling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Kommunalteknikk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Kommunalteknikk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Miljøenheten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Miljøenheten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Operated_by_Entro_and_Kjeldsberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Operated_by_Entro_and_Kjeldsberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Oppvekst_og_utdanning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Oppvekst_og_utdanning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Skatteetaten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Skatteetaten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Statens_kartverk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Statens_kartverk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_Kommune -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_Kommune">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/Municipality"/>
+        <rdfs:label xml:lang="no">TK</rdfs:label>
+        <rdfs:label xml:lang="no">Trondheim Kommune</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_bydrift -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_bydrift">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tronsdheimsregionen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tronsdheimsregionen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Økonomitjenesten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Økonomitjenesten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#9t2_dwh -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#9t2_dwh">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+        <BusinessMeaning rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ticket sale for school and daycare centers for public transport in Trondheim</BusinessMeaning>
+        <Contains_PII rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Contains_PII>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS/Coretrek -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS/Coretrek">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Owner"/>
+        <rdfs:label xml:lang="no">AtB AS/Coretrek</rdfs:label>
+        <rdfs:label xml:lang="no">AtB_AS</rdfs:label>
+        <rdfs:label xml:lang="en">Coretrek</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byplan/KO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Byplan/KO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;Friluftsliv -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;Friluftsliv">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;FriluftslivMiljøpakken"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;Friluftsliv"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
+        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;FriluftslivMiljøpakken"/>
+        <Uncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Idrett&amp;Friluftsliv could be the same dataset owner as Idrett&amp;FriluftslivMiljøpakken</Uncertainty>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;FriluftslivMiljøpakken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;FriluftslivMiljøpakken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
+        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Idrett&amp;Friluftsliv"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Leaders_of_HJTJ,_HVS_and_BOA_Units -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Leaders_of_HJTJ,_HVS_and_BOA_Units">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityOperator"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
