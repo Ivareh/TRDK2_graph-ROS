@@ -83,12 +83,36 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ImportantNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ImportantNote">
+        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An important note in a program or other entity</ontologies:entitydescription>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#NameStandard">
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</ontologies:entitydescription>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAnnotation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAnnotation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SoftwareModelForBA -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SoftwareModelForBA">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAnnotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:AnnotationProperty>
     
 
@@ -132,14 +156,6 @@
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description">
         <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of a system/program/dataset etc</ontologies:entitydescription>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantnote -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantnote">
-        <ontologies:entitydescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An important note in a program or other entity</ontologies:entitydescription>
     </owl:AnnotationProperty>
     
 
@@ -212,9 +228,38 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#aDHasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#aDHasMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasProgramAttribute"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#aDIsMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-GroupMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#aDIsMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#aDIsMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasProgramAttribute"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#canOrder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#canOrder">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasProgramAttribute"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+    </owl:ObjectProperty>
     
 
 
@@ -330,6 +375,7 @@ Unknown)&quot;</ontologies:entitydescription>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceManager -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceManager">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasProgramAttribute"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceManagerOf"/>
     </owl:ObjectProperty>
     
@@ -497,6 +543,14 @@ Public Cloud)</ontologies:entitydescription>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAttributes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-GroupMember -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-GroupMember">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
     </owl:Class>
     
 
@@ -734,6 +788,14 @@ Public Cloud)</ontologies:entitydescription>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/SystemService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Unit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ProgramAttributes"/>
     </owl:Class>
     
 
@@ -978,7 +1040,7 @@ Public Cloud)</ontologies:entitydescription>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#9t2_dwh">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
         <BusinessMeaning rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ticket sale for school and daycare centers for public transport in Trondheim</BusinessMeaning>
-        <Contains_PII rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Contains_PII>
+        <Contains_PII rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Contains_PII>
     </owl:NamedIndividual>
     
 
