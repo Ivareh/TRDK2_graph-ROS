@@ -13,12 +13,14 @@ import {
   List,
   ListItem,
   ListIcon,
+  Text,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 import { useContext, useEffect, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { InsecureRelation } from "../dummyTypes/OntologyTypes";
 import { stringify } from "querystring";
+import { fontStyle } from "@mui/system";
 /**
    * data imports I would assume needed:
    * import {
@@ -57,55 +59,19 @@ const InsecurityList: React.FC<InsecurityProps> = ({
     severityColor = "green.500";
   }
 
-  /* not sure if state and hook is necessary?
-    
-    const [severityColour, setSeverityColour] = useState<String>("green.500"); 
-    
-    const getSeverity() => {
-      const severity = insecuritySeverity;
-      let colour : string = "";
-      if  (severity >= 0.7) {
-        colour = "red.500"
-      } else if (severity >= 0.4) {
-        colour = "orange.500"
-      } else if (severity >= 0.1) {
-        colour = "yellow.500"
-      } else {
-        colour = "green.500"
-      }
-      setSeverityColour(colour);
-    };
-  
-    useEffect(() => {
-    getSeverity();
-    }, []); */
-
   return (
     <>
-      <ListItem>
+      <ListItem fontSize="20px">
         <ListIcon as={WarningIcon} color={severityColor} />
         {insecurityLabel}
+        <Text color={"darkgrey"} fontSize="15px">
+          {instance1 != null && instance2 != null
+            ? " mellom " + instance1 + " og " + instance2
+            : ""}
+        </Text>
       </ListItem>
     </>
   );
-  /*   <Menu closeOnSelect={false} closeOnBlur autoSelect={false}>
-      <MenuButton
-        as={Button}
-        bg="white"
-        size="sm"
-        color="cyan.700"
-        minW="13.5em"
-        rightIcon={<ChevronDownIcon />}
-      >
-        {isPositive ? "Positive " : "Negative "}
-        virkninger
-      </MenuButton>
-      <MenuList bg="cyan.700">
-        <CorrelationCheckbox text="Lav" isPositive={isPositive} index={0} />
-        <CorrelationCheckbox text="Moderat" isPositive={isPositive} index={1} />
-        <CorrelationCheckbox text="Høy" isPositive={isPositive} index={2} />
-      </MenuList>
-    </Menu> */
 };
 
 export default InsecurityList;

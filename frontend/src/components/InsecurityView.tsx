@@ -23,8 +23,8 @@ import InsecurityList from "./InsecurityList";
 import { InsecureRelation } from "../dummyTypes/OntologyTypes";
 import DummyInsecurities from "../dummyTypes/DummyInsecurities";
 /**
- * data imports I would assume needed:
- * import {
+  data imports I would assume needed:
+  import {
   getInsecurities,
   getEntitiy,
 } from '../../api/ontologies';
@@ -76,11 +76,7 @@ const InsecurityView = () => {
         </Box>
 
         <Center>
-          <List
-            spacing={3}
-            marginBottom={25}
-            marginX={25} /* marginTop={-125} */
-          >
+          <List spacing={3} marginY={25} marginX={25} /* marginTop={-125} */>
             {insecureRelations.map((i: InsecureRelation) => (
               <InsecurityList
                 instance1={i.instance1}
