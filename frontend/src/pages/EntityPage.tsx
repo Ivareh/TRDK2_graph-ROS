@@ -37,7 +37,7 @@ function EntityPage() {
         </GridItem>
         <GridItem pl='2' area={'main'}>
         </GridItem>
-        <GridItem pl='2' pt='4' area={'footer'} pr='2' >
+        <GridItem pl='2' pt='2' area={'footer'} pr='2' >
           <Card bg='#B0C5D6' h='150px' w='100%'>
             <CardBody>
               <Text> Byutvikling </Text>
