@@ -19,6 +19,7 @@ function EntityPage() {
         gap='4'
         pl='4'
         pr='4'
+        pb='16'
       >
         <GridItem pl='2' area={'header'} w='100%' borderColor='darkgrey' borderStyle='solid none solid none' borderWidth='1px' >
           <Text m='0 auto' textAlign='center' fontSize='28'>
@@ -26,7 +27,7 @@ function EntityPage() {
           </Text>
         </GridItem>
         <GridItem pl='2' area={'nav'}>
-          <Card bg='#EDE7E0' h='300px' w='250px'>
+          <Card bg='#EDE7E0' h='250px' w='250px'>
             <CardBody>
               <Text> # Relaterte virksomhetsområder </Text>
               <Text> # Interne tjenester </Text>
