@@ -16,6 +16,13 @@ export type MunicipalityEntity = {
     icon: string;
   };
 
+  export type InsecureRelation = {
+    instance1: string | null;
+    instance2: string | null;
+    label: string;
+    severity: number;
+  }
+
   export interface SubGoal extends Node {
     SubjectLabel: string;
     description: string;
