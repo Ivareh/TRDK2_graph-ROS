@@ -31,7 +31,8 @@ import { fontStyle } from "@mui/system";
    */
 
 /**
- * A list of all insecurities within the system. Ranged by assumed severity (0.1 = low, 0.7 = high).
+ * A list item of an insecurity within the system. Ranged by assumed severity (0.1 = low, 0.7 = high).
+ * Used to create items for the list in InsecurityView.tsx
  */
 
 interface InsecurityProps {
@@ -62,6 +63,7 @@ const InsecurityList: React.FC<InsecurityProps> = ({
   return (
     <>
       <ListItem fontSize="20px">
+        {/* should be able to press someging for more info about the insecurity, create setstate for this */}
         <ListIcon as={WarningIcon} color={severityColor} />
         {insecurityLabel}
         <Text color={"darkgrey"} fontSize="15px">
@@ -69,6 +71,7 @@ const InsecurityList: React.FC<InsecurityProps> = ({
             ? " mellom " + instance1 + " og " + instance2
             : ""}
         </Text>
+        {/* If there are instances, these should somehow link to instance page */}
       </ListItem>
     </>
   );

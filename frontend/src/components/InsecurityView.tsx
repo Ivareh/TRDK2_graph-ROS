@@ -15,6 +15,8 @@ import {
   ListItem,
   ListIcon,
   Text,
+  WrapItem,
+  Wrap,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 import { useContext, useState } from "react";
@@ -53,41 +55,50 @@ const InsecurityView = () => {
 
   return (
     <>
-      <Flex>
-        <Box margin={25} borderWidth="1px" borderColor={"tomato"}>
-          <List margin={5}>
-            <ListItem>
-              <ListIcon as={WarningIcon} color="green.500" />
-              Litt usikker relasjon
-            </ListItem>
-            <ListItem>
-              <ListIcon as={WarningIcon} color="yellow.500" />
-              Litt mer usikker relasjon
-            </ListItem>
-            <ListItem>
-              <ListIcon as={WarningIcon} color="orange.500" />
-              Ganske usikker relasjon
-            </ListItem>
-            <ListItem>
-              <ListIcon as={WarningIcon} color="red.500" />
-              Veldig usikker relasjon
-            </ListItem>
-          </List>
-        </Box>
-
-        <Center>
-          <List spacing={3} marginY={25} marginX={25} /* marginTop={-125} */>
-            {insecureRelations.map((i: InsecureRelation) => (
-              <InsecurityList
-                instance1={i.instance1}
-                instance2={i.instance2}
-                insecurityLabel={i.label}
-                insecuritySeverity={i.severity}
-              />
-            ))}
-          </List>
-        </Center>
-      </Flex>
+      <Wrap spacing={"25px"}>
+        <WrapItem>
+          <Box margin={25} borderWidth="1px" borderColor={"tomato"}>
+            <List margin={5}>
+              <ListItem>
+                <ListIcon as={WarningIcon} color="green.500" />
+                Litt usikker relasjon
+              </ListItem>
+              <ListItem>
+                <ListIcon as={WarningIcon} color="yellow.500" />
+                Litt mer usikker relasjon
+              </ListItem>
+              <ListItem>
+                <ListIcon as={WarningIcon} color="orange.500" />
+                Ganske usikker relasjon
+              </ListItem>
+              <ListItem>
+                <ListIcon as={WarningIcon} color="red.500" />
+                Veldig usikker relasjon
+              </ListItem>
+            </List>
+          </Box>
+        </WrapItem>
+        <WrapItem>
+          <Center>
+            <List
+              spacing={3}
+              marginY={25}
+              marginX={25}
+              /* marginRight={25}
+              marginLeft={"20%"}  */
+            >
+              {insecureRelations.map((i: InsecureRelation) => (
+                <InsecurityList
+                  instance1={i.instance1}
+                  instance2={i.instance2}
+                  insecurityLabel={i.label}
+                  insecuritySeverity={i.severity}
+                />
+              ))}
+            </List>
+          </Center>
+        </WrapItem>
+      </Wrap>
     </>
   );
 };
