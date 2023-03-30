@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#"
-     xml:base="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023"
+<rdf:RDF xmlns="http://www.semanticweb.org/ivar/ontologies/2023/2/testautomateddata#"
+     xml:base="http://www.semanticweb.org/ivar/ontologies/2023/2/testautomateddata"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:schema="http://schema.org/"
-     xmlns:ontologies="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023"/>
+     xmlns:ontologies="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ivar/ontologies/2023/2/testautomateddata"/>
     
 
 
@@ -23,12 +22,6 @@
     
 
 
-    <!-- http://schema.org/image -->
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty">
@@ -39,34 +32,7 @@
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount -->
 
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertaintyAmount"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These annotations only apply to uncertainty in one entity (either class or object property). These annotation uncertainties is not directly relational uncertainty between two entities, like the &quot;hasUncertainty&quot; object properties</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comment of something in the ontology, for instance dataset</rdfs:comment>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#datasetHasBusinessMeaning -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#datasetHasBusinessMeaning"/>
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount"/>
     
 
 
@@ -74,59 +40,6 @@
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description">
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of a system/program/dataset etc</rdfs:comment>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantNote -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantNote">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#incompleteData -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#incompleteData">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If an entity doesn&apos;t have completed data within it (either with annotations or object properties to other entities), this annotation can indicate this</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOrServiceManager -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOrServiceManager">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If there is uncertainty if a person is data responsible or service manager, the hasServiceManager or hasDataresponsible relations (or their inverses) can be annotated uncertain with this annotation</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#nameStandard -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#nameStandard">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If some data is suspect to be outdated</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
     </owl:AnnotationProperty>
     
 
@@ -165,7 +78,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertaintyAmount -->
 
     <rdfs:Datatype rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertaintyAmount">
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amount of uncertainty in a uncertainty labeled data</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amount of uncertainty in a uncertainty labeled data</ontologies:description>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
@@ -470,6 +383,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isLessPreciseThan">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isMorePreciseThan"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
     
 
@@ -520,6 +434,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If two entities has similar names but there are uncertainty if they are the same entity. Note that this relation is symmetric.</rdfs:comment>
     </owl:ObjectProperty>
@@ -541,6 +456,16 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -556,7 +481,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#containsPII">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Does the data contain Personally Identifiable Information?</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Does the data contain Personally Identifiable Information?</ontologies:description>
     </owl:DatatypeProperty>
     
 
@@ -565,7 +490,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#dataCreated">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When was the data originally created?</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When was the data originally created?</ontologies:description>
     </owl:DatatypeProperty>
     
 
@@ -574,7 +499,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#dataUpdated">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When was the data last updated?</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When was the data last updated?</ontologies:description>
     </owl:DatatypeProperty>
     
 
@@ -610,7 +535,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Address of something</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Address of something</ontologies:description>
     </owl:DatatypeProperty>
     
 
@@ -619,7 +544,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#needsAuthorizedOrderer">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Does something need an authorized orderer to be ordered?</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Does something need an authorized orderer to be ordered?</ontologies:description>
     </owl:DatatypeProperty>
     
 
@@ -686,7 +611,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group">
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active directory group</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active directory group</ontologies:description>
     </owl:Class>
     
 
@@ -695,7 +620,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-GroupMember">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active directory group member</description>
+        <ontologies:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active directory group member</ontologies:description>
     </owl:Class>
     
 
@@ -799,6 +724,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class for integrations inside System</rdfs:comment>
         <rdfs:label xml:lang="no">Integrasjon</rdfs:label>
     </owl:Class>
@@ -819,6 +745,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A SystemService that is an integration to another SystemService</rdfs:comment>
     </owl:Class>
@@ -964,6 +891,7 @@ closed)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceManager -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceManager">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceOwner"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -976,6 +904,7 @@ closed)</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:label xml:lang="no">Tjenesteforvalter</rdfs:label>
     </owl:Class>
     
@@ -996,6 +925,7 @@ closed)</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:label xml:lang="no">Tjenesteeier</rdfs:label>
     </owl:Class>
     
@@ -1082,6 +1012,7 @@ word, etc.)</rdfs:comment>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllUncertainties"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
     </owl:Class>
     
@@ -1133,63 +1064,10 @@ word, etc.)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Acos_AS -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Acos_AS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#All -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#All"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#High -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#High"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Justisdepartementet -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Justisdepartementet">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Low -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Low"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Medium -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Medium"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Open -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Open"/>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1198,6 +1076,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1206,6 +1085,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1214,6 +1094,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1222,6 +1103,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1230,6 +1112,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1238,6 +1121,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
     </owl:NamedIndividual>
     
@@ -1247,8 +1131,8 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.user.adminUser">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#User"/>
-        <password rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thisispassword123</password>
-        <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</username>
+        <ontologies:password rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thisispassword123</ontologies:password>
+        <ontologies:username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</ontologies:username>
     </owl:NamedIndividual>
     
 
@@ -1257,7 +1141,7 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.user.testUser">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#User"/>
-        <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test</username>
+        <ontologies:username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test</ontologies:username>
     </owl:NamedIndividual>
     
 
@@ -1266,29 +1150,7 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.userrole.admin">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Role"/>
-        <roleName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</roleName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ReadAccess -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ReadAccess"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Skatteetaten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Skatteetaten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Statens_kartverk -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Statens_kartverk">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
+        <ontologies:roleName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</ontologies:roleName>
     </owl:NamedIndividual>
     
 
@@ -1296,6 +1158,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIPAttachement"/>
     </owl:NamedIndividual>
     
@@ -1304,6 +1167,7 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Attachement"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIPAttachement"/>
     </owl:NamedIndividual>
     
@@ -1313,6 +1177,7 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_Kommune">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
         <rdfs:label xml:lang="no">TK</rdfs:label>
         <rdfs:label xml:lang="no">Trondheim Kommune</rdfs:label>
     </owl:NamedIndividual>
@@ -1328,262 +1193,6 @@ word, etc.)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Heimdal -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Heimdal">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Lerkendal -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Lerkendal">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Midtbyen -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Midtbyen">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Omsorgsenheten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Omsorgsenheten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Østbyen -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Østbyen">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byantikvaren -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byantikvaren">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byggesakskontoret -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byggesakskontoret">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplan -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplan">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplankontoret -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplankontoret">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.ESIKT -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.ESIKT">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Eierskapsenheten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Eierskapsenheten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_kart_og_arkitektur -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_kart_og_arkitektur">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_rustjenester -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_rustjenester">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_service_og_internkontroll -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_service_og_internkontroll">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.External -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.External">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Fagenhet_for_oppvekst_og_utdanning -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Fagenhet_for_oppvekst_og_utdanning">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.IT-tjenesten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.IT-tjenesten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kart_og_oppmåling -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kart_og_oppmåling">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kommunalteknikk -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kommunalteknikk">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kommuneadvokaten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kommuneadvokaten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kulturenheten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kulturenheten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kvalifiseringssenter_for_innvandrere -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kvalifiseringssenter_for_innvandrere">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Miljøenheten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Miljøenheten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Mobilitets-_og_samferdselsenheten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Mobilitets-_og_samferdselsenheten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Falkenborg -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Falkenborg">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Lerkendal -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Lerkendal">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Operated_by_Entro_and_Kjeldsberg -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Operated_by_Entro_and_Kjeldsberg">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Oppvekst_og_utdanning -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Oppvekst_og_utdanning">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Regnskapstjenesten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Regnskapstjenesten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Trondheim_bydrift -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Trondheim_bydrift">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Trondheim_kommunerevisjon -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Trondheim_kommunerevisjon">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Økonomitjenesten -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Økonomitjenesten">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#user.userrole.dataentry -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#user.userrole.dataentry">
@@ -1592,70 +1201,32 @@ word, etc.)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS/Coretrek -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AtB_AS/Coretrek">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ExternalOrganization"/>
-        <rdfs:label xml:lang="en">Coretrek</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Leaders_of_HJTJ,_HVS_and_BOA_Units -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Leaders_of_HJTJ,_HVS_and_BOA_Units">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#GroupWithinOrganization"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#N/A -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#N/A"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplan/KO -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Byplan/KO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-    </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <Uncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Idrett&amp;Friluftsliv could be the same dataset owner as Idrett&amp;FriluftslivMiljøpakken</Uncertainty>
-    </owl:Axiom>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-    </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <UncertaintyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</UncertaintyAmount>
-    </owl:Axiom>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These annotations only apply to uncertainty in one entity (either class or object property). These annotation uncertainties is not directly relational uncertainty between two entities, like the &quot;hasUncertainty&quot; object properties</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comment of something in the ontology, for instance dataset</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#incompleteData">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If an entity doesn&apos;t have completed data within it (either with annotations or object properties to other entities), this annotation can indicate this</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOrServiceManager">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If there is uncertainty if a person is data responsible or service manager, the hasServiceManager or hasDataresponsible relations (or their inverses) can be annotated uncertain with this annotation</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#nameStandard">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If some data is suspect to be outdated</rdfs:comment>
+    </rdf:Description>
 </rdf:RDF>
 
 
