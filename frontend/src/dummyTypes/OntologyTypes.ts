@@ -16,10 +16,17 @@ export type MunicipalityEntity = {
     icon: string;
   };
 
+  /**
+   * All insecurities must have a describing label and a severity level.
+   * Optional to have more details.
+   * If the insecutiry is between to specific instances, these are to be given.
+   */
+
   export type InsecureRelation = {
     instance1: string | null;
     instance2: string | null;
     label: string;
+    details: string | null;
     severity: number;
   }
 

@@ -92,6 +92,7 @@ const InsecurityView = () => {
                   instance1={i.instance1}
                   instance2={i.instance2}
                   insecurityLabel={i.label}
+                  insecurityDetails={i.details}
                   insecuritySeverity={i.severity}
                 />
               ))}

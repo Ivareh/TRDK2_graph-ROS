@@ -16,6 +16,7 @@ function DummyInsecurities() {
         instance1: "Underkategori1",
         instance2: "Underkategori2",
         label: "Usikkerhet ved navn",
+        details: "Detaljer står her",
         severity: 0.2,
     })
 
@@ -23,6 +24,7 @@ function DummyInsecurities() {
         instance1: "Underkategori1",
         instance2: "Underkategori3",
         label: "Usikkerhet i relasjoner mellom instanser",
+        details: "Detaljer her",
         severity: 0.5,
     })
 
@@ -30,6 +32,7 @@ function DummyInsecurities() {
         instance1: null,
         instance2: null,
         label: "Usikkerhet i relasjon",
+        details: null,
         severity: 0.8,
     })
 
@@ -37,6 +40,7 @@ function DummyInsecurities() {
         instance1: null,
         instance2: null,
         label: "Usikkerhet i relasjon",
+        details: "Detaljer",
         severity: 0.3,
     })
 
