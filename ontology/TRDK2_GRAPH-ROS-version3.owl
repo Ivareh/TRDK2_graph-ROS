@@ -95,6 +95,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#integrationdescription -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#integrationdescription"/>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOrServiceManager -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOrServiceManager">
@@ -1328,6 +1334,65 @@ word, etc.)</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass)"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO)"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern)"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autentiseringstjenester er en infrastrukturtjeneste som består av ulike komponenter og integrasjoner. Tjenestene inkluderer håndtering av brukere og passord, og autentisering for tjenester, og benyttes for blant annet Kerberospålogging til tjenester fra Windows. Tjenester er koblet til Azure Active directory (AAD), autentisering mot Citrix-tjenester og passordløsning for elever er også en del av tjenestene, samt sertifikathåndtering. Tjenesten består av følgende delsystem:</description>
+        <rdfs:label xml:lang="no">Autentiteringstjenester</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Heimdal -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Heimdal">
@@ -1618,6 +1683,38 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
     
 
 
