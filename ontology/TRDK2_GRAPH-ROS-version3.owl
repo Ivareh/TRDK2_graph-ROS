@@ -429,6 +429,18 @@
         <NamedIndividual IRI="#ad.Appl-AcosBarnevern"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ap.3ivx_MPEG-4_5.0.2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ap.7-Zip_9.20_x64"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ap.Access_2007"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ap.NET_Framework_4.6.1_001"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ds.9t2_dwh"/>
     </Declaration>
     <Declaration>
@@ -1067,6 +1079,22 @@
     <ClassAssertion>
         <Class IRI="#AD-Group"/>
         <NamedIndividual IRI="#ad.Appl-AcosBarnevern"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Application"/>
+        <NamedIndividual IRI="#ap.3ivx_MPEG-4_5.0.2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Application"/>
+        <NamedIndividual IRI="#ap.7-Zip_9.20_x64"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Application"/>
+        <NamedIndividual IRI="#ap.Access_2007"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Application"/>
+        <NamedIndividual IRI="#ap.NET_Framework_4.6.1_001"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Dataset"/>
