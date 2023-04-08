@@ -81,7 +81,8 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantNote -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#importantNote">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
     </owl:AnnotationProperty>
     
 
@@ -125,14 +126,6 @@
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData">
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If some data is suspect to be outdated</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyType"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#programAnnotation">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
     </owl:AnnotationProperty>
     
 
@@ -611,12 +604,37 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardDelete -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardDelete">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardNew -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardNew">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasAddress -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Address of something</description>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasImageInAttachement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasImageInAttachement">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If there exists an image in the attachement it came from, this indicates it</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1201,50 +1219,47 @@ word, etc.)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A_-_Organisasjon -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A_-_Organisasjon">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.A</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B_-_Helse_og_velferd -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B_-_Helse_og_velferd">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.B</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C_-_Oppvekst_og_utdanning -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C_-_Oppvekst_og_utdanning">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.C</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D_-_Byutvikling -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D_-_Byutvikling">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.D</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F_-_Kultur_og_idrett -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F_-_Kultur_og_idrett">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.F</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1303,6 +1318,7 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIPAttachement"/>
+        <rdfs:label xml:lang="no">TIP Applikasjonsliste 2018</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1311,6 +1327,15 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIPAttachement"/>
+        <rdfs:label xml:lang="no">TIP Dataset overview 2018</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tone_Schjei_Bjørnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tone_Schjei_Bjørnes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
     </owl:NamedIndividual>
     
 
@@ -1319,8 +1344,99 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Trondheim_Kommune">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
-        <rdfs:label xml:lang="no">TK</rdfs:label>
         <rdfs:label xml:lang="no">Trondheim Kommune</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AccountMatch14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AccountMatch14">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
+        <rdfs:label xml:lang="no">Appl-AccountMatch14</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AcosBarnevern -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AcosBarnevern">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group"/>
+        <rdfs:label xml:lang="no">Appl-AcosBarnevern</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.AA-register -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.AA-register">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+        <forwardDelete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardDelete>
+        <forwardNew rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardNew>
+        <hasAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brukerstøtte: ERP Support</hasAddress>
+        <hasAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Registrer sak i selvbetjeningsportalen</hasAddress>
+        <programIsInfoTorgProduct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</programIsInfoTorgProduct>
+        <programIsSoftwareModelForBA rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</programIsSoftwareModelForBA>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sentralt arbeidsgiverregister, konsesjonsbelagt</description>
+        <importantNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enhetsleder skal bestille på ERP tilgangsskjema i Selvbetjeningsportalen.</importantNote>
+        <rdfs:label xml:lang="no">AA-register</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.ACOS_BARNEVERN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.ACOS_BARNEVERN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Heimdal"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Lerkendal"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Midtbyen"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Omsorgsenheten"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Barne-_og_familietjenesten_Østbyen"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_kart_og_arkitektur"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_rustjenester"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Enhet_for_service_og_internkontroll"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.IT-tjenesten"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kommuneadvokaten"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kulturenheten"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Kvalifiseringssenter_for_innvandrere"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Falkenborg"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.NAV_Lerkendal"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Oppvekst_og_utdanning"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Regnskapstjenesten"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Trondheim_kommunerevisjon"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Økonomitjenesten"/>
+        <hasServiceManager rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tone_Schjei_Bjørnes"/>
+        <programHasADGroup rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AcosBarnevern"/>
+        <forwardDelete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forwardDelete>
+        <forwardNew rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forwardNew>
+        <hasAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acos-ppi.postmottak@trondheim.kommune.no</hasAddress>
+        <programIsSoftwareModelForBA rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</programIsSoftwareModelForBA>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Benyttes av de som jobber etter Lov om Barnevernstjenester.</description>
+        <importantNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tilleggsident i ACOS - se egen rutine
+
+Tjenesteforvalter: Tone Schjei Bjørnes</importantNote>
+        <rdfs:label xml:lang="no">ACOS BARNEVERN</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.Account_Adra_Match -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.Account_Adra_Match">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+        <canBeOrderedOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#All"/>
+        <programHasADGroup rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ad.Appl-AccountMatch14"/>
+        <forwardDelete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardDelete>
+        <forwardNew rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardNew>
+        <programIsSoftwareModelForBA rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</programIsSoftwareModelForBA>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Database som benyttes til avstemming av regnskap.</description>
+        <importantNote xml:lang="no">UTGÅTT?
+BF5 (190123): Lena Fiplingdal tror ikke det trengs å bestilles tilgang til BA eller på ERP-tilgangsskjema p.t. Regnskapstjenesten legger opp ident og sender link til programmet til de som skal ha tilgang selv. Nye løsningen er skybasert og har endret navn &quot;&quot;Matcher&quot;&quot;. 
+
+Utdatert info: Adra Match - skal bestilles på ERP-Tilgangsskjema</importantNote>
+        <outdatedData rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mention &quot;UTGÅTT?&quot; in important notes, it may be outdated</outdatedData>
+        <rdfs:label xml:lang="no">Account Adra Match</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1338,16 +1454,27 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <belongsToAttachement rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A_-_Organisasjon"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD"/>
-        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA"/>
-        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA_og_TKE"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass)"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO)"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern)"/>
-        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autentiseringstjenester er en infrastrukturtjeneste som består av ulike komponenter og integrasjoner. Tjenestene inkluderer håndtering av brukere og passord, og autentisering for tjenester, og benyttes for blant annet Kerberospålogging til tjenester fra Windows. Tjenester er koblet til Azure Active directory (AAD), autentisering mot Citrix-tjenester og passordløsning for elever er også en del av tjenestene, samt sertifikathåndtering. Tjenesten består av følgende delsystem:</description>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autentiseringstjenester er en infrastrukturtjeneste som består av ulike komponenter og integrasjoner. Tjenestene inkluderer håndtering av brukere og passord, og autentisering for tjenester, og benyttes for blant annet Kerberospålogging til tjenester fra Windows. Tjenester er koblet til Azure Active directory (AAD), autentisering mot Citrix-tjenester og passordløsning for elever er også en del av tjenestene, samt sertifikathåndtering. Tjenesten består av følgende delsystem:
+
+Azure AD
+GADS for TKA
+GADS for TKE
+Katalogtjeneste for TKA og TKE
+GAPS for TKA og TKE
+GST (TROVO)
+MIM (Microsoft Identity Manager)
+Sentral PKI-plattform (intern)
+Ekstern sertifikattjeneste (Buypass)</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HR-portalen og OAS er kilde for autorative data om brukere. Forvaltning og bruk av disse systemene er beskrevet under de respektive systemene.</integrationdescription>
         <rdfs:label xml:lang="no">Autentiteringstjenester</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1357,22 +1484,23 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description>Azure AD brukes svært aktivt og det gjennomføres autentisering av 27 ulike tjenester (SaaS eller driftet av Sopra Steria). Identity Governance brukes for autentisering av tjenesteleverandører/leverandører til servere. Access management styres av TK; tilgang til servere styres av Sopra Steria. Det er grensesnitt mellom TK, Sopra Steria og tredjepart. Tjenesten bukes også til provisjonering av 8-10 tjenester. Målet er at Azure pålogging skal være default, også mot Google med føderasjon mot Google i bakgrunnen.
+
+On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
+        <rdfs:label xml:lang="no">Azure_AD</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA_og_TKE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA_og_TKE">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasImageInAttachement rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasImageInAttachement>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Google Apps Directory Sync (GADS) er et verktøy som automatisk legger til, modifiserer og sletter brukere, grupper og OUer (organizational units) i G-Suite basert på informasjon fra AD.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Provisjonering av brukere fra adminnettet til Google workspace for business (GSB) kjører på server i internsone. Den henter data fra AD basert på gruppe, synkroniserer mot Google, etablerer konto og plasserer i riktig OU i Google. Endringer skjer umiddelbart mot TKA AD og TKE AD, mens synkronisering av provisjonering (oppretting/sletting/endring) skjer hver time.</integrationdescription>
+        <nameStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the attachement, this is only called &quot;GADS for TKA&quot;, but maybe also add &quot;og TKE&quot;?</nameStandard>
+        <rdfs:label xml:lang="no">GADS for TKA og TKE</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1380,6 +1508,51 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Google Apps Password Sync (GAPS) for Trondheim kommune Ansatte (TKA)
+er en passordsynk for synk til Google (API fra Google til Azure AD). Ansatte har en konto i TKA AD som går i synk. Man kan ikke ha to GAPS i to domener i samme domenekontroller, derfor er det separate synkroniseringer for TKE og TKA. Tjenesten benytter MIM.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">API mellom Google og AD.</integrationdescription>
+        <rdfs:label xml:lang="no">GAPS for TKA og TKE</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Google_workspace_for_business -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Google_workspace_for_business">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <rdfs:label xml:lang="no">Google workspace for business/GSB</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HR-portalen er master for person- og enhetsinformasjon i kommunen. Alle ansatte som har et tilsettingsforhold i Trondheim kommune ligger registrert i HR-portalen. HR-portalen benyttes blant annet til lønn og lønnsforhandling, registrering av ferie, sykefravær, permisjoner og reiser. Trondheim kommune har ca 15 000 faste ansatte som benytter tjenesten, i tillegg benyttes den av alle vikarer, tilkallingsvakter, støttekontakter og lignende.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PIE
+GAT
+Helseplattformen 
+All offentlig rapportering går direkte fra HR-portalen (NAV, Altinn)
+On-prem AD
+TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-integration, bg-ce_innsyn, hp-iam_integration (hp-iam_ad), hp-iam_expertise-api, bluegarden-get, hr-sn_sync, user-management_bg-ad-sync, user-management_bluegarden-episerver, user-management_bluegarden-get, user-management_bluegarden-integration, user-management_bluegarden-push, user-management_tkpw-api</integrationdescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Helseplattformen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Helseplattformen">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
     </owl:NamedIndividual>
     
@@ -1389,6 +1562,88 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.On-prem_AD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.On-prem_AD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tjenesten fungerer som en integrasjonsplattform hvor omtrent 199 tjenester kjøres på. Tjenesten fungerer som en proxytjeneste hvor den sender data videre mellom ulike plattformer/tjenester.
+
+TIP er en plattform utviklet av og for Trondheim kommune. TIPs oppgave er å ivareta alle ikke-direkte integrasjoner som Trondheim kommune, og Trondheim kommunes samarbeidspartnere, har behov for. TIP Sikker ble satt opp for å ivareta kravene til sikkerhet innen helseområdet. 
+
+Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hver integrasjonsmodul kjører i en egen Docker-container. Foran TIP står det også utstyr som tar seg av tjenestenektangrep o.l</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TIP har integrasjoner for omtrent 199 tjenester.</integrationdescription>
+        <rdfs:label xml:lang="no">TIP og TIP sikker</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TKA_AD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TKA_AD"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Byutvikling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Byutvikling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Byutvikling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Helse_og_velferd -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Helse_og_velferd">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Helse og velferd</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Kultur_og_Idrett -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Kultur_og_Idrett">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Kultur og idrett</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Oppvekst_og_utdanning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Oppvekst_og_utdanning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Oppvekst og utdanning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Organisasjon</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1680,9 +1935,34 @@ word, etc.)</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G_-_Næring,_Samferdsel,_Klima_og_Miljø -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_G_-_Næring,_Samferdsel,_Klima_og_Miljø">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROSAttachement"/>
+        <rdfs:label xml:lang="no">ROS V.G</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Read&amp;WriteAccess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.AAFREG/Folkeregisteret -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.AAFREG/Folkeregisteret">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+        <forwardDelete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardDelete>
+        <forwardNew rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forwardNew>
+        <hasAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ERP-Tilgangsskjema</hasAddress>
+        <programIsSoftwareModelForBA rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</programIsSoftwareModelForBA>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avvis brukere og henvis til ERP brukerhjelp i Selvbetjeningsportalen</description>
+        <importantNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Konsesjonsbelagt program, bestilles av ERP-support etter at konsesjon er sjekket.
+For de som jobber med brukeradmin i TK. Send bestilling til ERP.</importantNote>
+        <rdfs:label xml:lang="no">AAFREG/Folkeregisteret</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
@@ -1690,6 +1970,9 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass)">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasImageInAttachement rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasImageInAttachement>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trondheim kommune har også en sertifikattjeneste fra Buypass. Denne tjenesten leverer eksterne sertifikater som benytter for web/internett-tjenesten (&quot;SSL-sertifikater&quot;), virksomhetssertifikater for autentisering mot for eksempel Altinn, og kvalifiserte personsertifikater for ansatte direkte fra Buypass sin CA.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Selvbetjeningsportal for utstedelse av eIDAS til ansatte innen helse, eIDAS knyttes til fysisk FIDO2 autentiseringsbrikke. Figuren under viser autentisering samt hvordan brukere blir provisjonert i Buypass sin brukerdatabase for Trondheim kommune, dette går via TIP (tjenesteintegrasjonsplattformen).</integrationdescription>
     </owl:NamedIndividual>
     
 
@@ -1698,6 +1981,31 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO)">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GST er en synkroniseringstjeneste som bruker både MIM og andre tjenester for å synkronisere elevdata som er knyttet til TROVO (Trondheim voksenopplæring). Disse er registrert i Visma FLYVO, ikke i AD. Det er en egen GSE-tjeneste som heter trovo.no.</description>
+        <rdfs:label xml:lang="no">GST (TROVO)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAT"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Helseplattformen"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.On-prem_AD"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE"/>
+        <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HR-portalen er master for person- og enhetsinformasjon i kommunen. Alle ansatte som har et tilsettingsforhold i Trondheim kommune ligger registrert i HR-portalen. HR-portalen benyttes blant annet til lønn og lønnsforhandling, registrering av ferie, sykefravær, permisjoner og reiser. Trondheim kommune har ca 15 000 faste ansatte som benytter tjenesten, i tillegg benyttes den av alle vikarer, tilkallingsvakter, støttekontakter og lignende.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PIE
+GAT
+Helseplattformen 
+All offentlig rapportering går direkte fra HR-portalen (NAV, Altinn)
+On-prem AD
+TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-integration, bg-ce_innsyn, hp-iam_integration (hp-iam_ad), hp-iam_expertise-api, bluegarden-get, hr-sn_sync, user-management_bg-ad-sync, user-management_bluegarden-episerver, user-management_bluegarden-get, user-management_bluegarden-integration, user-management_bluegarden-push, user-management_tkpw-api</integrationdescription>
+        <nameStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Does the name imply HR-portalen (Visma_multi) is HR portalen mentioned other places?</nameStandard>
+        <rdfs:label xml:lang="no">HR-portalen (Visma_Multi)</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1706,6 +2014,8 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Microsoft Identity Manager (MIM) er en tjeneste som benyttes som ID-manager, og Trondheim kommune benytter kun synk-funksjonen for å synkronisere passord mellom data, TKA AD og TKE AD, samt for å synke passord til elever mellom TKE AD mot FEIDE.</description>
+        <rdfs:label xml:lang="no">MIM (Microsoft Identity Manager)</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1714,6 +2024,31 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern)">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trondheim kommunes interne PKI (public key infrastructure) er en intern sertifikatstruktur etablert for å understøtte interne behov for sertifikater innad i kommunens kommunikasjonsløsninger.</description>
+        <rdfs:label xml:lang="no">Sentral PKI plattform (intern)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Vigilo/OAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Vigilo/OAS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vigilo/OAS er en SaaS tjeneste som fungerer som oppvekstadministrativt system for Trondheim kommune. Tjenesten brukes av både barnehager, SFO og skole opp til 10. trinn.</description>
+        <integrationdescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TIP
+Skatteetaten
+Folkeregisteret
+TK-sak</integrationdescription>
+        <rdfs:label xml:lang="no">Vigilo/OAS</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Næring,_Samferdsel,_Klima_og_Miljø -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Næring,_Samferdsel,_Klima_og_Miljø">
+        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
+        <rdfs:label xml:lang="no">Næring, Samferdsel, Klima og Miljø</rdfs:label>
     </owl:NamedIndividual>
     
 
