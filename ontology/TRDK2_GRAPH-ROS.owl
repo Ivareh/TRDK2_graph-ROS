@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023">
-    <Prefix name="" IRI="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -1049,22 +1049,6 @@
         <NamedIndividual IRI="#Trondheim_Kommune"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Precise"/>
-        <NamedIndividual IRI="#Unknown"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#StoreLocation"/>
-        <NamedIndividual IRI="#Unknown"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#StoreType"/>
-        <NamedIndividual IRI="#Unknown"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Updated"/>
-        <NamedIndividual IRI="#Unknown"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Updated"/>
         <NamedIndividual IRI="#Weekly"/>
     </ClassAssertion>
@@ -1451,12 +1435,17 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#datasetHasOpenessDegree"/>
         <NamedIndividual IRI="#ds.ACOS-AD"/>
-        <NamedIndividual IRI="#Medium"/>
+        <NamedIndividual IRI="#Specified_access"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#datasetHasOwner"/>
         <NamedIndividual IRI="#ds.ACOS-AD"/>
         <NamedIndividual IRI="#Trondheim_Kommune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#datasetHasPreciseness"/>
+        <NamedIndividual IRI="#ds.ACOS-AD"/>
+        <NamedIndividual IRI="#Medium"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#datasetStoredWith"/>
@@ -1775,11 +1764,6 @@
         <DataProperty IRI="#containsPII"/>
         <NamedIndividual IRI="#ds.9t2_dwh"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#datasetHasAPI"/>
-        <NamedIndividual IRI="#ds.9t2_dwh"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#datasetHasDataprotocol"/>
@@ -2311,10 +2295,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#dataUpdated"/>
         <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#datasetHasAPI"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#datasetHasURLOfAPI"/>
