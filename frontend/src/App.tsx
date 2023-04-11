@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import EntityPage from "./pages/EntityPage";
 import AboutPage from "./pages/AboutPage";
+import ListPage from "./pages/ListPage";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/form" element={<FormPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/entity" element={<EntityPage />} />
+          <Route path="/list" element={<ListPage />} />
           {/* <Route component={NotFoundPage} /> */}
         </Routes>
       </Router>
