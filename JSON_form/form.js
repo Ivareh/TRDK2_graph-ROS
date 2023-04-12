@@ -12,7 +12,7 @@ formEvent.addEventListener("submit", event => {
     //make filename
     var filename = object["name"]+".json";
 
-    //convert to jaon string and save it to download
+    //convert to json string and save it to download
     var json = JSON.stringify(object)
     saveTextToFile(json,filename)
 });
