@@ -12,7 +12,14 @@ import {
   ModalCloseButton,
   ModalFooter,
 } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useDisclosure } from "@chakra-ui/react";
+import Form from "./Form";
+
+/**
+ *
+ * Creates overlay that shows the form for adding, edeting and deleting nodes, relations and deviation
+ */
 
 export default function Overlay() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,8 +28,15 @@ export default function Overlay() {
   const btnRef = React.useRef(null);
   return (
     <>
-      <Button mt={3} ref={btnRef} onClick={onOpen}>
-        Trigger modal
+      <Button
+        mt={2}
+        ref={btnRef}
+        onClick={onOpen}
+        rightIcon={<ArrowForwardIcon />}
+        size="sm"
+        marginRight={2}
+      >
+        Rediger
       </Button>
 
       <Modal
@@ -33,13 +47,13 @@ export default function Overlay() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Skjema</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <p>Modal content goes here.</p>
+            <Form />
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
+            <Button onClick={onClose}>Lukk</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
