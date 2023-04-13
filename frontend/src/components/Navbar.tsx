@@ -4,12 +4,15 @@ import {
   Button,
   Center,
   Flex,
+  HStack,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
   Stack,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
@@ -22,11 +25,29 @@ export default function Navbar() {
     <>
       <Box backgroundColor={"#F5F9FF"} px={10} id={"navbar"} marginTop="3">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <RouterLink to="/">
-            <Box>
-              <img src={Logo} style={{ height: 55, width: 240 }} />
-            </Box>
-          </RouterLink>
+          <HStack spacing={8} alignItems={"center"}>
+            <RouterLink to="/">
+              <Box>
+                <img src={Logo} style={{ height: 55, width: 240 }} />
+              </Box>
+            </RouterLink>
+            <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+              <RouterLink to="/entity">
+                <Text
+                  px={3}
+                  py={2}
+                  rounded={"full"}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: useColorModeValue("gray.200", "gray.700"),
+                  }}
+                >
+                  {" "}
+                  Grafside{" "}
+                </Text>
+              </RouterLink>
+            </HStack>
+          </HStack>
 
           <Flex id={"idButton"} alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
@@ -37,6 +58,12 @@ export default function Navbar() {
                   variant={"link"}
                   cursor={"pointer"}
                   minW={0}
+                  px={3}
+                  py={2}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: useColorModeValue("gray.200", "gray.700"),
+                  }}
                 >
                   <Avatar size={"md"} src={"image.png"} />
                 </MenuButton>
