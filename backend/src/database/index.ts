@@ -7,17 +7,13 @@ export const PREFIXES = {
   RDFS: EnapsoGraphDBClient.PREFIX_RDFS,
   XSD: EnapsoGraphDBClient.PREFIX_XSD,
   PROTONS: EnapsoGraphDBClient.PREFIX_PROTONS,
-  SDG: {
+  TRDK2: {
     prefix: 'TRDK2',
     iri: 'http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#',
   },
   SCHEMA: {
     prefix: 'schema',
     iri: 'http://schema.org/',
-  },
-  UNSDG: {
-    prefix: 'unsdg',
-    iri: 'http://metadata.un.org/sdg/',
   },
 };
 
