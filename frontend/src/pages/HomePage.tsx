@@ -21,9 +21,7 @@ const HomePage: React.FC = () => (
     <Stack>
       <Navbar />
     </Stack>
-    <Stack>
-      <Overlay />
-    </Stack>
+
     <Flex
       align="center"
       justify="center"
