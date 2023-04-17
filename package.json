@@ -1,5 +1,20 @@
 {
   "dependencies": {
     "@types/react": "^18.0.28"
-  }
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
+  },
+  "name": "trdk2_graph-ros",
+  "description": "Testing and editing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
