@@ -1,0 +1,46 @@
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.exe
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.deps.json
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.runtimeconfig.json
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.dll
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.pdb
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.AssemblyReference.cache
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler_MarkupCompile.cache
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler_MarkupCompile.lref
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.g.resources
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.AssemblyInfoInputs.cache
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.AssemblyInfo.cs
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.CoreCompileInputs.cache
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.dll
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\refint\Excelbehandler.dll
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.pdb
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.genruntimeconfig.cache
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\ref\Excelbehandler.dll
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\olavi\OneDrive\Studier\Bachelor\Excel behandler\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.ResolveComReference.cache
+D:\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.exe
+D:\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.deps.json
+D:\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.runtimeconfig.json
+D:\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.dll
+D:\Excelbehandler\Excelbehandler\bin\Debug\net6.0-windows\Excelbehandler.pdb
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.AssemblyReference.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.ResolveComReference.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\App.g.cs
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler_MarkupCompile.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler_MarkupCompile.lref
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\MainWindow.baml
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.g.resources
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.GeneratedMSBuildEditorConfig.editorconfig
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.AssemblyInfoInputs.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.AssemblyInfo.cs
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.csproj.CoreCompileInputs.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.dll
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\refint\Excelbehandler.dll
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.pdb
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\Excelbehandler.genruntimeconfig.cache
+D:\Excelbehandler\Excelbehandler\obj\Debug\net6.0-windows\ref\Excelbehandler.dll
