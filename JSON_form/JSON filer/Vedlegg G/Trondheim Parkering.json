@@ -1,0 +1,7 @@
+{
+  "name": "Trondheim Parkering",
+  "description": "Enheten Trondheim Parkering tilhører virksomhetsområde Næring, Samferdsel, Klima og Miljø. Det har blitt skilt ut en forretningsdel som heter Trondheim parkering AS. Trondheim Parkering AS er fortsatt inne i TK sin SmartPark applikasjon. Trondheim parkering AS drifter parkeringshus og private parkeringsplasser. Det er ingen kontrollaktiviteter av Trondheim Parkering AS som benytter systemer til Trondheim Parkering. ",
+  "integrations": [ "SmartPark", "Azure", "Pocket Control", "Pez", "Parka", "EON-appen", "Virta", "EasyPark", "minGAT", "ESA", "Autodata", "Flowbird", "TicketLine", "CWO", "NETS", "PAYEX", "Strex", "EPC" ],
+  "Virksomhetsområde": "Næring, sammferdel, klima og miljø",
+  "klasse": "Overordnet system",
+ "delsystem type":"NA"}

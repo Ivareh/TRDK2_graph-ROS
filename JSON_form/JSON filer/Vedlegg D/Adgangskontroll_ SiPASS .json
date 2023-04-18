@@ -1,0 +1,8 @@
+{
+  "name": "Adgangskontroll: SiPASS ",
+  "description": "SiPASS adgangskontroll er en gammel tjeneste for adgangskontroll.",
+  "integrations": [ "WEB/app-server", "Terminal server", "CAG", "AD" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

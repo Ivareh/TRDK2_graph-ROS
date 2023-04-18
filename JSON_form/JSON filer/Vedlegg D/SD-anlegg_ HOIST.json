@@ -1,0 +1,8 @@
+{
+  "name": "SD-anlegg: HOIST",
+  "description": "Hoist er en tjeneste for styring av SD-anlegg. Kun få bygg som er igjen. Har planer om å ta bygg ut av Hoist. Har fire bygg, kun to de har kommunikasjon med.  ",
+  "integrations": [ "Ingen" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Usikkert"
+}
