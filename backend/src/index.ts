@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', routes);
-
+ 
 const init = async (): Promise<void> => {
   console.log('Initializing server...');
   await databaseLogin();
