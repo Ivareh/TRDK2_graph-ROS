@@ -1,0 +1,7 @@
+{
+  "name": "BRAARKIV – BYUTVIKLING",
+  "description": "BRAARKIV Byutvikling er i hovedsak et historisk arkiv, som også har noen levende komponenter som inneholder nyere informasjon fra visse fagfelt. Arkivet brukes som et alternativ til lagring av filer på disk. Arkivet brukes for å ha all nødvendig dokumentasjon lagret på en plass til intern saksbehandling, eksempelvis rapporter, bilder og endelige vedtak for Byutvikling. Dokumentene er lagret på nøkler, mens deler av arkivet er offentlig. I 2021 var det lagret 3,2 millioner dokumenter i Braarkiv.",
+  "integrations": [ "Gemini Plattform", "Webkart til TK", "Planarkivet", "Ebyggesak", "Komtek" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Annet",
+ "delsystem type":"NA"}

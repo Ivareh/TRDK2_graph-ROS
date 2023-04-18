@@ -1,0 +1,8 @@
+{
+  "name": "AKTØRBASEN",
+  "description": "Aktørbasen er en tjeneste som har vært i bruk siden 2015. Tjenesten ble utviklet av Bouvet etter bestilling fra Trondheim kommune. Tjenestens formål er å samle alle lag og organisasjoner i kommunen av to årsaker; tjenesten brukes som oppslagsverk så lenge man har samtykket til å vises offentlig, i tillegg til at tjenesten brukes som forsystem for tilskudd- og bookingbasen. Alle kan registrere seg som aktør; enten med bruk av organisasjonsnummer hvis man formelt er en organisasjon i Brønnøysundregisteret, man kan registrere eksempelvis bedriftslag uten et formelt organisasjonsnummer, eller man kan registrere seg som enkeltperson. Per i dag er det ca. 3750 registrerte aktører i Aktørbasen (organisasjoner og enkeltpersoner). Formålet med å registrere seg er enten for å søke om tilskudd i Tilskuddsbasen eller for å gjøre bookinger av Trondheim kommunes lokaler i Bookingbasen.",
+  "integrations": [ "Enhetsregisteret", "Tilskuddsbasen", "Bookingbasen", "MinSide" ],
+  "Virksomhetsområde": "Kultur og idrett",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

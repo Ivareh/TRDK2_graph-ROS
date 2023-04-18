@@ -1,0 +1,9 @@
+{
+  "name": "Mercell KAV (kontraktsadministrasjonsverktøy)",
+  "description": "Mercell KAV er et kontraktsadministrasjonsverktøy. Det har oversikt over eksisterende avtaler, leverandørinformasjon og relevante tilbakemeldinger. Autoriserte ansatte kan se og søke etter aktuelle avtaler.  Det finnes en dummybruker som er tilgjengelig fra TK-nett (IP-filter) og korrekt URL som benyttes for å søke i leverandørenes kataloger. Dette er integrert fra LIFT. Roller for KAV er som for KGV, med unntak av at konsulenter ikke har tilgang til avtaler.",
+  "integrations": [ "KGV" ],
+  "Virksomhetsområde": "Næring, sammferdel, klima og miljø",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}

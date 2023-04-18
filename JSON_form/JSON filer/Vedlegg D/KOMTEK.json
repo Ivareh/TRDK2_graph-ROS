@@ -1,0 +1,8 @@
+{
+  "name": "KOMTEK",
+  "description": "Komtek er et fagsystem for å forvalte kommunale avgifter og eiendomsskatt i Trondheim kommune. Fagsystemet tar for seg alt fra det tidspunktet en eiendom er etablert, til endringer og klager. Tjenesten bruker ESA (TK sak) som støtteverktøy i saksbehandling. ",
+  "integrations": [ "Matrikkel", "Braarkiv Byutvikling", "Kart" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

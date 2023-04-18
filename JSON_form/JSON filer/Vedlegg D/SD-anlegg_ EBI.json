@@ -1,0 +1,9 @@
+{
+  "name": "SD-anlegg: EBI",
+  "description": "EBI er en tjeneste for styring av SD-anlegg. Dette er et Honeywell-system som leveres av GK. Systemet har samme funksjonalitet som Siemens DESIGO.",
+  "integrations": [ "Ingen" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}

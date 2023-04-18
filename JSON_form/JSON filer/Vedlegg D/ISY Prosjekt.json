@@ -1,0 +1,8 @@
+{
+  "name": "ISY Prosjekt",
+  "description": "ISY Prosjekt er et program som bruker til håndtering av endringer til kontrakter som Trondheim kommune har inngått. Tjenesten inneholder blant annet informasjon om bedrifter kommunen har kontrakt med, som defineres som forretningshemmeligheter. ",
+  "integrations": [ "prosjekt-endring", "ISY Prosjektøkonomi", "LIFT", "ISY Prosjekt" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

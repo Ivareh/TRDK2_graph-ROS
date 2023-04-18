@@ -1,0 +1,8 @@
+{
+  "name": "BIBLIOFIL",
+  "description": "Bibliofil er en tjeneste som benyttes av Trondheim folkebibliotek til administrering av utlån. Tjenesten er en webtjeneste med tilhørende applikasjon for publikum hvor de kan få oversikt over egne utlån. Trondheim folkebibliotek sitter med et av Trondheims største personregister og har per i dag ca 118 000 registrerte lånekort, dette inkluderer også noen institusjoner. Ca 80% av nyregistreringer gjøres på nett, mens resten gjøres ved personlig oppmøte. Det registreres ca 10 000 nye lånere hvert år, mange av disse er studenter.  ",
+  "integrations": [ "LIFT", "Låneautomater", "API mellom Bibliofil og nettsiden til Trondheim kommune", "Vipps", "SMS-leverandør", "Mailutsending" ],
+  "Virksomhetsområde": "Kultur og idrett",
+  "klasse": "Overordnet system",
+  "delsystem type": "NA"
+}

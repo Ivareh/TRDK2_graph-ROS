@@ -1,0 +1,8 @@
+{
+  "name": "SD-anlegg: METASYS",
+  "description": "Metasys er en tjeneste for styring av SD-anlegg som leveres av Johnson Controls. Johnson Controls har per tid rammeavtale med kommunen og er en av de største leverandørene. ",
+  "integrations": [ "OPENMUC" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+}
