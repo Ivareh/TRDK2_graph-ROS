@@ -1030,6 +1030,12 @@ closed)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreLocation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Where is the data located? 
 
 (Local PC, 
