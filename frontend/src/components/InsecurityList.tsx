@@ -1,26 +1,11 @@
 import {
-  Avatar,
-  Box,
-  Button,
-  Center,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  Stack,
-  List,
   ListItem,
   ListIcon,
   Text,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
-import { useContext, useEffect, useState } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { InsecureRelation } from "../dummyTypes/OntologyTypes";
-import { stringify } from "querystring";
-import { fontStyle } from "@mui/system";
+import { useState } from "react";
+
 /**
    * data imports I would assume needed:
    * import {
