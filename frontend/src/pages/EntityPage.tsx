@@ -1,11 +1,10 @@
-import React from "react";
 import { Box, Container, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { Card, CardHeader, CardBody, CardFooter, Text } from "@chakra-ui/react";
 import { Stack, HStack, VStack } from "@chakra-ui/react";
-import { color } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Overlay from "../components/formpageOverlay/Overlay";
+import GraphContainer from "../components/graph/GraphContainer";
 
 function EntityPage() {
   return (
@@ -44,8 +43,10 @@ function EntityPage() {
               </CardBody>
             </Card>
           </GridItem>
+          <GridItem pl="2" area={"main"}>
+            <GraphContainer />
+          </GridItem>
           <GridItem pl="2" area={"main"}></GridItem>
-
           <GridItem pl="2" pt="2" area={"footer"} pr="2">
             <Card bg="#B0C5D6" h="150px" w="100%">
               <Flex justify="flex-end">

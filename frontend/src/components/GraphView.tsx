@@ -1,7 +1,9 @@
 import React from "react";
 
 function GraphView() {
-  return <div className="GraphView"></div>;
+  return <>
+  
+  </>
 }
 
 export default GraphView;
