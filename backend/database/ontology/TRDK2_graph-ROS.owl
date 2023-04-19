@@ -1045,23 +1045,16 @@ Public Cloud)</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
-                                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
-                                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>How is it stored?
 
