@@ -684,6 +684,12 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <description>Active directory group</description>
     </owl:Class>
     
