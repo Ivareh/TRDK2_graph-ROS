@@ -172,6 +172,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#accessControlOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasAccessControl"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AccessControl"/>
     </owl:ObjectProperty>
     
 
@@ -328,6 +330,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasIntegration">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isIntegrationOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
     </owl:ObjectProperty>
     
 
@@ -415,14 +418,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isIntegrationOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
     </owl:ObjectProperty>
     
@@ -530,6 +525,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#containsPII -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#containsPII">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <description>Does the data contain Personally Identifiable Information?</description>
     </owl:DatatypeProperty>
@@ -582,6 +578,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardDelete -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardDelete">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -590,6 +587,7 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardNew -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#forwardNew">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -599,6 +597,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <description>Address of something</description>
     </owl:DatatypeProperty>
@@ -685,6 +684,12 @@
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AD-Group">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <description>Active directory group</description>
     </owl:Class>
     
@@ -703,30 +708,13 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AccessControl">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isIntegrationOf"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>Contains all integrations in the ontology. Both a system and normal integrations can be an integration. This defined class gathers both of these types of integrations. See inferred description hierarchy</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="tilgangskontroll"></rdfs:label>
     </owl:Class>
     
 
@@ -765,9 +753,37 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Criticality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Criticality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How and when is it important?</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Environments -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Environments">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -791,37 +807,8 @@
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Integration">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdfs:comment>Class for integrations inside System</rdfs:comment>
-        <rdfs:label xml:lang="no">Integrasjon</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isIntegrationOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
-        <rdfs:comment>A SystemService that is an integration to another SystemService</rdfs:comment>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Different measurements, grades, numbers, degrees and time indicators</rdfs:comment>
     </owl:Class>
     
 
@@ -879,6 +866,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#OpennessDegree">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Openness Degree
 
 (Open, 
@@ -901,6 +894,18 @@ closed)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="no">Person</rdfs:label>
     </owl:Class>
     
@@ -910,6 +915,12 @@ closed)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Precise">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>How precise (reliable) is the dataset?</rdfs:comment>
     </owl:Class>
     
@@ -917,7 +928,14 @@ closed)</rdfs:comment>
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -1018,11 +1036,18 @@ closed)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreLocation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Where is the data located? 
 
 (Local PC, 
 Private Cloud,
 Public Cloud)</rdfs:comment>
+        <rdfs:label xml:lang="no">Tilgangskontroll</rdfs:label>
     </owl:Class>
     
 
@@ -1031,10 +1056,23 @@ Public Cloud)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>How is it stored?
 
 (excel, csv, db, 
 word, etc.)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In some attachements, it&apos;s called &quot;Database type&quot; and others &quot;Store type&quot;</rdfs:comment>
     </owl:Class>
     
 
@@ -1042,7 +1080,17 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemNR -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemNR">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1050,7 +1098,43 @@ word, etc.)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService">
-        <rdfs:comment>Class for system or service, generally inside a business area</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_A_-_Organisasjon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_B_-_Helse_og_velferd"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_C_-_Oppvekst_og_utdanning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_D_-_Byutvikling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Vedlegg_F_-_Kultur_og_idrett"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class for system or service</rdfs:comment>
     </owl:Class>
     
 
@@ -1096,6 +1180,12 @@ word, etc.)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Updated">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>How often does the data get updated?</rdfs:comment>
     </owl:Class>
     
@@ -1111,10 +1201,15 @@ word, etc.)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UserCanal -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UserChannel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UserCanal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UserChannel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1773,8 +1868,6 @@ Ekstern sertifikattjeneste (Buypass)</description>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Azure_AD">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1789,8 +1882,6 @@ On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA_og_TKE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GADS_for_TKA_og_TKE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1806,8 +1897,6 @@ On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
@@ -1823,8 +1912,6 @@ er en passordsynk for synk til Google (API fra Google til Azure AD). Ansatte har
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAT -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAT">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1861,8 +1948,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Helseplattformen -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Helseplattformen">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)"/>
     </owl:NamedIndividual>
@@ -1872,8 +1957,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Katalogtjeneste_for_TKA_og_TKE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1884,8 +1967,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.On-prem_AD -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.On-prem_AD">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1896,8 +1977,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -1908,8 +1987,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.HR-portalen_(Visma_Multi)"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
@@ -2459,8 +2536,6 @@ For de som jobber med brukeradmin i TK. Send bestilling til ERP.</importantNote>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Ekstern_sertifikattjeneste_(Buypass)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <hasImageInAttachement rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasImageInAttachement>
@@ -2473,8 +2548,6 @@ For de som jobber med brukeradmin i TK. Send bestilling til ERP.</importantNote>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GST_(TROVO)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
@@ -2509,8 +2582,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.GAPS_for_TKA_og_TKE"/>
@@ -2524,8 +2595,6 @@ TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Sentral_PKI-plattform_(intern)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#AllIntegrations"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#IntegrationSystemService"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <description>Trondheim kommunes interne PKI (public key infrastructure) er en intern sertifikatstruktur etablert for å understøtte interne behov for sertifikater innad i kommunens kommunikasjonsløsninger.</description>
