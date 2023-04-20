@@ -1,0 +1,1 @@
+{"name":"Azure Traffic Manager","description":"Azure Traffic Manager benyttes for lastbalansering til www.trondheim.kommune.no og kan benyttes for failover til reserve-site. Den er integrert med Azure DNS  For ytterligere informasjon, se Azure plattform og DNS.","integrations":["Azure DNS"],"Virksomhetsområde":"Organisasjon","klasse":"Delsystem","delsystem type":"Eksternt"}

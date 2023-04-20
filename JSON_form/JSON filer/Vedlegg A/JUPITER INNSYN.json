@@ -1,0 +1,1 @@
+{"name":"JUPITER INNSYN","description":"Jupiter Innsyn er en tjeneste som produserer postjournal for TK. Tjenesten henter data fra ESA og E-byggesak. Den har både en historisk- og produksjonsdatabase. ","integrations":["ESA","E-byggsak"],"Virksomhetsområde":"Organisasjon","klasse":"Delsystem","delsystem type":"Internt"}
