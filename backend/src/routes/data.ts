@@ -1,6 +1,5 @@
 import { Router, Request, Response } from 'express';
 import _ from 'lodash';
-import multer from 'multer';
 
 import { parseCSV, detectSeparator } from '../utils/csv';
 import { u4sscKpiMap, u4sscKpiDataseries, TKTransform } from '../database/u4sscKpiMap';
@@ -18,8 +17,6 @@ import CheckMunicipalityByCode from '../database/CheckMunicipalityByCode';
 
 import { ApiError } from '../types/errorTypes';
 import onError from './middleware/onError';
-import verifyDatabaseAccess from './middleware/verifyDatabaseAccess';
-import verifyToken from './middleware/verifyToken';
 
 import { DataPoint } from '../types/ontologyTypes';
 
@@ -146,9 +143,6 @@ const availableYears = async (req: Request, res: Response) => {
   }
 };
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
-
 type CSVErrorMessage = {
   data: any;
   message: string;
@@ -243,13 +237,5 @@ const dataUploadCSV = async (req: Request, res: Response) => {
   }
 };
 
-router.post('/insert', verifyDatabaseAccess, verifyToken, insertData);
-router.post('/insert-bulk', verifyDatabaseAccess, verifyToken, insertBulkData);
-router.get('/get/:municipality/:year/:indicator', verifyDatabaseAccess, getData);
-router.get('/get-all-dataseries/:municipality', verifyDatabaseAccess, getAllData);
-
-router.get('/available-years/:municipality', verifyDatabaseAccess, availableYears);
-
-router.post('/upload', verifyToken, verifyDatabaseAccess, upload.single('csv'), dataUploadCSV);
 
 export default router;
