@@ -12,33 +12,16 @@ formEvent.addEventListener("submit", event => {
     //make filename
     var filename = object["name"]+".json";
 
-    //convert to json string and save it to download
+    //convert to json string and save it for download
     var json = JSON.stringify(object)
     saveTextToFile(json,filename)
 });
 
+// receive text and put it in a file and download it with name as "name"
 // Source: https://gist.github.com/clucle/8f6bb67f1f38ac5bb595f43a4efb8e0c
 function saveTextToFile(text, name) {
 
   // file setting
-  const type = "text/plain";
-
-  // create file
-  const a = document.createElement("a");
-  const file = new Blob([text], { type: type });
-  a.href = URL.createObjectURL(file);
-  a.download = name;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-}
-
-function saveJsonObjToFile() {
-  const saveObj = { "a": 3 }; // tmp
-
-  // file setting
-  const text = JSON.stringify(saveObj);
-  const name = "sample.json";
   const type = "text/plain";
 
   // create file

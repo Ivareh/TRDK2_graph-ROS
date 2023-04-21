@@ -1,0 +1,1 @@
+{"name":"TKweb Intern","description":"Tjenesten er underlagt Trondheim kommunes webtjeneste internt og benyttes til én applikasjon/webløsning for tildeling av kommunale boliger («boliglista»). ","integrations":["fildeling (for admin)","SMTP","ekstern MySQL (db13.subsys.no)"],"Virksomhetsområde":"Organisasjon","klasse":"Delsystem","delsystem type":"Internt"}

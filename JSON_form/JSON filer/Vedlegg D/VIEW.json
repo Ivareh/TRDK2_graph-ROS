@@ -1,0 +1,8 @@
+{
+  "name": "VIEW",
+  "description": "View er en webapplikasjon for et forvaltning-, drift- og vedlikeholdssystem som har vært brukt av Trondheim Bydrift i mange år. ",
+  "integrations": [ "EA driftskontroll" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Internt"
+}

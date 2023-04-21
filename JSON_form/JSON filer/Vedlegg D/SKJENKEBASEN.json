@@ -1,0 +1,8 @@
+{
+  "name": "SKJENKEBASEN",
+  "description": "Skjenkebasen er bygd på ServiceNow og har all informasjon knyttet til bevilling registrert i sin del av ServiceNow og all saksbehandling foregår her. Se tjenesten «ServiceNow» for mer utfyllende informasjon om tilgangsstyring, systemoppdatering, leverandør, kritikalitet og databehandleravtale.",
+  "integrations": [ "LIFT", "SvarUt", "ESA", "" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Meglerpakken",
+  "description": "Meglerpakken er en tjeneste som formidler informasjon via tre forhandlere; Ambita, Norkart og Proconnect. I hovedsak er dette informasjon som etterspørres av meglere i forbindelse med boligsalg. Det er i tillegg et produkt som leverer nabolister hvis man skal gjøre tiltak som krever utsending av nabovarsel. For beskyttede adresser foreligger det en egen rutine for dette, som enheten nettopp har hatt gjennomgang av.   I hovedsak er det denne informasjonen som går ut via Meglerpakken; Gebyrer, avgifter Tilknytning til vann og avløp  Planinformasjon fra TK planregister   Ulovlighetsoppføling  Takst for kommunal avgift  Kart og eiendomskart som gir areal på eiendom og eier på eiendom som ferdigattest hentes fra byggesaksarkiv  Matrikkelen er sentral fra kartverket    Megler registrerer seg som bruker hos forhandler før hen deretter bestiller informasjon. Megler må identifisere seg med bank-ID. Opplysninger hentes av kartløsning, i denne løsningen kan man hente ut informasjon i egen løsning via kommunens webkart. Produkter til formidlere hentes fra samme kilde. Kilden er matrikkelen som kommunen oppdaterer, men som forvaltes av statens kartverk.    Amibita – har portal infoland Norkart – har portal etorg Proconnect – har portal eplassen  Det er den samme informasjonen som formidles av alle tre forhandlere. Leverandør har historiske arkiv for hva de har levert til kunder. ",
+  "integrations": [ "TK", "matrikkelen", "planinformasjon", "kartplott" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Eksternt"
+
+}

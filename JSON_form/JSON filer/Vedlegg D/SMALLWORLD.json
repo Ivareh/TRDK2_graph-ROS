@@ -1,0 +1,8 @@
+{
+  "name": "SMALLWORLD",
+  "description": "Smallworld er primært lagring av dokumentasjon av geodata på gatelys. Dette inneholder blant annet plassering av master, armaturer, styreskap, kabler. Dette er kun en database, ikke styringssystem. ",
+  "integrations": [ "Gatelys2" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Usikkert"
+}

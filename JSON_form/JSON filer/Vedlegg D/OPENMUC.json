@@ -1,0 +1,9 @@
+{
+  "name": "OPENMUC",
+  "description": "OPENMUC samler data fra SD-anlegg og overfører data til E-save. Server står hos Sopra Steria.  ",
+  "integrations": [ "Desigo", "Ecostruxture", "Hoist", "Metasys" ],
+  "Virksomhetsområde": "Byutvikling",
+  "klasse": "Delsystem",
+  "delsystem type": "Usikkert"
+
+}
