@@ -128,7 +128,7 @@ export default class {
   private linkForce = () =>
     d3
       .forceLink()
-      .id((node) => (node as GraphNode).id)
+      .id((node: d3.SimulationNodeDatum) => (node as GraphNode).id)
       .links(this.edges)
       .distance(edgeDistance);
 
