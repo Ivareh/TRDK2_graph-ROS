@@ -1,0 +1,1 @@
+{"name":"HP JASM","description":"HP Jet Admin System Manager overvåker og administrer sikkerhetsnivået på multifunksjonsmaskin etter gitt sikkerhetspolicy. Ved avvik varsles dette og rettes opp av leverandør. Tjenesten administrerer ca 740 printere. ","integrations":["Printere"],"Virksomhetsområde":"Organisasjon","klasse":"Delsystem","delsystem type":"Usikkert"}

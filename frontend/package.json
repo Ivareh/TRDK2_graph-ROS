@@ -29,8 +29,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "tsc",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -52,6 +52,6 @@
     ]
   },
   "devDependencies": {
-    "@types/d3": "^7.4.0"
+    "jest": "^27.5.1"
   }
 }

@@ -1,0 +1,1 @@
+{"name":"Logger til drift- og sikkerhetsformål","description":"Det samles inn logger i flere ulike systemer, i tillegg til lokal logging av system- og applikasjonslogger. ","integrations":["Splunk Universal Forwarder"],"Virksomhetsområde":"Organisasjon","klasse":"Delsystem","delsystem type":"Internt"}
