@@ -51,11 +51,12 @@ const BusinessAreaView: React.FC = () => {
       {/* BAView: her skal alle IconContainers vises i en grid: */}
       <SimpleGrid columns={3} spacing={20} marginBottom={150} marginTop={25}>
         {businessAreas &&
-          businessAreas.map((ba) => (
+          businessAreas.map((ba, i) => (
             <IconContainer
               icon={ba.icon}
               instancesOf={ba.instancesOf}
               label={ba.label}
+              key={i}
               /* onClick={() => {
                 onClickBA(ba);
                 window.scrollTo(0, 0);
