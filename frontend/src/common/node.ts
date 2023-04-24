@@ -18,10 +18,10 @@ export const mapPrefixNameToNode = (
 ): Node => ({
   prefix: {
     prefix,
-    iri: `http://www.semanticweb.org/aga/ontologies/2017/9/${prefix}#`,
+    iri: `http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/${prefix}#`,
   },
   name,
-  id: `http://www.semanticweb.org/aga/ontologies/2017/9/${prefix}#${name}`,
+  id: `http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/${prefix}#${name}`,
   correlation: correlation || -1,
   type: type || 'undefined',
 });
