@@ -2,7 +2,7 @@ import { parsePrefixesToQuery } from '../../common/database';
 import { PREFIXES } from '../index';
 
 export default (municipalityCode: string): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.SDG);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2);
 
   return `
         ${prefixString}

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node-dev src/index.ts",
+    "test": "mocha --exit -r ts-node/register src/tests/*.spec.*s",
+    "lint": "npx eslint --ext .ts,.tsx src/",
+    "lint-fix": "npx eslint --fix --ext .ts,.tsx src/"
   },
   "author": "",
   "license": "ISC",
@@ -27,9 +30,10 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-promise": "^4.0.1",
+    "jest": "^29.5.0",
     "mocha": "^5.2.0",
     "supertest": "^3.3.0",
-    "typescript-eslint-parser": "^21.0.1",
-    "jest": "^29.5.0"
+    "ts-node-dev": "^2.0.0",
+    "typescript-eslint-parser": "^21.0.1"
   }
 }
