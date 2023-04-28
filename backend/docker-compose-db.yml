@@ -4,7 +4,7 @@ services:
   graphdb:
     build:
       context: 'database/'
-      dockerfile: 'graphdb.Dockerfile'
+      dockerfile: 'graphdb_unlicensed.Dockerfile'
     ports:
       - '7200:7200'
     command: '/opt/graphdb/dist/bin/loadrdf -c /opt/graphdb/dist/conf/TRDK2_graph-ROS-config.ttl -m parallel /opt/graphdb/home/ontology'

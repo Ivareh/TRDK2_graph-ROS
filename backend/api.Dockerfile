@@ -1,8 +1,7 @@
-FROM node:14
+FROM node:16
 EXPOSE 3001
 WORKDIR /app
-COPY package.json .
-COPY npm.lock .
-RUN npm
+COPY package*.json ./
+RUN npm install
 COPY . .
-ENTRYPOINT [ "npm", "start" ]
+CMD [ "npm", "start" ]
