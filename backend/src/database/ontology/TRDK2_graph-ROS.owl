@@ -29,12 +29,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount"/>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment">
@@ -43,16 +37,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#datasetHasBusinessMeaning -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#datasetHasBusinessMeaning"/>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#description">
         <rdfs:comment>Description of a system/program/dataset etc</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasBusinessMeaning -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasBusinessMeaning">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Dataset"/>
     </owl:AnnotationProperty>
     
 
@@ -69,17 +65,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#nameStandard -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainNameStandard -->
 
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#nameStandard">
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainNameStandard">
         <rdfs:comment>An entity that doesn&apos;t follow the normal name standard, for instance names with capital letters, excess information etc. This is uncertainty regarding the name of entity.</rdfs:comment>
     </owl:AnnotationProperty>
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainOutdatedData -->
 
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData">
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainOutdatedData">
         <rdfs:comment>If some data is suspect to be outdated</rdfs:comment>
     </owl:AnnotationProperty>
     
@@ -383,7 +379,9 @@
 
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo">
+        <rdfs:seeAlso rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -611,9 +609,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyBool -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyBool">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If entity has some type of uncertainty (see annotations for uncertainty description and types). Used to infer to the class AllUncertainties, which gathers all uncertainties in the ontology.</rdfs:comment>
     </owl:DatatypeProperty>
@@ -737,7 +735,7 @@
         </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyBool"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -1679,7 +1677,7 @@ word, etc.)</rdfs:comment>
         <getsUpdated rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Daily"/>
         <containsPII rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</containsPII>
         <datasetHasDataprotocol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasDataprotocol>
-        <datasetHasBusinessMeaning>Ticket sale for school and daycare centers for public transport in Trondheim</datasetHasBusinessMeaning>
+        <hasBusinessMeaning>Ticket sale for school and daycare centers for public transport in Trondheim</hasBusinessMeaning>
     </owl:NamedIndividual>
     
 
@@ -1698,7 +1696,7 @@ word, etc.)</rdfs:comment>
         <datasetHasAPI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasAPI>
         <datasetHasDataprotocol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasDataprotocol>
         <comment>ACOS is an application IT system, gathering data from various sources specified after &quot;-&quot; in the field &quot;Dataset Name&quot;</comment>
-        <datasetHasBusinessMeaning>Overview access applications</datasetHasBusinessMeaning>
+        <hasBusinessMeaning>Overview access applications</hasBusinessMeaning>
     </owl:NamedIndividual>
     
 
@@ -1718,7 +1716,7 @@ word, etc.)</rdfs:comment>
         <datasetHasAPI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasAPI>
         <datasetHasDataprotocol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasDataprotocol>
         <comment>ACOS is an application IT system, gathering data from various sources specified after &quot;-&quot; in the field &quot;Dataset Name&quot;</comment>
-        <datasetHasBusinessMeaning>Personal information about children and their guardians</datasetHasBusinessMeaning>
+        <hasBusinessMeaning>Personal information about children and their guardians</hasBusinessMeaning>
     </owl:NamedIndividual>
     
 
@@ -1791,7 +1789,7 @@ Tjenesteforvalter: Tone Schjei Bjørnes</importantNote>
 BF5 (190123): Lena Fiplingdal tror ikke det trengs å bestilles tilgang til BA eller på ERP-tilgangsskjema p.t. Regnskapstjenesten legger opp ident og sender link til programmet til de som skal ha tilgang selv. Nye løsningen er skybasert og har endret navn &quot;&quot;Matcher&quot;&quot;. 
 
 Utdatert info: Adra Match - skal bestilles på ERP-Tilgangsskjema</importantNote>
-        <outdatedData>Mention &quot;UTGÅTT?&quot; in important notes, it may be outdated</outdatedData>
+        <uncertainOutdatedData>Mention &quot;UTGÅTT?&quot; in important notes, it may be outdated</uncertainOutdatedData>
         <rdfs:label xml:lang="no">Account Adra Match</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1858,10 +1856,10 @@ On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
         <hasImageInAttachement rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasImageInAttachement>
-        <hasUncertaintyBool rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUncertaintyBool>
+        <hasUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUncertainty>
         <description>Google Apps Directory Sync (GADS) er et verktøy som automatisk legger til, modifiserer og sletter brukere, grupper og OUer (organizational units) i G-Suite basert på informasjon fra AD.</description>
         <integrationdescription>Provisjonering av brukere fra adminnettet til Google workspace for business (GSB) kjører på server i internsone. Den henter data fra AD basert på gruppe, synkroniserer mot Google, etablerer konto og plasserer i riktig OU i Google. Endringer skjer umiddelbart mot TKA AD og TKE AD, mens synkronisering av provisjonering (oppretting/sletting/endring) skjer hver time.</integrationdescription>
-        <nameStandard>In the attachement, this is only called &quot;GADS for TKA&quot;, but maybe also add &quot;og TKE&quot;?</nameStandard>
+        <uncertainNameStandard>In the attachement, this is only called &quot;GADS for TKA&quot;, but maybe also add &quot;og TKE&quot;?</uncertainNameStandard>
         <rdfs:label xml:lang="no">GADS for TKA og TKE</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2465,7 +2463,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Indicator"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Store"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#StoreType"/>
-        <nameStandard>Should we keep the whole name, or format this in another more sensible way with multiple instances?</nameStandard>
+        <uncertainNameStandard>Should we keep the whole name, or format this in another more sensible way with multiple instances?</uncertainNameStandard>
     </owl:NamedIndividual>
     
 
@@ -2485,7 +2483,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <datasetHasAPI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</datasetHasAPI>
         <datasetHasDataprotocol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</datasetHasDataprotocol>
         <comment>ACOS is an application IT system, gathering data from various sources specified after &quot;-&quot; in the field &quot;Dataset Name&quot;</comment>
-        <datasetHasBusinessMeaning>Accesses, documentation, code works, etc.</datasetHasBusinessMeaning>
+        <hasBusinessMeaning>Accesses, documentation, code works, etc.</hasBusinessMeaning>
     </owl:NamedIndividual>
     
 
@@ -2546,7 +2544,7 @@ Helseplattformen
 All offentlig rapportering går direkte fra HR-portalen (NAV, Altinn)
 On-prem AD
 TIP-integrasjoner: bluegarden-archiver, bluegarden-archiver-receiver, vigilo_hr-integration, bg-ce_innsyn, hp-iam_integration (hp-iam_ad), hp-iam_expertise-api, bluegarden-get, hr-sn_sync, user-management_bg-ad-sync, user-management_bluegarden-episerver, user-management_bluegarden-get, user-management_bluegarden-integration, user-management_bluegarden-push, user-management_tkpw-api</integrationdescription>
-        <nameStandard>Does the name imply HR-portalen (Visma_multi) is HR portalen mentioned other places?</nameStandard>
+        <uncertainNameStandard>Does the name imply HR-portalen (Visma_multi) is HR portalen mentioned other places?</uncertainNameStandard>
         <rdfs:label xml:lang="no">HR-portalen (Visma_Multi)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2641,14 +2639,7 @@ TK-sak</integrationdescription>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
         <hasUncertaintyTo rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
     </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <UncertaintyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</UncertaintyAmount>
-    </owl:Axiom>
     
 
 
