@@ -1,7 +1,7 @@
 # DO NOT PUSH TO DOCKER HUB
 # This dockerfile can possibly build a licensed image
 # Only use this for local development
-FROM ontotext/graphdb:9.9.0-se
+FROM ontotext/graphdb:10.2.0
 EXPOSE 7200
 RUN mkdir -p /opt/graphdb/dist/conf
 COPY conf/ /opt/graphdb/dist/conf
