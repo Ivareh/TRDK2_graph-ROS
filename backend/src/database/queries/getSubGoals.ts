@@ -10,13 +10,13 @@ export default (nodeId: string): string => {
   if (!node) return '';
 
   const fullNodeName = parseOntologyEntityToQuery(node);
-  const prefixString = parsePrefixesToQuery(PREFIXES.SDG, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
 
   return `
       ${prefixString}
       SELECT ?Subject ?SubjectLabel ?description
       WHERE { 
-        ?Subject SDG:harBærekraftsmål ${fullNodeName}.
+        ?Subject TRDK2:hasSystemService ${fullNodeName}.
         optional{?Subject rdfs:label ?SubjectLabel}.
         optional{?Subject SDG:description ?description}
 }ORDER BY ( xsd:string ( STRBEFORE ( STR ( ?SubjectLabel ), "" ) ) )
