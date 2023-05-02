@@ -7,6 +7,6 @@ export default (municipalityCode: string): string => {
   return `
         ${prefixString}
         SELECT ?municipality_name {
-            ?municipality_name SDG:municipalityCode "${municipalityCode}".
+            ?municipality_name TRDK2:municipalityCode "${municipalityCode}".
         }`;
 };

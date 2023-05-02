@@ -67,7 +67,7 @@ export const makePredicateUnique = (ontology: Ontology): Ontology => ({
 
 export const changeColorBasedOnType = (type: string) => {
   let nodeColor = '#63B3ED';
-  if (type.includes('SDG')) nodeColor = '#D6BCFA';
+  if (type.includes('TRDK2')) nodeColor = '#D6BCFA';
   if (type.includes('Trippel bunnlinje')) nodeColor = '#68D391';
   if (type.includes('Delmål')) nodeColor = '#FBD38D';
   if (type.includes('Utviklingsområde')) nodeColor = '#FC8181';
@@ -91,7 +91,7 @@ export const updateColorKPI = (type: string, toggle: boolean) => {
   let nodeColor = changeColorBasedOnType(type);
 
   if (toggle) {
-    if (type.includes('SDG')) nodeColor = '#00BB00';
+    if (type.includes('TRDK2')) nodeColor = '#00BB00';
   }
   // else {
   //   changeColorBasedOnType(type);

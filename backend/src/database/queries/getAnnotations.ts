@@ -19,10 +19,10 @@ export default (classId: string): string => {
     { 
          ${fullClassName} rdfs:label ?label.
     Optional {
-         ${fullClassName} SDG:description ?description.
+         ${fullClassName} TRDK2:description ?description.
     }
     Optional {
-         ${fullClassName} SDG:moreInformation ?moreInformation.
+         ${fullClassName} TRDK2:moreInformation ?moreInformation.
     }
     }
    } `;

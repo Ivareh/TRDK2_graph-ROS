@@ -19,7 +19,7 @@ import { selectNode } from '../../state/reducers/ontologyReducer';
 import { Node } from "../dummyTypes/OntologyTypes";
 
 /**
- * Searchbar taken from SDG-Ontology. Need data to fully implement search logic.
+ * Searchbar taken from TRDK2-Ontology. Need data to fully implement search logic.
  */
 interface SearchBarProps {
   limit?: number;

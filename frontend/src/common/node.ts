@@ -61,11 +61,11 @@ export const mapIdToNode = (id: string, correlation?: number, type?: string): No
   };
 };
 
-export const mapSustainabilityGoalToNode = (sdg: SustainabilityGoal): Node | null => {
-  const node = mapIdToNode(sdg.instancesOf);
+export const mapSustainabilityGoalToNode = (TRDK2: SustainabilityGoal): Node | null => {
+  const node = mapIdToNode(TRDK2.instancesOf);
   if (!node) return null;
-  node.name = sdg.label;
-  node.type = sdg.type;
+  node.name = TRDK2.label;
+  node.type = TRDK2.type;
   return node;
 };
 

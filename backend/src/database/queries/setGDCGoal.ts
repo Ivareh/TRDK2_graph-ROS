@@ -13,38 +13,38 @@ export default (
   startRange: number,
   isDummy: boolean,
 ): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.SDG, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
 
-  const dummyDataString = isDummy ? '?uri SDG:isDummyData true.' : '';
+  const dummyDataString = isDummy ? '?uri TRDK2:isDummyData true.' : '';
   const dataseriesVariant =
     dataseries === undefined || dataseries === 'main'
       ? ''
-      : `?dataseries SDG:dataseriesVariant "${dataseries}".`;
+      : `?dataseries TRDK2:dataseriesVariant "${dataseries}".`;
 
   return `
     ${prefixString}
     insert {
-      ?uri rdf:type SDG:U4SSCIndicatorGoal .
-      ?uri SDG:goalStartRange ${startRange}.
-      ?uri SDG:goalBaseline ${baseline}.
-      ?uri SDG:goalBaselineYear ${baselineYear}.
-      ?uri SDG:goalTarget ${target}.
-      ?uri SDG:goalDeadline ${deadline}.
+      ?uri rdf:type TRDK2:U4SSCIndicatorGoal .
+      ?uri TRDK2:goalStartRange ${startRange}.
+      ?uri TRDK2:goalBaseline ${baseline}.
+      ?uri TRDK2:goalBaselineYear ${baselineYear}.
+      ?uri TRDK2:goalTarget ${target}.
+      ?uri TRDK2:goalDeadline ${deadline}.
 
-      ?uri SDG:isGoalForMunicipality ?municipality.
-      ?uri SDG:isGoalForDataseries ?dataseries.
+      ?uri TRDK2:isGoalForMunicipality ?municipality.
+      ?uri TRDK2:isGoalForDataseries ?dataseries.
 
       ${dummyDataString}
    }
    where {
-      BIND(IRI("http://www.semanticweb.org/aga/ontologies/2017/9/SDG#goals.u4ssc.${dataseries}.${municipality}") as ?uri)
+      BIND(IRI("http://www.semanticweb.org/aga/ontologies/2017/9/TRDK2#goals.u4ssc.${dataseries}.${municipality}") as ?uri)
 
-      ?municipality SDG:municipalityCode "${municipality}".
+      ?municipality TRDK2:municipalityCode "${municipality}".
 
-      ?dataseries SDG:isDataSeriesFor ?indicator.
+      ?dataseries TRDK2:isDataSeriesFor ?indicator.
 
       ${dataseriesVariant}
 
-      ?indicator SDG:kpiNumber "${kpi}".
+      ?indicator TRDK2:kpiNumber "${kpi}".
    }`;
 };

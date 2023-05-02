@@ -6,7 +6,7 @@ export default (
   baselineMunicipality: string,
   overrideMode: string,
 ): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.SDG, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
 
   if (overrideMode === 'absolute') {
     return `
@@ -14,33 +14,33 @@ export default (
 
         SELECT ?kpi ?baseline ?baselineYear ?target ?deadline ?startRange ?dataseries ?calculationMethod
         WHERE {
-            ?indicator rdf:type SDG:U4SSCIndicator.
-            ?indicator SDG:kpiNumber ?kpi.
+            ?indicator rdf:type TRDK2:U4SSCIndicator.
+            ?indicator TRDK2:kpiNumber ?kpi.
             
-            ?goal rdf:type SDG:U4SSCIndicatorGoal.
-            ?goal SDG:goalDeadline ?deadline.
-            ?goal SDG:goalTarget ?target.
-            ?goal SDG:goalStartRange ?startRange.
+            ?goal rdf:type TRDK2:U4SSCIndicatorGoal.
+            ?goal TRDK2:goalDeadline ?deadline.
+            ?goal TRDK2:goalTarget ?target.
+            ?goal TRDK2:goalStartRange ?startRange.
 
-            ?goal SDG:isGoalForMunicipality ?municipality.
-            ?goal SDG:isGoalForDataseries ?ds.
+            ?goal TRDK2:isGoalForMunicipality ?municipality.
+            ?goal TRDK2:isGoalForDataseries ?ds.
 
-            ?baselineGoal rdf:type SDG:U4SSCIndicatorGoal.
-            ?baselineGoal SDG:goalBaseline ?baseline.
-            ?baselineGoal SDG:goalBaselineYear ?baselineYear.
+            ?baselineGoal rdf:type TRDK2:U4SSCIndicatorGoal.
+            ?baselineGoal TRDK2:goalBaseline ?baseline.
+            ?baselineGoal TRDK2:goalBaselineYear ?baselineYear.
 
-            ?baselineGoal SDG:isGoalForMunicipality ?baselineMuni.
-            ?baselineGoal SDG:isGoalForDataseries ?ds.
+            ?baselineGoal TRDK2:isGoalForMunicipality ?baselineMuni.
+            ?baselineGoal TRDK2:isGoalForDataseries ?ds.
 
-            ?ds SDG:isDataSeriesFor ?indicator.
-            ?ds SDG:dataseriesScoreCalculationMethod ?calculationMethod.
+            ?ds TRDK2:isDataSeriesFor ?indicator.
+            ?ds TRDK2:dataseriesScoreCalculationMethod ?calculationMethod.
 
             OPTIONAL {
-              ?ds SDG:dataseriesVariant ?dataseries.
+              ?ds TRDK2:dataseriesVariant ?dataseries.
             }
 
-            ?municipality SDG:municipalityCode "${municipality}".
-            ?baselineMuni SDG:municipalityCode "${baselineMunicipality}".
+            ?municipality TRDK2:municipalityCode "${municipality}".
+            ?baselineMuni TRDK2:municipalityCode "${baselineMunicipality}".
         }`;
   }
 
@@ -50,37 +50,37 @@ export default (
 
         SELECT ?kpi ?baseline ?baselineYear ?target ?deadline ?startRange ?dataseries ?calculationMethod
         WHERE {
-            ?indicator rdf:type SDG:U4SSCIndicator.
-            ?indicator SDG:kpiNumber ?kpi.
+            ?indicator rdf:type TRDK2:U4SSCIndicator.
+            ?indicator TRDK2:kpiNumber ?kpi.
             
-            ?goal rdf:type SDG:U4SSCIndicatorGoal.
-            ?goal SDG:goalDeadline ?deadline.
-            ?goal SDG:goalTarget ?goalTarget.
-            ?goal SDG:goalStartRange ?startRange.
-            ?goal SDG:goalBaseline ?targetBaseline.
+            ?goal rdf:type TRDK2:U4SSCIndicatorGoal.
+            ?goal TRDK2:goalDeadline ?deadline.
+            ?goal TRDK2:goalTarget ?goalTarget.
+            ?goal TRDK2:goalStartRange ?startRange.
+            ?goal TRDK2:goalBaseline ?targetBaseline.
 
-            ?goal SDG:isGoalForMunicipality ?municipality.
-            ?goal SDG:isGoalForDataseries ?ds.
+            ?goal TRDK2:isGoalForMunicipality ?municipality.
+            ?goal TRDK2:isGoalForDataseries ?ds.
 
             BIND(ofn:max(?targetBaseline, 0.01) as ?targetDenom).
             BIND(?goalTarget / ?targetDenom as ?targetFract).
             BIND(?targetFract * ?baseline as ?target).
 
-            ?baselineGoal rdf:type SDG:U4SSCIndicatorGoal.
-            ?baselineGoal SDG:goalBaseline ?baseline.
-            ?baselineGoal SDG:goalBaselineYear ?baselineYear.
+            ?baselineGoal rdf:type TRDK2:U4SSCIndicatorGoal.
+            ?baselineGoal TRDK2:goalBaseline ?baseline.
+            ?baselineGoal TRDK2:goalBaselineYear ?baselineYear.
 
-            ?baselineGoal SDG:isGoalForMunicipality ?baselineMuni.
-            ?baselineGoal SDG:isGoalForDataseries ?ds.
+            ?baselineGoal TRDK2:isGoalForMunicipality ?baselineMuni.
+            ?baselineGoal TRDK2:isGoalForDataseries ?ds.
 
-            ?ds SDG:isDataSeriesFor ?indicator.
-            ?ds SDG:dataseriesScoreCalculationMethod ?calculationMethod.
+            ?ds TRDK2:isDataSeriesFor ?indicator.
+            ?ds TRDK2:dataseriesScoreCalculationMethod ?calculationMethod.
 
             OPTIONAL {
-              ?ds SDG:dataseriesVariant ?dataseries.
+              ?ds TRDK2:dataseriesVariant ?dataseries.
             }
 
-            ?municipality SDG:municipalityCode "${municipality}".
-            ?baselineMuni SDG:municipalityCode "${baselineMunicipality}".
+            ?municipality TRDK2:municipalityCode "${municipality}".
+            ?baselineMuni TRDK2:municipalityCode "${baselineMunicipality}".
         }`;
 };

@@ -6,14 +6,13 @@ export default (obj: DataPoint): string => {
   const prefixString = parsePrefixesToQuery(
     PREFIXES.RDF,
     PREFIXES.OWL,
-    PREFIXES.SDG,
-    PREFIXES.UNSDG,
+    PREFIXES.TRDK2,
   );
-  const dummyDataString = obj.isDummy ? '?uri SDG:isDummyData true.' : '';
+  const dummyDataString = obj.isDummy ? '?uri TRDK2:isDummyData true.' : '';
   const dataseriesVariant =
     obj.dataseries === undefined || obj.dataseries === 'main'
       ? ''
-      : `?dataseries SDG:dataseriesVariant "${obj.dataseries}".`;
+      : `?dataseries TRDK2:dataseriesVariant "${obj.dataseries}".`;
 
   const dataseries =
     obj.indicatorName +
@@ -22,24 +21,24 @@ export default (obj: DataPoint): string => {
   return `
     ${prefixString}
     insert {
-      ?uri rdf:type SDG:Datapoint .
-      ?uri SDG:datapointForSeries ?dataseries.
-      ?uri SDG:datapointForMunicipality ?municipality.
-      ?uri SDG:datapointYear ${obj.year}.
-      ?uri SDG:datapointValue ${obj.data}.
+      ?uri rdf:type TRDK2:Datapoint .
+      ?uri TRDK2:datapointForSeries ?dataseries.
+      ?uri TRDK2:datapointForMunicipality ?municipality.
+      ?uri TRDK2:datapointYear ${obj.year}.
+      ?uri TRDK2:datapointValue ${obj.data}.
 
       ${dummyDataString}
    }
    where {
-      BIND(IRI(CONCAT("http://www.semanticweb.org/aga/ontologies/2017/9/SDG#datapoint.u4ssc.${dataseries}.${obj.municipality}.${obj.year}")) as ?uri)
+      BIND(IRI(CONCAT("http://www.semanticweb.org/aga/ontologies/2017/9/TRDK2#datapoint.u4ssc.${dataseries}.${obj.municipality}.${obj.year}")) as ?uri)
       BIND(${obj.year} as ?year)
 
-      ?municipality SDG:municipalityCode "${obj.municipality}".
+      ?municipality TRDK2:municipalityCode "${obj.municipality}".
 
-      ?dataseries SDG:isDataSeriesFor ?indicator.
+      ?dataseries TRDK2:isDataSeriesFor ?indicator.
 
       ${dataseriesVariant}
 
-      ?indicator SDG:kpiNumber "${obj.indicatorId}".
+      ?indicator TRDK2:kpiNumber "${obj.indicatorId}".
    }`;
 };

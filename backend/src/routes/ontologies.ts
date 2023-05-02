@@ -90,7 +90,7 @@ const getDevelopmentAreaToNodes = async (req: ClassIdRequest, res: NodeArrayResp
   }
 };
 
-const getSubGoalsfromSDG = async (req: Request, res: NodeArrayResponse) => {
+const getSubGoalsfromTRDK2 = async (req: Request, res: NodeArrayResponse) => {
   try {
     const data = await getSubGoals(req.params.classId);
     res.json(data);
@@ -128,7 +128,7 @@ router.get('/search', regexSearch);
 router.get('/contributions/:classId', getContributionsToNodes);
 router.get('/tradeoff/:classId', getTradeOffToNodes);
 router.get('/developmentarea/:classId', getDevelopmentAreaToNodes);
-router.get('/subgoals/:classId', getSubGoalsfromSDG);
+router.get('/subgoals/:classId', getSubGoalsfromTRDK2);
 router.get('/checkMunicipalityByCode', checkMunicipalityByCode);
 
 export default router;

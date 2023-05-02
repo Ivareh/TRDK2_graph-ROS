@@ -17,11 +17,11 @@ export default (nodeId: string): string => {
       SELECT *
       WHERE {
         {
-          ${fullNodeName} SDG:harUtviklingsOmråde ?Object .
+          ${fullNodeName} TRDK2:harUtviklingsOmråde ?Object .
           OPTIONAL {?Object rdfs:label ?ObjectLabel}
         }
       Union {
-        ${fullNodeName} SDG:erUtviklingsområdeFor ?Object .
+        ${fullNodeName} TRDK2:erUtviklingsområdeFor ?Object .
         OPTIONAL {?Object rdfs:label ?ObjectLabel}
       }  
       }`;

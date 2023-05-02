@@ -16,18 +16,18 @@ export default (nodeId: string): string => {
     ${prefixString}
     SELECT ?Object ?ObjectLabel ?High ?Moderate ?Low 
       WHERE { 
-      ${fullNodeName} SDG:harTradeOffTil ?Object.
+      ${fullNodeName} TRDK2:harTradeOffTil ?Object.
       ?Object rdfs:label ?ObjectLabel
       Optional {
-          ?Object SDG:harHøyTradeOffTil ${fullNodeName}.
+          ?Object TRDK2:harHøyTradeOffTil ${fullNodeName}.
           ?Object rdfs:label ?High }
 
       Optional {
-          ?Object SDG:harModeratTradeOffTil ${fullNodeName}.
+          ?Object TRDK2:harModeratTradeOffTil ${fullNodeName}.
           ?Object rdfs:label ?Moderate }
 
       Optional {
-          ?Object SDG:harLavTradeOffTil ${fullNodeName}.
+          ?Object TRDK2:harLavTradeOffTil ${fullNodeName}.
           ?Object rdfs:label ?Low }
     }`;
 };

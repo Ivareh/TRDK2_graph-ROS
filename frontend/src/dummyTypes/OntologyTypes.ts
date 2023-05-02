@@ -1,6 +1,6 @@
 
 /**
- * Copied from ontologyTypes in SDG-ontology-visualozer. 
+ * Copied from ontologyTypes in TRDK2-ontology-visualozer. 
  * Only changed name of SustainabilityGoal to MunicipalityEnity.
  */
 

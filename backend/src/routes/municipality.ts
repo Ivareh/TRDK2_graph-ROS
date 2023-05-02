@@ -2,9 +2,6 @@ import { Router, Request, Response } from 'express';
 
 import onError from './middleware/onError';
 
-import verifyDatabaseAccess from './middleware/verifyDatabaseAccess';
-import verifyToken from './middleware/verifyToken';
-
 import { ApiError } from '../types/errorTypes';
 
 import getSimilarlySizedMunicipalities from '../database/getSimilarlySizedMunicipalities';
@@ -57,10 +54,10 @@ const addMunicipality = async (req: Request, res: Response) => {
 };
 
 // These should really be get endpoints...
-router.get('/similar/:code', verifyDatabaseAccess, findSimilar);
-router.get('/info/:code', verifyDatabaseAccess, getInfo);
-router.get('/all', verifyDatabaseAccess, getAll);
+router.get('/similar/:code', findSimilar);
+router.get('/info/:code', getInfo);
+router.get('/all', getAll);
 
-router.post('/add', verifyDatabaseAccess, verifyToken, addMunicipality);
+router.post('/add', addMunicipality);
 
 export default router;

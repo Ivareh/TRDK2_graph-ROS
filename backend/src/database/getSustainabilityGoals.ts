@@ -1,6 +1,6 @@
 import DB from './index';
 import { SustainabilityGoal } from '../types/ontologyTypes';
-import getSustainabilityGoals from './queries/getSustainabilityGoals';
+import getSustainabilityGoals from './queries/getBusinessArea';
 
 export default async (): Promise<Array<SustainabilityGoal>> => {
   const query = getSustainabilityGoals();

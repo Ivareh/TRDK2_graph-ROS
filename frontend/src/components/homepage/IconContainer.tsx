@@ -5,7 +5,7 @@ import DummyData from "../../dummyTypes/DummyData";
 import { MotionBox } from "../../types/react/componentTypes"; */
 
 /**
- * Hentet fra SDG-ontology-visualizer, justert navn og plasseringer.
+ * Hentet fra TRDK2-ontology-visualizer, justert navn og plasseringer.
  * Ettersom disse omhandler annen data enn vi har, kan det være dette må gjøres om på.
  * Henter per nå inn duy data med verdier for ikon, label og instancesOf.
  * Original kode er kommentert ut.

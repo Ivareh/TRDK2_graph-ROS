@@ -2,7 +2,7 @@ import { parsePrefixesToQuery } from '../../common/database';
 import { PREFIXES } from '../index';
 
 export default (correlationCountry: string, kpi: string): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.SDG, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
 
   return `
         ${prefixString}
@@ -12,19 +12,19 @@ export default (correlationCountry: string, kpi: string): string => {
             SELECT ?kpi ?correlation ?subgoal
             WHERE
             {
-              ?fromKpi SDG:kpiNumber "${kpi}".
-              ?fromKpi SDG:linkedSDGSubgoal ?fromSubgoal.
+              ?fromKpi TRDK2:kpiNumber "${kpi}".
+              ?fromKpi TRDK2:linkedTRDK2Subgoal ?fromSubgoal.
 
-              ?corrUri SDG:subgoalCorrelationTo ?fromSubgoal.
-              ?corrUri SDG:subgoalCorrelationFrom ?toSubgoal.
+              ?corrUri TRDK2:subgoalCorrelationTo ?fromSubgoal.
+              ?corrUri TRDK2:subgoalCorrelationFrom ?toSubgoal.
 
               ?toSubgoal rdfs:label ?subgoal.
 
-              ?toKpi SDG:linkedSDGSubgoal ?toSubgoal.
-              ?toKpi SDG:kpiNumber ?kpi.
+              ?toKpi TRDK2:linkedTRDK2Subgoal ?toSubgoal.
+              ?toKpi TRDK2:kpiNumber ?kpi.
 
-              ?corrUri SDG:subgoalCorrelationCountry "${correlationCountry}"^^xsd:string.
-              ?corrUri SDG:subgoalCorrelationFactor ?correlation.
+              ?corrUri TRDK2:subgoalCorrelationCountry "${correlationCountry}"^^xsd:string.
+              ?corrUri TRDK2:subgoalCorrelationFactor ?correlation.
             }
           } UNION {
             SELECT ?kpi ?correlation ?subgoal
@@ -32,13 +32,13 @@ export default (correlationCountry: string, kpi: string): string => {
             {
               BIND(1.0 as ?correlation).
 
-              ?fromKpi SDG:kpiNumber "${kpi}".
-              ?fromKpi SDG:linkedSDGSubgoal ?commonSubgoal.
+              ?fromKpi TRDK2:kpiNumber "${kpi}".
+              ?fromKpi TRDK2:linkedTRDK2Subgoal ?commonSubgoal.
 
               ?commonSubgoal rdfs:label ?subgoal.
 
-              ?toKpi SDG:linkedSDGSubgoal ?commonSubgoal.
-              ?toKpi SDG:kpiNumber ?kpi.
+              ?toKpi TRDK2:linkedTRDK2Subgoal ?commonSubgoal.
+              ?toKpi TRDK2:kpiNumber ?kpi.
 
               FILTER(?fromKpi != ?toKpi).
             }

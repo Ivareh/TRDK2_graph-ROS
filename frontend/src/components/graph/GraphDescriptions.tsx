@@ -16,7 +16,7 @@ const GraphDescriptions: React.FC<GraphDescriptionsProps> = ({ float }: GraphDes
     rounded="lg"
   >
     <GraphNodeKey description="Standardfarge/Startnode" />
-    <GraphNodeKey description="SDG (Bærekraftsmål)" />
+    <GraphNodeKey description="TRDK2 (Bærekraftsmål)" />
     <GraphNodeKey description="Delmål til bærekraftsmål" />
     <GraphNodeKey description="Trippel bunnlinje" />
     <GraphNodeKey description="Utviklingsområde" />

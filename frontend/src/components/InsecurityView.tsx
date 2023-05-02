@@ -36,7 +36,7 @@ const InsecurityView = () => {
   const DI: Array<InsecureRelation> = DummyInsecurities();
   const [insecureRelations, setInsecuritieRelations] = useState(DI);
   /* 
-  some borrowed and inspired by SDGs SubGoaldsGrid and DetailView
+  some borrowed and inspired by TRDK2s SubGoaldsGrid and DetailView
   const [insecureRelations, setInsecuritieRelations] = useState<Array<InsecureRelation>>([]); 
   
   const loadInsecurities = async () => {

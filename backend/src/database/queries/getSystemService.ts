@@ -18,7 +18,7 @@ export default (nodeId: string): string => {
       WHERE { 
         ?Subject TRDK2:hasSystemService ${fullNodeName}.
         optional{?Subject rdfs:label ?SubjectLabel}.
-        optional{?Subject SDG:description ?description}
+        optional{?Subject TRDK2:description ?description}
 }ORDER BY ( xsd:string ( STRBEFORE ( STR ( ?SubjectLabel ), "" ) ) )
 ( xsd:long ( STRAFTER ( STR ( ?SubjectLabel ), "" ) ) )`;
 };

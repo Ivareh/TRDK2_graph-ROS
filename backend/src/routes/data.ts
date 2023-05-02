@@ -5,13 +5,8 @@ import { parseCSV, detectSeparator } from '../utils/csv';
 import { u4sscKpiMap, u4sscKpiDataseries, TKTransform } from '../database/u4sscKpiMap';
 
 import setData from '../database/setData';
-import getDataSeries from '../database/getDataSeries';
 import getDataSeriesForMunicipality from '../database/getDataSeriesForMunicipality';
-import deleteDataPoint from '../database/deleteDataPoint';
 import getAvailableYears from '../database/getAvailableYears';
-
-import bulkDeleteDataPoints from '../database/bulkDeleteDataPoints';
-import bulkInsertDataPoints from '../database/bulkInsertDataPoints';
 
 import CheckMunicipalityByCode from '../database/CheckMunicipalityByCode';
 
@@ -41,8 +36,6 @@ const insertData = async (req: Request, res: Response) => {
       isDummy,
       dataseries: req.body.dataseries,
     };
-
-    await deleteDataPoint(newDataPoint);
 
     // Insert new datapoint.
     await setData(newDataPoint);
@@ -82,22 +75,8 @@ const insertBulkData = async (req: Request, res: Response) => {
       datapoints.push(datapoint);
     });
 
-    await bulkDeleteDataPoints(datapoints);
-    await bulkInsertDataPoints(municipality, datapoints);
 
     res.json({});
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
-const getData = async (req: Request, res: Response) => {
-  try {
-    const year = parseInt(req.params.year, 10);
-    if (Number.isNaN(year)) throw new ApiError(400, 'Non-integer year');
-
-    const data = await getDataSeries(req.params.indicator, req.params.municipality, year);
-    res.json(data);
   } catch (e: any) {
     onError(e, req, res);
   }
@@ -227,9 +206,6 @@ const dataUploadCSV = async (req: Request, res: Response) => {
     if (errors.length > 0) {
       throw new ApiError(401, `Data errors: ${JSON.stringify(errors)}`);
     }
-
-    await bulkDeleteDataPoints(datapoints);
-    await bulkInsertDataPoints(municipality, datapoints);
 
     res.json({});
   } catch (e) {
