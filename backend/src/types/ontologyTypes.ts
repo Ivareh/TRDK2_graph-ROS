@@ -53,7 +53,7 @@ export type DataPoint = {
   dataseries?: string;
 };
 
-export type SustainabilityGoal = {
+export type BusinessArea = {
   instancesOf: string;
   label: string;
   icon: string;

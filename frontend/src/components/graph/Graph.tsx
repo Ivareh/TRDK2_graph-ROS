@@ -82,6 +82,7 @@ const Graph: React.FC<GraphProps> = ({
       return;
     }
     if (!simulation) {
+      console.log("HEY")
       createNewGraphSimulation();
     } else if (!hasInitialized) {
       setHasInitialized(true);

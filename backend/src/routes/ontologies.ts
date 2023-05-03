@@ -7,7 +7,7 @@ import getDevelopmentArea from '../database/getDevelopmentArea';
 import getRelations from '../database/getRelations';
 import getSubclasses from '../database/getSubclasses';
 import getSubGoals from '../database/getSubGoals';
-import getSustainabilityGoals from '../database/getSustainabilityGoals';
+import getBusinessAreas from '../database/getBusinessAreas';
 import getTradeOff from '../database/getTradeOffTo';
 import CheckMunicipalityByCode from '../database/CheckMunicipalityByCode';
 import {
@@ -18,7 +18,7 @@ import {
   NodeArrayResponse,
   OntologyArrayResponse,
   RegexRequest,
-  SustainbilityGoalArrayResponse,
+  BusinessAreaArrayResponse,
 } from '../types/routerTypes';
 import onError from './middleware/onError';
 
@@ -51,12 +51,12 @@ const getAnnotationsFromClass = async (req: ClassIdRequest, res: AnnotationRespo
   }
 };
 
-const getSustainabilityGoalsFromOntology = async (
+const getBusinessAreasFromOntology = async (
   req: EmptyRequest,
-  res: SustainbilityGoalArrayResponse,
+  res: BusinessAreaArrayResponse,
 ) => {
   try {
-    const data = await getSustainabilityGoals();
+    const data = await getBusinessAreas();
     res.json(data);
   } catch (e: any) {
     onError(e, req, res);
@@ -123,7 +123,7 @@ const checkMunicipalityByCode = async (req: Request, res: AnyResponse) => {
 router.get('/relations/:classId', getRelationsFromClass);
 router.get('/subclasses/:classId', getSubclassesFromClass);
 router.get('/annotations/:classId', getAnnotationsFromClass);
-router.get('/sustainabilityGoals', getSustainabilityGoalsFromOntology);
+router.get('/businessAreas', getBusinessAreasFromOntology);
 router.get('/search', regexSearch);
 router.get('/contributions/:classId', getContributionsToNodes);
 router.get('/tradeoff/:classId', getTradeOffToNodes);

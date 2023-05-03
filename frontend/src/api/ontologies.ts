@@ -1,4 +1,4 @@
-import { Annotation, SustainabilityGoal, Node, Ontology, SubGoal } from '../types/ontologyTypes';
+import { Annotation, BusinessArea, Node, Ontology, SubGoal } from '../types/ontologyTypes';
 import api from './api';
 
 export const getRelations = async (nodeId: string): Promise<Array<Ontology>> => {
@@ -35,9 +35,9 @@ export const getSubclasses = async (nodeId: string): Promise<Array<Node>> => {
   }
 };
 
-export const getSustainabilityGoals = async (): Promise<Array<SustainabilityGoal>> => {
+export const getBusinessAreas = async (): Promise<Array<BusinessArea>> => {
   try {
-    const data = await api.GET('ontologies/sustainabilityGoals');
+    const data = await api.GET('ontologies/businessAreas');
     return data;
   } catch (e) {
     console.log(e);
@@ -71,16 +71,6 @@ export const search = async (searchTerm: string, limit?: number): Promise<Array<
   }
 };
 
-export const getTradeOff = async (nodeId: string): Promise<Array<Node>> => {
-  try {
-    const data: Array<Node> = await api.GET(`ontologies/tradeoff/${encodeURIComponent(nodeId)}`);
-    return data;
-  } catch (e) {
-    console.log(e);
-    return [];
-  }
-};
-
 export const getDevelopmentArea = async (nodeId: string): Promise<Array<Node>> => {
   try {
     const data: Array<Node> = await api.GET(
@@ -93,9 +83,9 @@ export const getDevelopmentArea = async (nodeId: string): Promise<Array<Node>> =
   }
 };
 
-export const getSubGoals = async (nodeId: string): Promise<Array<SubGoal>> => {
+export const getSystemService = async (nodeId: string): Promise<Array<SubGoal>> => {
   try {
-    const data: Array<SubGoal> = await api.GET(`ontologies/subgoals/${encodeURIComponent(nodeId)}`);
+    const data: Array<SubGoal> = await api.GET(`ontologies/systemservice/${encodeURIComponent(nodeId)}`);
     return data;
   } catch (e) {
     console.log(e);

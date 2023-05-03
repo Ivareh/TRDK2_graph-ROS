@@ -4,7 +4,7 @@ import {
   GraphEdge,
   Node,
   Prefix,
-  SustainabilityGoal,
+  BusinessArea,
   CorrelationFilter,
   KpiFilter,
 } from '../types/ontologyTypes';
@@ -61,7 +61,7 @@ export const mapIdToNode = (id: string, correlation?: number, type?: string): No
   };
 };
 
-export const mapSustainabilityGoalToNode = (TRDK2: SustainabilityGoal): Node | null => {
+export const mapBusinessAreaToNode = (TRDK2: BusinessArea): Node | null => {
   const node = mapIdToNode(TRDK2.instancesOf);
   if (!node) return null;
   node.name = TRDK2.label;

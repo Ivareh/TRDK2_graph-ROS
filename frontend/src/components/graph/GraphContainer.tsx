@@ -60,6 +60,11 @@ const GraphContainer: React.FC = () => {
       w={isFullscreen ? '100vw' : ''}
       position={isFullscreen ? 'absolute' : 'static'}
     >
+      <GraphToolBar
+        onSubgoalFilter={filterSubgoals}
+        onUnlockNodes={setUnlockNodes}
+        onEdgeLabelsVisible={setEdgeLabelsVisible}
+      />
       <Flex h="100%" justify="space-between">
         <Graph
           nodeFilter={nodeFilter}

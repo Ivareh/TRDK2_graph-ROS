@@ -43,7 +43,7 @@ export type DataSeriesRequest = Request<DataSeriesParams>;
 
 export type NodeArrayResponse = Response<Array<Node>>;
 
-export type SustainbilityGoalArrayResponse = Response<Array<SustainabilityGoal>>;
+export type BusinessAreaArrayResponse = Response<Array<SustainabilityGoal>>;
 
 export type OntologyArrayResponse = Response<Array<Ontology>>;
 

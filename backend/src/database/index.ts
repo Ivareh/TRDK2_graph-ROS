@@ -20,4 +20,5 @@ export const PREFIXES = {
 export default new EnapsoGraphDBClient.Endpoint({
   baseURL: config.GRAPHDB_BASE_URL,
   repository: config.GRAPHDB_REPOSITORY,
+  prefixes: Object.values(PREFIXES),
 } as EndpointOptions);

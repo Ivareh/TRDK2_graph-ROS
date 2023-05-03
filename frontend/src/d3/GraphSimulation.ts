@@ -1,3 +1,5 @@
+// We got this from https://github.com/vemund0507/SDG-ontology-visualizer/tree/main/frontend/src/d3 and we are using it to visualize the ontology graph.
+
 /*  eslint func-names: "off" */
 /*
   This file handles the entire simulation and rendering of the ontology graph.

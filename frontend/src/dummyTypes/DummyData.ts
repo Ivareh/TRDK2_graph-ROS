@@ -43,7 +43,7 @@ function DummyData() {
 
     DD.push({
         instancesOf:"",
-        label: "Miljø og klima",
+        label: "Næring, Samferdsel, Klima og Miljø",
         icon: "https://cdn-icons-png.flaticon.com/512/2961/2961643.png",
     })
 

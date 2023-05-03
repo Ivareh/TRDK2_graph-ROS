@@ -6,7 +6,7 @@ export type Annotation = {
   moreInformation: string | null;
 };
 
-export type SustainabilityGoal = {
+export type BusinessArea = {
   instancesOf: string;
   label: string;
   icon: string;
