@@ -10,7 +10,6 @@ function EntityPage() {
   return (
     <>
       <Stack bg="#F5F9FF">
-        <Navbar />
         <Grid
           templateAreas={`"header header"
                         "nav main"
@@ -64,9 +63,6 @@ function EntityPage() {
             </Card>
           </GridItem>
         </Grid>
-        <Stack>
-          <Footer />
-        </Stack>
       </Stack>
     </>
   );

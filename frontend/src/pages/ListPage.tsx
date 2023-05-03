@@ -17,9 +17,6 @@ import { MunicipalityEntity } from "../dummyTypes/OntologyTypes";
 
 const ListPage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
-    <Stack>
-      <Navbar />
-    </Stack>
     <Flex
       align="center"
       justify="center"

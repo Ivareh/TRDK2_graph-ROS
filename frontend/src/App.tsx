@@ -10,13 +10,17 @@ import FormPage from "./pages/FormPage";
 import EntityPage from "./pages/EntityPage";
 import AboutPage from "./pages/AboutPage";
 import ListPage from "./pages/ListPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 export default function App() {
   return (
-    <ChakraProvider>
+        <ChakraProvider>
+
       <Provider store={store}>
         <Router>
+        <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/form" element={<FormPage />} />
@@ -25,6 +29,7 @@ export default function App() {
             <Route path="/list" element={<ListPage />} />
             {/* <Route component={NotFoundPage} /> */}
           </Routes>
+          <Footer />
         </Router>
       </Provider>
     </ChakraProvider>

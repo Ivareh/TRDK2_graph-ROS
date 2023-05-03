@@ -1,7 +1,7 @@
 import { Flex, Stack } from '@chakra-ui/react';
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { isKpiSelected, isSubgoal, isWithinCorrelationLimit } from '../../common/node';
+import { isWithinCorrelationLimit } from '../../common/node';
 import { RootState } from '../../state/store';
 import { D3Edge } from '../../types/d3/simulation';
 import { GraphEdge, GraphNode } from '../../types/ontologyTypes';
@@ -24,7 +24,6 @@ const GraphContainer: React.FC = () => {
 
   const filterKPISetSelection = useCallback(
     (node: GraphNode): boolean => {
-      if (isKpiSelected(node, kpiFilter)) return false;
       return true;
     },
     [kpiFilter.u4ssc, kpiFilter.oecd, kpiFilter.unIndicator],
@@ -32,7 +31,6 @@ const GraphContainer: React.FC = () => {
 
   const nodeFilter = useCallback(
     (node: GraphNode): boolean => {
-      if (!showSubgoals && isSubgoal(node)) return false;
       return true;
     },
     [showSubgoals],

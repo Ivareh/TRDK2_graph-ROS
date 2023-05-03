@@ -14,13 +14,10 @@ import SearchBar from "../components/SearchBar";
 må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
 import Navbar from "../components/Navbar";
-import Overlay from "../components/formpageOverlay/Overlay";
+
 
 const HomePage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
-    <Stack>
-      <Navbar />
-    </Stack>
 
     <Flex
       align="center"
