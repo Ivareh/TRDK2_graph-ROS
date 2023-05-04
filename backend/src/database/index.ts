@@ -9,7 +9,7 @@ export const PREFIXES = {
   PROTONS: EnapsoGraphDBClient.PREFIX_PROTONS,
   TRDK2: {
     prefix: 'TRDK2',
-    iri: 'http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/inf#',
+    iri: 'http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#',
   },
   SCHEMA: {
     prefix: 'schema',
