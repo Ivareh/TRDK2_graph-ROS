@@ -102,7 +102,7 @@ namespace Excelbehandler
             Worksheet DatasetTable;
             Dataset = excel.Workbooks.Open(filepath);
             DatasetTable = Dataset.Worksheets[1];
-            int LengthData = 127;  //DatasetTable.UsedRange.Rows.Count - 1; There was a problem with empty namecells below the last entrance in the sourcefile. 
+            int LengthData = DatasetTable.UsedRange.Rows.Count - 1; //There was a problem with empty namecells below the last entrance in the sourcefile. 
 
             //simple parse through the excelfile programoversikt.
             for (int i = 2; i <= LengthData; i++)
