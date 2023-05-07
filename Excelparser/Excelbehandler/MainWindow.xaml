@@ -25,11 +25,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" Grid.Column="1" Content="Filsti:" Margin="5,5,5,5"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Filepath:" Margin="5,5,5,5"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="Out data:" Margin="5,5,5,5"/>
         <TextBox x:Name="Innfilsti" Grid.Row="1" Grid.Column="2" Width="300" Margin="5,5,5,5"></TextBox>
         <Button x:Name="Dataset" Grid.Row="1" Grid.Column="3" Content="Dataset" Click="ParseExcelDataset" Width="150" Height="20"></Button>
-        <Button x:Name="SoftwareList" Grid.Row="2" Grid.Column="3" Content="Programoversikt" Width="150" Height="20" Click="SoftwareList_Click"></Button>
-        <Button x:Name="ApplicationList" Grid.Row="3" Grid.Column="3" Content="Applikasjonsliste" Width="150" Height="20" Click="ApplicationList_Click"></Button>
+        <Button x:Name="SoftwareList" Grid.Row="2" Grid.Column="3" Content="Software list" Width="150" Height="20" Click="SoftwareList_Click"></Button>
+        <Button x:Name="ApplicationList" Grid.Row="3" Grid.Column="3" Content="Application list" Width="150" Height="20" Click="ApplicationList_Click"></Button>
         <TextBox x:Name="Status" Grid.Row="2" Grid.Column="2" Width="300" Height="200" Grid.RowSpan="4"></TextBox>
     </Grid>
 </Window>
