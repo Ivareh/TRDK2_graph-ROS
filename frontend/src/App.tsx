@@ -1,25 +1,35 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import store from "./state/store";
+import { Provider } from "react-redux";
+
 import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import EntityPage from "./pages/EntityPage";
 import AboutPage from "./pages/AboutPage";
 import ListPage from "./pages/ListPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <ChakraProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/form" element={<FormPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/entity" element={<EntityPage />} />
-          <Route path="/list" element={<ListPage />} />
-          {/* <Route component={NotFoundPage} /> */}
-        </Routes>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/form" element={<FormPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/entity" element={<EntityPage />} />
+            <Route path="/list" element={<ListPage />} />
+            {/* <Route component={NotFoundPage} /> */}
+          </Routes>
+          <Footer />
+        </Router>
+      </Provider>
     </ChakraProvider>
   );
 }

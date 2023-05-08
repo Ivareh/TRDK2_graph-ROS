@@ -2,26 +2,15 @@ import React from "react";
 import {
   Heading,
   Stack,
-  Image,
   Flex,
-  Box,
-  Text,
   VStack,
   HStack,
 } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
-/* import SustainabilityGoals from '../molecules/SustainabilityGoalsList'; 
-må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
-import Navbar from "../components/Navbar";
-import Overlay from "../components/formpageOverlay/Overlay";
 
 const HomePage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
-    <Stack>
-      <Navbar />
-    </Stack>
-
     <Flex
       align="center"
       justify="center"

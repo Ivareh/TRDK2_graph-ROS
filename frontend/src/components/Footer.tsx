@@ -1,23 +1,9 @@
-import React from "react";
 import {
-  Box,
-  chakra,
-  Container,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue,
-  VisuallyHidden,
   Center,
   Heading,
-} from '@chakra-ui/react';
-// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { useContext } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { ReactNode } from 'react';
+} from "@chakra-ui/react";
 
 const Footer = () => {
-
   return (
     <footer>
       <Center bg="#4D5D75" w="100%" p={4} color="white" h="12vh" mt="20">

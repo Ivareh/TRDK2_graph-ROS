@@ -7,14 +7,11 @@ import {
   HStack,
   Menu,
   MenuButton,
-  MenuDivider,
-  MenuItem,
   MenuList,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useContext } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Logo from "./Images/brand-logo.png";
 
@@ -47,8 +44,38 @@ export default function Navbar() {
                 </Text>
               </RouterLink>
             </HStack>
-          </HStack>
-
+                <RouterLink to="/list">
+                    <Text
+                      px={3}
+                      py={2}
+                      rounded={"full"}
+                      _hover={{
+                        textDecoration: "none",
+                        bg: useColorModeValue("gray.200", "gray.700"),
+                      }}
+                    >
+                      {" "}
+                      Usikkerhetsliste{" "}
+                    </Text>
+                  </RouterLink>
+                <RouterLink to="/form">
+                  <Text
+                    px={3}
+                    py={2}
+                    rounded={"full"}
+                    _hover={{
+                      textDecoration: "none",
+                      bg: useColorModeValue("gray.200", "gray.700"),
+                    }}
+                  >
+                    {" "}
+                    Form{" "}
+                  </Text>
+                </RouterLink>
+              </HStack>
+              
+              
+                
           <Flex id={"idButton"} alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
               <Menu>
@@ -73,27 +100,6 @@ export default function Navbar() {
                     <Avatar size={"2xl"} src={"image.png"} />
                   </Center>
                   <br />
-
-                  {/* if user is logged in, show email, if not show Guest */}
-                  {/* {user ? (
-                    <Center>
-                      <p>{user.email}</p>
-                    </Center>
-                  ) : (
-                    <Center>
-                      <p>Guest</p>
-                    </Center>
-                  )}
-                  <br />
-                  <MenuDivider />
-                  */}
-
-                  {/* if user exists, show logout button */}
-                  {/*{user ? (
-                    <MenuItem onClick={onLogout}>Logout</MenuItem>
-                  ) : (
-                    <MenuItem onClick={onLogin}>Login</MenuItem>
-                  )} */}
                 </MenuList>
               </Menu>
             </Stack>

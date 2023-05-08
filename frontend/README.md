@@ -1,7 +1,7 @@
 # Start react application
 
-Go into: 
+Go into:
 
-$ cd /frontend 
+$ cd /frontend
 $ npm install
 $ npm start

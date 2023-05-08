@@ -2,24 +2,14 @@ import React from "react";
 import {
   Heading,
   Stack,
-  Image,
   Flex,
-  Box,
-  Text,
-  VStack,
   HStack,
 } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
-import Navbar from "../components/Navbar";
 import InsecurityList from "../components/InsecurityView";
-import DummyData from "../dummyTypes/DummyData";
-import { MunicipalityEntity } from "../dummyTypes/OntologyTypes";
 
 const ListPage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
-    <Stack>
-      <Navbar />
-    </Stack>
     <Flex
       align="center"
       justify="center"
