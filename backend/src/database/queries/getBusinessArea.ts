@@ -2,7 +2,7 @@ import { parsePrefixesToQuery } from '../../common/database';
 import { PREFIXES } from '../index';
 
 export default (): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.RDF, PREFIXES.SCHEMA, PREFIXES.XSD, PREFIXES.RDFS);
 
   return `
       ${prefixString}
@@ -11,7 +11,7 @@ export default (): string => {
       PREFIX schema: <http://schema.org/>
       PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       PREFIX TRDK2: <http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#>
-      SELECT ?instancesOf ?label ?icon ?type
+      SELECT ?instancesOf ?label
             WHERE { 
               ?instancesOf  rdf:type TRDK2:MunicipalityBusinessArea.
               ?instancesOf  rdfs:label  ?label.
