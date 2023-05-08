@@ -1,11 +1,20 @@
-import { D3Edge, LabelTransform } from '../types/d3/simulation';
-import { GraphEdge, GraphNode, Ontology, UniqueObject, Edge } from '../types/ontologyTypes';
-import { mapIdToEdge } from './node';
-import { camelCaseToText } from './other';
+import { D3Edge, LabelTransform } from "../types/d3/simulation";
+import {
+  GraphEdge,
+  GraphNode,
+  Ontology,
+  UniqueObject,
+  Edge,
+} from "../types/ontologyTypes";
+import { mapIdToEdge } from "./node";
+import { camelCaseToText } from "./other";
 
 export const mapOntologyToGraphEdge = (ontology: Ontology): GraphEdge => {
-  const edge = mapIdToEdge(ontology.Predicate.id, ontology.Predicate.correlation);
-  if (!edge) throw new Error('Could not map ontology to graph edge');
+  const edge = mapIdToEdge(
+    ontology.Predicate.id,
+    ontology.Predicate.correlation
+  );
+  if (!edge) throw new Error("Could not map ontology to graph edge");
   return {
     ...edge,
     source: ontology.Subject.id,
@@ -18,28 +27,36 @@ export const mapOntologyToGraphEdge = (ontology: Ontology): GraphEdge => {
 export const removeDuplicates = <T extends UniqueObject>(
   node: T,
   index: number,
-  self: T[],
+  self: T[]
 ): boolean => index === self.findIndex((n) => node.id === n.id);
 
 export const removeUndefinedTypes = <H extends GraphNode>(node: H): boolean =>
-  node.type !== 'undefined' && node.type !== null;
+  node.type !== "undefined" && node.type !== null;
 
 export const mergeParallelEdges = (
   edge: GraphEdge | D3Edge,
   _: number,
-  self: Array<GraphEdge | D3Edge>,
+  self: Array<GraphEdge | D3Edge>
 ): boolean =>
   self.every((e) => {
-    if (edge.sourceToTarget.some((child) => child.id === e.sourceToTarget[0].id)) {
+    if (
+      edge.sourceToTarget.some((child) => child.id === e.sourceToTarget[0].id)
+    ) {
       return true;
     }
-    if (edge.targetToSource.some((child) => child.id === e.sourceToTarget[0].id)) {
+    if (
+      edge.targetToSource.some((child) => child.id === e.sourceToTarget[0].id)
+    ) {
       return true;
     }
-    if (e.sourceToTarget.some((child) => child.id === edge.sourceToTarget[0].id)) {
+    if (
+      e.sourceToTarget.some((child) => child.id === edge.sourceToTarget[0].id)
+    ) {
       return false;
     }
-    if (e.targetToSource.some((child) => child.id === edge.sourceToTarget[0].id)) {
+    if (
+      e.targetToSource.some((child) => child.id === edge.sourceToTarget[0].id)
+    ) {
       return false;
     }
     if (edge.source === e.target && edge.target === e.source) {
@@ -66,32 +83,32 @@ export const makePredicateUnique = (ontology: Ontology): Ontology => ({
 // }
 
 export const changeColorBasedOnType = (type: string) => {
-  let nodeColor = '#63B3ED';
-  if (type.includes('TRDK2')) nodeColor = '#D6BCFA';
-  if (type.includes('Trippel bunnlinje')) nodeColor = '#68D391';
-  if (type.includes('Delmål')) nodeColor = '#FBD38D';
-  if (type.includes('Utviklingsområde')) nodeColor = '#FC8181';
-  if (type.includes('Kategori')) nodeColor = '#00BB00';
-  if (type.includes('U4SSC KPI')) nodeColor = '#F4A460';
-  if (type.includes('OECD KPI')) nodeColor = '#F4A460';
+  let nodeColor = "#63B3ED";
+  if (type.includes("TRDK2")) nodeColor = "#D6BCFA";
+  if (type.includes("Trippel bunnlinje")) nodeColor = "#68D391";
+  if (type.includes("Delmål")) nodeColor = "#FBD38D";
+  if (type.includes("Utviklingsområde")) nodeColor = "#FC8181";
+  if (type.includes("Kategori")) nodeColor = "#00BB00";
+  if (type.includes("U4SSC KPI")) nodeColor = "#F4A460";
+  if (type.includes("OECD KPI")) nodeColor = "#F4A460";
   // The follong 3 line is for UN Indicators
-  if (type.includes('Indicador')) nodeColor = '#F4A460';
-  if (type.includes('Indicator')) nodeColor = '#F4A460';
-  if (type.includes('Indicateur')) nodeColor = '#F4A460';
+  if (type.includes("Indicador")) nodeColor = "#F4A460";
+  if (type.includes("Indicator")) nodeColor = "#F4A460";
+  if (type.includes("Indicateur")) nodeColor = "#F4A460";
 
   // ----------------------------------------------------------------
   // in order for the following line to work, nodes need accept being of multiple types.
   // ----------------------------------------------------------------
   // if (type.includes('U4SSC KPI') && type.includes('Utviklingsområde')) nodeColor = '#ABB2B9';
-  if (type.includes('Direktørområde')) nodeColor = '#03dffc';
-  if (type.includes('Enhetsområde')) nodeColor = '#00D1D1';
+  if (type.includes("Direktørområde")) nodeColor = "#03dffc";
+  if (type.includes("Enhetsområde")) nodeColor = "#00D1D1";
   return nodeColor;
 };
 export const updateColorKPI = (type: string, toggle: boolean) => {
   let nodeColor = changeColorBasedOnType(type);
 
   if (toggle) {
-    if (type.includes('TRDK2')) nodeColor = '#00BB00';
+    if (type.includes("TRDK2")) nodeColor = "#00BB00";
   }
   // else {
   //   changeColorBasedOnType(type);
@@ -115,12 +132,19 @@ export const mapOntologyToNonClickedGraphNode =
   (ontology: Ontology): GraphNode =>
     ontology.Subject.id === clickedNode.id ? ontology.Object : ontology.Subject;
 
-export const isD3Edge = (edge: GraphEdge | D3Edge) => typeof edge.target === 'string';
-export const isGraphEdge = (edge: GraphEdge | D3Edge) => typeof edge.target !== 'string';
+export const isD3Edge = (edge: GraphEdge | D3Edge) =>
+  typeof edge.target === "string";
+export const isGraphEdge = (edge: GraphEdge | D3Edge) =>
+  typeof edge.target !== "string";
 
 export const getRotationAndPosition = (edge: any): LabelTransform => {
   let degree =
-    (Math.atan2(edge.target.y! - edge.source.y!, edge.target.x! - edge.source.x!) * 180) / Math.PI;
+    (Math.atan2(
+      edge.target.y! - edge.source.y!,
+      edge.target.x! - edge.source.x!
+    ) *
+      180) /
+    Math.PI;
   let radian = degree / 180;
   let x = 0;
   let y = 0;
@@ -146,28 +170,42 @@ export const getRotationAndPosition = (edge: any): LabelTransform => {
   return { x, y, degree, flip };
 };
 
-const addDirectionArrowToEdgeLabelText = (text: string, direction: boolean): string => {
+const addDirectionArrowToEdgeLabelText = (
+  text: string,
+  direction: boolean
+): string => {
   if (direction) return `<-- ${text}`;
   return `${text} -->`;
 };
 
-export const createEdgeLabelText = (edge: Edge[], flipDirection: boolean): string => {
+export const createEdgeLabelText = (
+  edge: Edge[],
+  flipDirection: boolean
+): string => {
   switch (edge.length) {
     case 0:
-      return '';
+      return "";
     case 1:
-      return addDirectionArrowToEdgeLabelText(camelCaseToText(edge[0].name), flipDirection);
+      return addDirectionArrowToEdgeLabelText(
+        camelCaseToText(edge[0].name),
+        flipDirection
+      );
     default:
-      return addDirectionArrowToEdgeLabelText(`${edge.length} Predicates`, flipDirection);
+      return addDirectionArrowToEdgeLabelText(
+        `${edge.length} Predicates`,
+        flipDirection
+      );
   }
 };
 
 export const removingNodeWillMakeGraphEmpty = (
   node: GraphNode,
-  edges: Array<D3Edge | GraphEdge>,
+  edges: Array<D3Edge | GraphEdge>
 ): boolean =>
   edges.every((edge) => {
-    const source = typeof edge.source === 'string' ? edge.source : edge.source.id;
-    const target = typeof edge.target === 'string' ? edge.target : edge.target.id;
+    const source =
+      typeof edge.source === "string" ? edge.source : edge.source.id;
+    const target =
+      typeof edge.target === "string" ? edge.target : edge.target.id;
     return node.id === source || node.id === target;
   });

@@ -1,4 +1,9 @@
-import { CLEAR_ERROR, ErrorState, ErrorStateAction, SET_ERROR } from '../../types/redux/errorTypes';
+import {
+  CLEAR_ERROR,
+  ErrorState,
+  ErrorStateAction,
+  SET_ERROR,
+} from "../../types/redux/errorTypes";
 
 const defaultState: ErrorState = {
   error: null,
@@ -6,7 +11,7 @@ const defaultState: ErrorState = {
 
 const apiErrorReducer = (
   state: ErrorState = defaultState,
-  action: ErrorStateAction,
+  action: ErrorStateAction
 ): ErrorState => {
   switch (action.type) {
     case SET_ERROR:
@@ -25,10 +30,10 @@ const apiErrorReducer = (
 };
 
 export const setError = (error: Error): ErrorStateAction => ({
-  type: 'SET_ERROR',
+  type: "SET_ERROR",
   payload: error,
 });
 
-export const clearError = (): ErrorStateAction => ({ type: 'CLEAR_ERROR' });
+export const clearError = (): ErrorStateAction => ({ type: "CLEAR_ERROR" });
 
 export default apiErrorReducer;

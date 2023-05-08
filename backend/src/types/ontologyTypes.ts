@@ -1,4 +1,4 @@
-import { Prefix } from '@innotrade/enapso-graphdb-client';
+import { Prefix } from "@innotrade/enapso-graphdb-client";
 
 export interface OntologyEntity {
   prefix: Prefix;

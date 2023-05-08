@@ -1,8 +1,12 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (municipality: string, endYear: number): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.SCHEMA,
+    PREFIXES.RDFS
+  );
 
   return `
         ${prefixString}

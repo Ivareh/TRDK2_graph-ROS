@@ -1,5 +1,5 @@
-import { PREFIXES } from '../index';
-import { parsePrefixesToQuery } from '../../common/database';
+import { PREFIXES } from "../index";
+import { parsePrefixesToQuery } from "../../common/database";
 
 export default (searchTerm: string, limitResults?: number): string => {
   const prefixes = parsePrefixesToQuery(PREFIXES.RDFS);

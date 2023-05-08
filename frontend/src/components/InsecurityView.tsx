@@ -1,16 +1,6 @@
 import {
-  Avatar,
   Box,
-  Button,
   Center,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  Stack,
-  HStack,
   List,
   ListItem,
   ListIcon,
@@ -19,8 +9,7 @@ import {
   Wrap,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
-import { useContext, useState } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import InsecurityList from "./InsecurityList";
 import { InsecureRelation } from "../dummyTypes/OntologyTypes";
 import DummyInsecurities from "../dummyTypes/DummyInsecurities";

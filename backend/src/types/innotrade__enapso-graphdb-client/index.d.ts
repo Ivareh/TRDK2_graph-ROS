@@ -1,4 +1,4 @@
-declare module '@innotrade/enapso-graphdb-client' {
+declare module "@innotrade/enapso-graphdb-client" {
   export type EndpointOptions = {
     baseURL: string;
     repository: string;
@@ -34,7 +34,10 @@ declare module '@innotrade/enapso-graphdb-client' {
 
   interface EnapsoGraphDBClientType {
     Endpoint: (aOptions: EndpointOptions) => void;
-    transformBindingsToResultSet: (aBindings: any, aOptions: TransformBindingsOptions) => ResultSet;
+    transformBindingsToResultSet: (
+      aBindings: any,
+      aOptions: TransformBindingsOptions
+    ) => ResultSet;
     parsePrefixes: (sparql: string) => Prefix[];
     FORMAT_JSON: Format;
     FORMAT_JSON_LD: Format;

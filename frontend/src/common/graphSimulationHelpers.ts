@@ -1,5 +1,5 @@
-import { NodeMenuTransform } from '../types/d3/svg';
-import { normalizeScale } from './other';
+import { NodeMenuTransform } from "../types/d3/svg";
+import { normalizeScale } from "./other";
 
 export const getEdgeLabelOpacity = (scale: number): number => {
   if (scale >= 1) return 1;
@@ -22,7 +22,10 @@ export const selectNodeLabel = (_: any, index: number) => index === 2;
   Determines whether edge labels should be rendered. As edge labels are by far the most demanding part of the render
   cycle, the labels skip frames if the user's FPS is low.
 */
-export const shouldRenderEdgeLabel = (fps: number, frameIndex: number): boolean => {
+export const shouldRenderEdgeLabel = (
+  fps: number,
+  frameIndex: number
+): boolean => {
   let frameSkips = 1;
   if (fps < 15) frameSkips = 10;
   else if (fps < 20) frameSkips = 6;
@@ -32,8 +35,11 @@ export const shouldRenderEdgeLabel = (fps: number, frameIndex: number): boolean 
   return true;
 };
 
-export const getEdgeLabelFontSize = (fontSize: number, maxFontSize: number, scale: number) =>
-  Math.min(fontSize / scale, maxFontSize);
+export const getEdgeLabelFontSize = (
+  fontSize: number,
+  maxFontSize: number,
+  scale: number
+) => Math.min(fontSize / scale, maxFontSize);
 
 export const getNodeLabelFontSize = (scale: number, fontSize: number) =>
   scale <= 0.6 ? fontSize / 0.6 : fontSize / scale;
@@ -41,7 +47,7 @@ export const getNodeLabelFontSize = (scale: number, fontSize: number) =>
 export const getNodeMenuPosition = (
   nodeRadius: number,
   highlightMultiplier: number,
-  scale: number,
+  scale: number
 ): NodeMenuTransform => {
   const yPos = -nodeRadius * highlightMultiplier - 15 / scale;
   return { x: 0, y: yPos, scale: 1 / scale };

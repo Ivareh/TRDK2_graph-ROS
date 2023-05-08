@@ -1,10 +1,10 @@
-import api from './api';
+import api from "./api";
 
-import { Municipality, MunicipalityInfo } from '../types/municipalityTypes';
+import { Municipality, MunicipalityInfo } from "../types/municipalityTypes";
 
 export const getAllMunicipalities = async (): Promise<Array<Municipality>> => {
   try {
-    const data: Array<Municipality> = await api.GET('municipality/all');
+    const data: Array<Municipality> = await api.GET("municipality/all");
     return data;
   } catch (e) {
     console.log(e);
@@ -12,9 +12,13 @@ export const getAllMunicipalities = async (): Promise<Array<Municipality>> => {
   }
 };
 
-export const getSimilarMunicipalities = async (code: string): Promise<Array<Municipality>> => {
+export const getSimilarMunicipalities = async (
+  code: string
+): Promise<Array<Municipality>> => {
   try {
-    const data: Array<Municipality> = await api.GET(`municipality/similar/${code}`);
+    const data: Array<Municipality> = await api.GET(
+      `municipality/similar/${code}`
+    );
     return data;
   } catch (e) {
     console.log(e);
@@ -22,12 +26,14 @@ export const getSimilarMunicipalities = async (code: string): Promise<Array<Muni
   }
 };
 
-export const getMunicipalityInfo = async (code: string): Promise<MunicipalityInfo> => {
+export const getMunicipalityInfo = async (
+  code: string
+): Promise<MunicipalityInfo> => {
   try {
     const data: MunicipalityInfo = await api.GET(`municipality/info/${code}`);
     return data;
   } catch (e) {
     console.log(e);
-    return { name: '', code: '', population: -1 };
+    return { name: "", code: "", population: -1 };
   }
 };

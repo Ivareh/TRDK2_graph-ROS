@@ -2,7 +2,7 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import store from './state/store';
+import store from "./state/store";
 import { Provider } from "react-redux";
 
 import HomePage from "./pages/HomePage";
@@ -13,14 +13,12 @@ import ListPage from "./pages/ListPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-
 export default function App() {
   return (
-        <ChakraProvider>
-
+    <ChakraProvider>
       <Provider store={store}>
         <Router>
-        <Navbar />
+          <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/form" element={<FormPage />} />

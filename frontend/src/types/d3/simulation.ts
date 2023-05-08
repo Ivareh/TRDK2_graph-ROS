@@ -1,5 +1,5 @@
-import { Modify } from '../genericTypes';
-import { GraphEdge, GraphNode } from '../ontologyTypes';
+import { Modify } from "../genericTypes";
+import { GraphEdge, GraphNode } from "../ontologyTypes";
 
 export type CenterForce = d3.ForceCenter<GraphNode>;
 

@@ -1,5 +1,5 @@
-import DB from './index';
-import setGDCGoal from './queries/setGDCGoal';
+import DB from "./index";
+import setGDCGoal from "./queries/setGDCGoal";
 
 // TODO: Remove any
 export default async (
@@ -12,7 +12,7 @@ export default async (
   baseline: number,
   baselineYear: number,
   startRange: number,
-  isDummy: boolean,
+  isDummy: boolean
 ): Promise<any> => {
   const query = setGDCGoal(
     municipality,
@@ -24,9 +24,9 @@ export default async (
     baseline,
     baselineYear,
     startRange,
-    isDummy,
+    isDummy
   );
-  return DB.update(query, { transform: 'toJSON' })
+  return DB.update(query, { transform: "toJSON" })
     .then((resp) => resp)
     .catch((err) => {
       console.log(err);

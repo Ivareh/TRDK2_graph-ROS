@@ -1,4 +1,4 @@
-import { CorrelationFilter, KpiFilter, Node } from '../ontologyTypes';
+import { CorrelationFilter, KpiFilter, Node } from "../ontologyTypes";
 
 export type SetCorrelationFilterPayload = {
   isPositive: boolean;
@@ -40,7 +40,7 @@ export type OntologyStateAction =
   | SetCorrelationFilterAction
   | SetKpiFilterAction;
 
-export const SELECT_NODE = 'SELECT_NODE';
-export const CLEAR_SELECTED_NODE = 'CLEAR_SELECTED_NODE';
-export const SET_CORRELATION_FILTER = 'SET_CORRELATION_FILTER';
-export const SET_KPI_FILTER = 'SET_KPI_FILTER';
+export const SELECT_NODE = "SELECT_NODE";
+export const CLEAR_SELECTED_NODE = "CLEAR_SELECTED_NODE";
+export const SET_CORRELATION_FILTER = "SET_CORRELATION_FILTER";
+export const SET_KPI_FILTER = "SET_KPI_FILTER";

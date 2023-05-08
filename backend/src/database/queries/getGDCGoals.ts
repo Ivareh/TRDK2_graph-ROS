@@ -1,14 +1,18 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (
   municipality: string,
   baselineMunicipality: string,
-  overrideMode: string,
+  overrideMode: string
 ): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.SCHEMA,
+    PREFIXES.RDFS
+  );
 
-  if (overrideMode === 'absolute') {
+  if (overrideMode === "absolute") {
     return `
         ${prefixString}
 

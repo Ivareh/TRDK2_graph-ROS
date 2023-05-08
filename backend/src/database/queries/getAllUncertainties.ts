@@ -1,8 +1,14 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.RDF, PREFIXES.SCHEMA, PREFIXES.XSD, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.RDF,
+    PREFIXES.SCHEMA,
+    PREFIXES.XSD,
+    PREFIXES.RDFS
+  );
 
   return `
       ${prefixString}
@@ -11,4 +17,5 @@ export default (): string => {
           ?instancesOf  rdf:type TRDK2:AllUncertainties.
       } ORDER BY ( xsd:string ( STRBEFORE ( STR ( ?instancesOf ), "B" ) ) )
       ( xsd:long ( STRAFTER ( STR ( ?instancesOf ), "B" ) ) )
+}`;
 };

@@ -1,5 +1,5 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (
   municipality: string,
@@ -11,14 +11,18 @@ export default (
   baseline: number,
   baselineYear: number,
   startRange: number,
-  isDummy: boolean,
+  isDummy: boolean
 ): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.SCHEMA,
+    PREFIXES.RDFS
+  );
 
-  const dummyDataString = isDummy ? '?uri TRDK2:isDummyData true.' : '';
+  const dummyDataString = isDummy ? "?uri TRDK2:isDummyData true." : "";
   const dataseriesVariant =
-    dataseries === undefined || dataseries === 'main'
-      ? ''
+    dataseries === undefined || dataseries === "main"
+      ? ""
       : `?dataseries TRDK2:dataseriesVariant "${dataseries}".`;
 
   return `

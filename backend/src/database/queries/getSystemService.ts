@@ -2,15 +2,19 @@ import {
   mapIdToOntologyEntity,
   parseOntologyEntityToQuery,
   parsePrefixesToQuery,
-} from '../../common/database';
-import { PREFIXES } from '../index';
+} from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (nodeId: string): string => {
   const node = mapIdToOntologyEntity(nodeId);
-  if (!node) return '';
+  if (!node) return "";
 
   const fullNodeName = parseOntologyEntityToQuery(node);
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.SCHEMA,
+    PREFIXES.RDFS
+  );
 
   return `
       ${prefixString}

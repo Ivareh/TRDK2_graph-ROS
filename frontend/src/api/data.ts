@@ -1,8 +1,12 @@
-import api, { API_BASE, responseHandler } from './api';
+import api, { API_BASE, responseHandler } from "./api";
 
-export const getAvailableYears = async (municipality: string): Promise<Array<number>> => {
+export const getAvailableYears = async (
+  municipality: string
+): Promise<Array<number>> => {
   try {
-    const data: Array<number> = await api.GET(`data/available-years/${municipality}`);
+    const data: Array<number> = await api.GET(
+      `data/available-years/${municipality}`
+    );
     return data;
   } catch (e) {
     console.log(e);
@@ -10,15 +14,18 @@ export const getAvailableYears = async (municipality: string): Promise<Array<num
   }
 };
 
-export const uploadDataCSV = async (token: string, formData: FormData): Promise<boolean> => {
+export const uploadDataCSV = async (
+  token: string,
+  formData: FormData
+): Promise<boolean> => {
   try {
     // Have to do this in order to send form data...
     // TODO: refactor into helper function in api.ts
     return await window
       .fetch(`${API_BASE}/data/upload`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: formData,

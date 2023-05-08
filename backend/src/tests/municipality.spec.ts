@@ -1,9 +1,9 @@
 /* eslint-disable no-restricted-syntax */
 
-import { expect } from 'chai';
+import { expect } from "chai";
 // import getSimilarlySizedMunicipalities from '../database/getSimilarlySizedMunicipalities';
 
-describe('Similar municipalities', () => {
+describe("Similar municipalities", () => {
   /*
   const similarToTrondheim = await getSimilarlySizedMunicipalities('no.5001', 0.25);
   
@@ -31,7 +31,7 @@ describe('Similar municipalities', () => {
     assert(expectedSimilarToTrondheim.size === 0);
   });
 */
-  it('Placeholder to make test runner happy while we wait for test branch to be merged.', () => {
+  it("Placeholder to make test runner happy while we wait for test branch to be merged.", () => {
     expect(true).to.eq(true);
   });
 });

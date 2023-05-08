@@ -1,15 +1,17 @@
-import { Stack } from '@chakra-ui/react';
-import React from 'react';
-import GraphNodeKey from './GraphNodeKey';
+import { Stack } from "@chakra-ui/react";
+import React from "react";
+import GraphNodeKey from "./GraphNodeKey";
 
 interface GraphDescriptionsProps {
   float: boolean;
 }
 
-const GraphDescriptions: React.FC<GraphDescriptionsProps> = ({ float }: GraphDescriptionsProps) => (
+const GraphDescriptions: React.FC<GraphDescriptionsProps> = ({
+  float,
+}: GraphDescriptionsProps) => (
   <Stack
-    width={[null, null, null, '20vw', '17vw']}
-    position={float ? 'absolute' : 'static'}
+    width={[null, null, null, "20vw", "17vw"]}
+    position={float ? "absolute" : "static"}
     right={0}
     bgColor="white"
     boxShadow="md"

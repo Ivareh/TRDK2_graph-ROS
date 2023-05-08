@@ -1,5 +1,5 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (code: string, name: string, population: number): string => {
   const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2);

@@ -1,18 +1,6 @@
-import {
-  ListItem,
-  ListIcon,
-  Text,
-} from "@chakra-ui/react";
+import { ListItem, ListIcon, Text } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 import { useState } from "react";
-/**
-   * data imports I would assume needed:
-   * import {
-    getInsecurities,
-    getEntitiy,
-  } from '../../api/ontologies';
-  import { Annotation, Node, InsecureRelation } from '../../types/ontologyTypes';
-   */
 
 /**
  * A list item of an insecurity within the system. Ranged by assumed severity (0.1 = low, 0.7 = high).

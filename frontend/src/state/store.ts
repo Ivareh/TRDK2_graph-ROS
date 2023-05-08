@@ -1,7 +1,7 @@
-import { combineReducers, createStore } from 'redux';
-import apiErrorReducer from './reducers/apiErrorReducer';
-import ontologyReducer from './reducers/ontologyReducer';
-import fullscreenReducer from './reducers/fullscreenReducer';
+import { combineReducers, createStore } from "redux";
+import apiErrorReducer from "./reducers/apiErrorReducer";
+import ontologyReducer from "./reducers/ontologyReducer";
+import fullscreenReducer from "./reducers/fullscreenReducer";
 
 const rootReducer = combineReducers({
   apiError: apiErrorReducer,

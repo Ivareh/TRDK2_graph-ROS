@@ -1,17 +1,17 @@
-import api, { API_BASE, responseHandler } from './api';
+import api, { API_BASE, responseHandler } from "./api";
 import {
   IndicatorScore,
   IndicatorWithoutGoal,
   Score,
   GDCOutput,
   CorrelatedKPI,
-} from '../types/gdcTypes';
+} from "../types/gdcTypes";
 
 export const getGDCOutput = async (
   municipality: string,
   year: number,
   goalOverride?: string,
-  overrideMode?: string,
+  overrideMode?: string
 ): Promise<GDCOutput> => {
   try {
     let path = `gdc/compute/${municipality}/${year}`;
@@ -25,17 +25,22 @@ export const getGDCOutput = async (
 
     return await api.GET(path).then((data) => {
       try {
-        const domains: Map<string, Score> = new Map<string, Score>(data.domains);
-        const subdomains: Map<string, Score> = new Map<string, Score>(data.subdomains);
-        const categories: Map<string, Score> = new Map<string, Score>(data.categories);
-        const indicators: Map<string, IndicatorScore> = new Map<string, IndicatorScore>(
-          data.indicators,
+        const domains: Map<string, Score> = new Map<string, Score>(
+          data.domains
         );
-
-        const indicatorsWithoutGoals: Map<string, IndicatorWithoutGoal> = new Map<
+        const subdomains: Map<string, Score> = new Map<string, Score>(
+          data.subdomains
+        );
+        const categories: Map<string, Score> = new Map<string, Score>(
+          data.categories
+        );
+        const indicators: Map<string, IndicatorScore> = new Map<
           string,
-          IndicatorWithoutGoal
-        >(data.indicatorsWithoutGoals);
+          IndicatorScore
+        >(data.indicators);
+
+        const indicatorsWithoutGoals: Map<string, IndicatorWithoutGoal> =
+          new Map<string, IndicatorWithoutGoal>(data.indicatorsWithoutGoals);
 
         const output: GDCOutput = {
           averageScore: data.averageScore,
@@ -87,7 +92,7 @@ export const getGDCOutput = async (
 
 export const getAreGoalsAttained = async (
   municipality: string,
-  year: number,
+  year: number
 ): Promise<Map<string, boolean>> => {
   try {
     const path = `gdc/get-attained-goals/${municipality}/${year}`;
@@ -97,7 +102,9 @@ export const getAreGoalsAttained = async (
   }
 };
 
-export const getCorrelatedKPIs = async (kpi: string): Promise<CorrelatedKPI[]> => {
+export const getCorrelatedKPIs = async (
+  kpi: string
+): Promise<CorrelatedKPI[]> => {
   try {
     const data: CorrelatedKPI[] = await api.GET(`gdc/correlated-kpis/${kpi}`);
     return data;
@@ -107,15 +114,18 @@ export const getCorrelatedKPIs = async (kpi: string): Promise<CorrelatedKPI[]> =
   }
 };
 
-export const uploadGoalCSV = async (token: string, formData: FormData): Promise<boolean> => {
+export const uploadGoalCSV = async (
+  token: string,
+  formData: FormData
+): Promise<boolean> => {
   try {
     // Have to do this in order to send form data...
     // TODO: refactor into helper function in api.ts
     return await window
       .fetch(`${API_BASE}/gdc/upload`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: formData,

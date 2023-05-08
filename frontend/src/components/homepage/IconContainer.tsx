@@ -31,13 +31,13 @@ const IconContainer: React.FC<IconContainerProps> = ({
         boxSize="150"
         object-fit="cover"
       />
-        <Box
-          p={0}
-          _hover={{
-            cursor: "pointer",
-          }}
-          onClick={() => onClick(businessAreaNode)}
-        ></Box>
+      <Box
+        p={0}
+        _hover={{
+          cursor: "pointer",
+        }}
+        onClick={() => onClick(businessAreaNode)}
+      ></Box>
       <Text fontSize="2xl" color="darkgrey">
         {label}
       </Text>

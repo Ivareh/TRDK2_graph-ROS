@@ -1,14 +1,14 @@
-import * as fs from 'fs/promises';
-import computeScore from './score';
+import * as fs from "fs/promises";
+import computeScore from "./score";
 
 import {
   u4sscKpiToCategory,
   u4sscCategoryToSubdomain,
   u4sscSubdomainToDomain,
   u4sscKpis,
-} from '../database/u4sscKpiMap';
+} from "../database/u4sscKpiMap";
 
-import { ApiError } from '../types/errorTypes';
+import { ApiError } from "../types/errorTypes";
 
 import {
   Goal,
@@ -19,20 +19,20 @@ import {
   CumulativeScore,
   Score,
   IndicatorScore,
-} from '../types/gdcTypes';
+} from "../types/gdcTypes";
 
-import { gdc2json } from '../utils/gdcUtils';
+import { gdc2json } from "../utils/gdcUtils";
 
 export const computeGDC = (
   dataseries: Dataseries[],
   goalArray: Goal[],
-  historicalData: Dataseries[],
+  historicalData: Dataseries[]
 ): GDCOutput => {
   const goals: Map<string, Goal> = new Map<string, Goal>();
 
   goalArray.forEach((goal) => {
     const isVariant = goal.dataseries !== undefined;
-    const displayKPI = goal.kpi + (isVariant ? ` - ${goal.dataseries}` : '');
+    const displayKPI = goal.kpi + (isVariant ? ` - ${goal.dataseries}` : "");
     goals.set(displayKPI, goal);
   });
 
@@ -50,7 +50,8 @@ export const computeGDC = (
 
   dataseries.forEach((series) => {
     const isVariant = series.dataseries !== undefined;
-    const displayKPI = series.kpi + (isVariant ? ` - ${series.dataseries}` : '');
+    const displayKPI =
+      series.kpi + (isVariant ? ` - ${series.dataseries}` : "");
 
     const goal = goals.get(displayKPI);
     unreportedIndicators.delete(series.kpi);
@@ -75,7 +76,7 @@ export const computeGDC = (
     outputIndicatorScores.set(displayKPI, score);
 
     const category = u4sscKpiToCategory.get(series.kpi);
-    if (category === undefined) throw new ApiError(400, 'WUT');
+    if (category === undefined) throw new ApiError(400, "WUT");
 
     const arr = categoryScores.get(category);
     if (arr === undefined) categoryScores.set(category, [score]);
@@ -86,7 +87,7 @@ export const computeGDC = (
 
   historicalData.forEach((hist) => {
     const isVariant = hist.dataseries !== undefined;
-    const displayKPI = hist.kpi + (isVariant ? ` - ${hist.dataseries}` : '');
+    const displayKPI = hist.kpi + (isVariant ? ` - ${hist.dataseries}` : "");
 
     let score: IndicatorScore | IndicatorWithoutGoal | undefined =
       outputIndicatorScores.get(displayKPI);
@@ -111,17 +112,21 @@ export const computeGDC = (
     score.historicalData.sort((a, b) => a.year - b.year);
 
     const predictionDiffs: number[] = score.historicalData.map((datum) => {
-      const predictedValue = baseline * (score.currentCAGR + 1.0) ** (datum.year - baselineYear);
+      const predictedValue =
+        baseline * (score.currentCAGR + 1.0) ** (datum.year - baselineYear);
       return datum.value - predictedValue;
     });
 
-    const diffMean = predictionDiffs.reduce((acc, val) => acc + val) / predictionDiffs.length;
+    const diffMean =
+      predictionDiffs.reduce((acc, val) => acc + val) / predictionDiffs.length;
     const squaredDiff = predictionDiffs.reduce(
       (acc, val) => acc + (val - diffMean) * (val - diffMean),
-      0.0,
+      0.0
     );
     const diffStd =
-      predictionDiffs.length > 1 ? Math.sqrt(squaredDiff / (predictionDiffs.length - 1)) : 0;
+      predictionDiffs.length > 1
+        ? Math.sqrt(squaredDiff / (predictionDiffs.length - 1))
+        : 0;
 
     score.diffMean = diffMean;
     score.diffStd = diffStd;
@@ -133,24 +138,33 @@ export const computeGDC = (
     for (let i = 1; i < score.historicalData.length; i += 1) {
       const prev = score.historicalData[i - 1];
       const curr = score.historicalData[i];
-      const CAGR = (curr.value / prev.value) ** (1 / (curr.year - prev.year)) - 1.0;
-      yearlyGrowth.push({ value: CAGR, startYear: prev.year, endYear: curr.year });
+      const CAGR =
+        (curr.value / prev.value) ** (1 / (curr.year - prev.year)) - 1.0;
+      yearlyGrowth.push({
+        value: CAGR,
+        startYear: prev.year,
+        endYear: curr.year,
+      });
     }
 
     if (yearlyGrowth.length > 0) {
       const trends = yearlyGrowth.map((g) => g.value);
-      const trendMean = trends.reduce((acc, v) => acc + v) / yearlyGrowth.length;
+      const trendMean =
+        trends.reduce((acc, v) => acc + v) / yearlyGrowth.length;
       const squaredDiffTrend = trends.reduce(
         (acc, v) => acc + (v - trendMean) * (v - trendMean),
-        0.0,
+        0.0
       );
-      const trendStd = trends.length > 1 ? Math.sqrt(squaredDiffTrend / (trends.length - 1)) : 0.0;
+      const trendStd =
+        trends.length > 1
+          ? Math.sqrt(squaredDiffTrend / (trends.length - 1))
+          : 0.0;
 
       score.trendMean = trendMean;
       score.trendStd = trendStd;
     }
 
-    if (score.goal.calculationMethod.startsWith('INV_'))
+    if (score.goal.calculationMethod.startsWith("INV_"))
       yearlyGrowth.sort((a, b) => b.value - a.value);
     else yearlyGrowth.sort((a, b) => a.value - b.value);
 
@@ -167,7 +181,8 @@ export const computeGDC = (
     const current = score.historicalData[score.historicalData.length - 1];
     if (current.year !== first.year)
       score.currentCAGR =
-        (current.value / first.value) ** (1.0 / (current.year - first.year)) - 1.0;
+        (current.value / first.value) ** (1.0 / (current.year - first.year)) -
+        1.0;
 
     // Find periods of largest and smallest growth.
 
@@ -176,24 +191,34 @@ export const computeGDC = (
     for (let i = 1; i < score.historicalData.length; i += 1) {
       const prev = score.historicalData[i - 1];
       const curr = score.historicalData[i];
-      const CAGR = (curr.value / prev.value) ** (1 / (curr.year - prev.year)) - 1.0;
-      yearlyGrowth.push({ value: CAGR, startYear: prev.year, endYear: curr.year });
+      const CAGR =
+        (curr.value / prev.value) ** (1 / (curr.year - prev.year)) - 1.0;
+      yearlyGrowth.push({
+        value: CAGR,
+        startYear: prev.year,
+        endYear: curr.year,
+      });
     }
 
     if (yearlyGrowth.length > 0) {
       const trends = yearlyGrowth.map((g) => g.value);
-      const trendMean = trends.reduce((acc, v) => acc + v) / yearlyGrowth.length;
+      const trendMean =
+        trends.reduce((acc, v) => acc + v) / yearlyGrowth.length;
       const squaredDiffTrend = trends.reduce(
         (acc, v) => acc + (v - trendMean) * (v - trendMean),
-        0.0,
+        0.0
       );
-      const trendStd = trends.length > 1 ? Math.sqrt(squaredDiffTrend / (trends.length - 1)) : 0.0;
+      const trendStd =
+        trends.length > 1
+          ? Math.sqrt(squaredDiffTrend / (trends.length - 1))
+          : 0.0;
 
       score.trendMean = trendMean;
       score.trendStd = trendStd;
     }
 
-    if (score.calculationMethod.startsWith('INV_')) yearlyGrowth.sort((a, b) => b.value - a.value);
+    if (score.calculationMethod.startsWith("INV_"))
+      yearlyGrowth.sort((a, b) => b.value - a.value);
     else yearlyGrowth.sort((a, b) => a.value - b.value);
 
     score.yearlyGrowth = yearlyGrowth;
@@ -206,7 +231,9 @@ export const computeGDC = (
 
   // Compute category score (average of indicators)
   categoryScores.forEach((scores: IndicatorScore[], category: string) => {
-    const cumulativePoints = scores.map((x) => x.points).reduce((acc, score) => acc + score);
+    const cumulativePoints = scores
+      .map((x) => x.points)
+      .reduce((acc, score) => acc + score);
     const longestCompletion = scores
       .map((x) => x.projectedCompletion)
       .reduce((acc, score) => Math.max(acc, score));
@@ -218,7 +245,7 @@ export const computeGDC = (
     });
 
     const subdomain = u4sscCategoryToSubdomain.get(category);
-    if (subdomain === undefined) throw new ApiError(400, 'WUT?');
+    if (subdomain === undefined) throw new ApiError(400, "WUT?");
 
     const arr = subdomainScores.get(subdomain);
     if (arr === undefined)
@@ -241,11 +268,15 @@ export const computeGDC = (
 
   // Compute subdomain scores
   subdomainScores.forEach((scores: CumulativeScore[], subdomain: string) => {
-    const cumulativePoints = scores.map((x) => x.cumulative).reduce((acc, score) => acc + score);
+    const cumulativePoints = scores
+      .map((x) => x.cumulative)
+      .reduce((acc, score) => acc + score);
     const longestCompletion = scores
       .map((x) => x.projectedCompletion)
       .reduce((acc, score) => Math.max(acc, score));
-    const totalNumber = scores.map((x) => x.count).reduce((acc, cat) => acc + cat);
+    const totalNumber = scores
+      .map((x) => x.count)
+      .reduce((acc, cat) => acc + cat);
     const avgPoints = cumulativePoints / totalNumber;
 
     outputSubdomainScores.set(subdomain, {
@@ -254,7 +285,7 @@ export const computeGDC = (
     });
 
     const domain = u4sscSubdomainToDomain.get(subdomain);
-    if (domain === undefined) throw new ApiError(400, 'WUT???');
+    if (domain === undefined) throw new ApiError(400, "WUT???");
 
     const arr = domainScores.get(domain);
     if (arr === undefined)
@@ -281,18 +312,25 @@ export const computeGDC = (
 
   // Compute domain scores
   domainScores.forEach((scores: CumulativeScore[], domain: string) => {
-    const cumulativePoints = scores.map((x) => x.cumulative).reduce((acc, score) => acc + score);
+    const cumulativePoints = scores
+      .map((x) => x.cumulative)
+      .reduce((acc, score) => acc + score);
     const longestCompletion = scores
       .map((x) => x.projectedCompletion)
       .reduce((acc, score) => Math.max(acc, score));
-    const totalNumber = scores.map((x) => x.count).reduce((acc, cat) => acc + cat);
+    const totalNumber = scores
+      .map((x) => x.count)
+      .reduce((acc, cat) => acc + cat);
     const avgPoints = cumulativePoints / totalNumber;
 
     cumulativeScore += cumulativePoints;
     numberOfPosts += totalNumber;
     projectedCompletion = Math.max(projectedCompletion, longestCompletion);
 
-    outputDomainScores.set(domain, { score: avgPoints, projectedCompletion: longestCompletion });
+    outputDomainScores.set(domain, {
+      score: avgPoints,
+      projectedCompletion: longestCompletion,
+    });
   });
 
   const averageScore = cumulativeScore / Math.max(numberOfPosts, 1);
@@ -316,36 +354,46 @@ export const recordGDCData = async (
   dataseries: Dataseries[],
   goals: Goal[],
   historicalData: Dataseries[],
-  output: GDCOutput,
+  output: GDCOutput
 ) => {
   const filename = `./src/tests/gdcData/${municipality}-${year}-${goalOverride}.ts`;
   let filehandle;
   try {
     // await fs.unlink(filename);
-    filehandle = await fs.open(filename, 'w');
-    await filehandle.write("import { Dataseries, Goal, GDCOutput } from '../../types/gdcTypes';\n");
-    await filehandle.write("import { json2gdc } from '../../utils/gdcUtils';\n\n");
+    filehandle = await fs.open(filename, "w");
+    await filehandle.write(
+      "import { Dataseries, Goal, GDCOutput } from '../../types/gdcTypes';\n"
+    );
+    await filehandle.write(
+      "import { json2gdc } from '../../utils/gdcUtils';\n\n"
+    );
 
-    await filehandle.write(`export const municipality: string = "${municipality}";\n`);
-    await filehandle.write(`export const goalOverride: string = "${goalOverride}";\n`);
+    await filehandle.write(
+      `export const municipality: string = "${municipality}";\n`
+    );
+    await filehandle.write(
+      `export const goalOverride: string = "${goalOverride}";\n`
+    );
     await filehandle.write(`export const year: number = ${year};\n\n`);
 
     await filehandle.write(
-      `export const dataseries: Dataseries[] = JSON.parse('${JSON.stringify(dataseries)}');\n`,
+      `export const dataseries: Dataseries[] = JSON.parse('${JSON.stringify(
+        dataseries
+      )}');\n`
     );
     await filehandle.write(
-      `export const goals: Goal[] = JSON.parse('${JSON.stringify(goals)}');\n`,
+      `export const goals: Goal[] = JSON.parse('${JSON.stringify(goals)}');\n`
     );
     await filehandle.write(
       `export const historicalData: Dataseries[] = JSON.parse('${JSON.stringify(
-        historicalData,
-      )}');\n\n`,
+        historicalData
+      )}');\n\n`
     );
 
     await filehandle.write(
       `export const gdcOutput: GDCOutput = json2gdc(JSON.parse('${JSON.stringify(
-        gdc2json(output),
-      )}'));\n`,
+        gdc2json(output)
+      )}'));\n`
     );
   } catch (err) {
     console.error(err);

@@ -1,4 +1,4 @@
-import { SimulationNodeDatum } from 'd3';
+import { SimulationNodeDatum } from "d3";
 
 export type Annotation = {
   label: string;

@@ -6,4 +6,4 @@ export type ToggleFullscreenStateAction = {
   type: typeof SET_FULLSCREEN;
 };
 
-export const SET_FULLSCREEN = 'TOGGLE_FULLSCREEN';
+export const SET_FULLSCREEN = "TOGGLE_FULLSCREEN";

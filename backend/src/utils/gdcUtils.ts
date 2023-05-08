@@ -1,4 +1,9 @@
-import { GDCOutput, IndicatorScore, IndicatorWithoutGoal, Score } from '../types/gdcTypes';
+import {
+  GDCOutput,
+  IndicatorScore,
+  IndicatorWithoutGoal,
+  Score,
+} from "../types/gdcTypes";
 
 export const gdc2json = (gdc: GDCOutput) => ({
   averageScore: gdc.averageScore,
@@ -20,7 +25,7 @@ export const json2gdc = (jsonObject: any) => {
     const indicators = new Map<string, IndicatorScore>(jsonObject.indicators);
 
     const indicatorsWithoutGoals = new Map<string, IndicatorWithoutGoal>(
-      jsonObject.indicatorsWithoutGoals,
+      jsonObject.indicatorsWithoutGoals
     );
 
     const output: GDCOutput = {

@@ -10,15 +10,11 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
-/* import SustainabilityGoals from '../molecules/SustainabilityGoalsList'; 
-må opprettes:*/
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
 import Navbar from "../components/Navbar";
 
-
 const HomePage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">
-
     <Flex
       align="center"
       justify="center"

@@ -1,15 +1,15 @@
-import { Router, Request } from 'express';
-import { verifyRequestQueryParams } from '../common/router';
-import getAnnotations from '../database/getAnnotations';
-import getClassesByString from '../database/getClassesByString';
-import getContributions from '../database/getContributions';
-import getDevelopmentArea from '../database/getDevelopmentArea';
-import getRelations from '../database/getRelations';
-import getSubclasses from '../database/getSubclasses';
-import getSubGoals from '../database/getSubGoals';
-import getBusinessAreas from '../database/getBusinessAreas';
-import getTradeOff from '../database/getTradeOffTo';
-import CheckMunicipalityByCode from '../database/CheckMunicipalityByCode';
+import { Router, Request } from "express";
+import { verifyRequestQueryParams } from "../common/router";
+import getAnnotations from "../database/getAnnotations";
+import getClassesByString from "../database/getClassesByString";
+import getContributions from "../database/getContributions";
+import getDevelopmentArea from "../database/getDevelopmentArea";
+import getRelations from "../database/getRelations";
+import getSubclasses from "../database/getSubclasses";
+import getSubGoals from "../database/getSubGoals";
+import getBusinessAreas from "../database/getBusinessAreas";
+import getTradeOff from "../database/getTradeOffTo";
+import CheckMunicipalityByCode from "../database/CheckMunicipalityByCode";
 import {
   AnnotationResponse,
   AnyResponse,
@@ -19,12 +19,15 @@ import {
   OntologyArrayResponse,
   RegexRequest,
   BusinessAreaArrayResponse,
-} from '../types/routerTypes';
-import onError from './middleware/onError';
+} from "../types/routerTypes";
+import onError from "./middleware/onError";
 
 const router = Router();
 
-const getRelationsFromClass = async (req: ClassIdRequest, res: OntologyArrayResponse) => {
+const getRelationsFromClass = async (
+  req: ClassIdRequest,
+  res: OntologyArrayResponse
+) => {
   try {
     const data = await getRelations(req.params.classId);
     res.json(data);
@@ -33,7 +36,10 @@ const getRelationsFromClass = async (req: ClassIdRequest, res: OntologyArrayResp
   }
 };
 
-const getSubclassesFromClass = async (req: ClassIdRequest, res: NodeArrayResponse) => {
+const getSubclassesFromClass = async (
+  req: ClassIdRequest,
+  res: NodeArrayResponse
+) => {
   try {
     const data = await getSubclasses(req.params.classId);
     res.json(data);
@@ -42,7 +48,10 @@ const getSubclassesFromClass = async (req: ClassIdRequest, res: NodeArrayRespons
   }
 };
 
-const getAnnotationsFromClass = async (req: ClassIdRequest, res: AnnotationResponse) => {
+const getAnnotationsFromClass = async (
+  req: ClassIdRequest,
+  res: AnnotationResponse
+) => {
   try {
     const data = await getAnnotations(req.params.classId);
     res.json(data);
@@ -53,17 +62,21 @@ const getAnnotationsFromClass = async (req: ClassIdRequest, res: AnnotationRespo
 
 const getBusinessAreasFromOntology = async (
   req: EmptyRequest,
-  res: BusinessAreaArrayResponse,
+  res: BusinessAreaArrayResponse
 ) => {
   try {
     const data = await getBusinessAreas();
     res.json(data);
   } catch (e: any) {
+    console.log("WHATUPUP");
     onError(e, req, res);
   }
 };
 
-const getContributionsToNodes = async (req: ClassIdRequest, res: NodeArrayResponse) => {
+const getContributionsToNodes = async (
+  req: ClassIdRequest,
+  res: NodeArrayResponse
+) => {
   try {
     const data = await getContributions(req.params.classId);
     res.json(data);
@@ -72,7 +85,10 @@ const getContributionsToNodes = async (req: ClassIdRequest, res: NodeArrayRespon
   }
 };
 
-const getTradeOffToNodes = async (req: ClassIdRequest, res: NodeArrayResponse) => {
+const getTradeOffToNodes = async (
+  req: ClassIdRequest,
+  res: NodeArrayResponse
+) => {
   try {
     const data = await getTradeOff(req.params.classId);
     res.json(data);
@@ -81,7 +97,10 @@ const getTradeOffToNodes = async (req: ClassIdRequest, res: NodeArrayResponse) =
   }
 };
 
-const getDevelopmentAreaToNodes = async (req: ClassIdRequest, res: NodeArrayResponse) => {
+const getDevelopmentAreaToNodes = async (
+  req: ClassIdRequest,
+  res: NodeArrayResponse
+) => {
   try {
     const data = await getDevelopmentArea(req.params.classId);
     res.json(data);
@@ -120,15 +139,15 @@ const checkMunicipalityByCode = async (req: Request, res: AnyResponse) => {
   }
 };
 
-router.get('/relations/:classId', getRelationsFromClass);
-router.get('/subclasses/:classId', getSubclassesFromClass);
-router.get('/annotations/:classId', getAnnotationsFromClass);
-router.get('/businessAreas', getBusinessAreasFromOntology);
-router.get('/search', regexSearch);
-router.get('/contributions/:classId', getContributionsToNodes);
-router.get('/tradeoff/:classId', getTradeOffToNodes);
-router.get('/developmentarea/:classId', getDevelopmentAreaToNodes);
-router.get('/subgoals/:classId', getSubGoalsfromTRDK2);
-router.get('/checkMunicipalityByCode', checkMunicipalityByCode);
+router.get("/relations/:classId", getRelationsFromClass);
+router.get("/subclasses/:classId", getSubclassesFromClass);
+router.get("/annotations/:classId", getAnnotationsFromClass);
+router.get("/businessAreas", getBusinessAreasFromOntology);
+router.get("/search", regexSearch);
+router.get("/contributions/:classId", getContributionsToNodes);
+router.get("/tradeoff/:classId", getTradeOffToNodes);
+router.get("/developmentarea/:classId", getDevelopmentAreaToNodes);
+router.get("/subgoals/:classId", getSubGoalsfromTRDK2);
+router.get("/checkMunicipalityByCode", checkMunicipalityByCode);
 
 export default router;

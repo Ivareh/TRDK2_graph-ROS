@@ -1,11 +1,15 @@
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 /**
  * Returns SPARQL Query for getting all datapoints for a municipality.
  */
 export default (municipality: string): string => {
-  const prefixString = parsePrefixesToQuery(PREFIXES.TRDK2, PREFIXES.SCHEMA, PREFIXES.RDFS);
+  const prefixString = parsePrefixesToQuery(
+    PREFIXES.TRDK2,
+    PREFIXES.SCHEMA,
+    PREFIXES.RDFS
+  );
 
   return `
         ${prefixString}

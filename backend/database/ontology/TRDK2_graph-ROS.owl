@@ -6,6 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://schema.org/"
      xmlns:ontologies="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023"/>
     
@@ -19,6 +20,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://schema.org/icon -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/icon"/>
     
 
 
@@ -2042,6 +2049,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/209/209474.png</schema:icon>
         <rdfs:label xml:lang="no">Byutvikling</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2053,6 +2061,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/687/687529.png</schema:icon>
         <rdfs:label xml:lang="no">Helse og velferd</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2064,6 +2073,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/1198/1198416.png</schema:icon>
         <rdfs:label xml:lang="no">Kultur og idrett</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2077,6 +2087,7 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityUnit"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/3819/3819378.png</schema:icon>
         <rdfs:label xml:lang="no">Oppvekst og utdanning</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2100,7 +2111,12 @@ Kjerneteknologien brukt for å implementere TIP er programmeringsspråket Go. Hv
         <hasSystemService rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.PIE"/>
         <hasSystemService rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TIP_og_TIP_sikker"/>
         <hasSystemService rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.TKA_AD"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/2674/2674995.png</schema:icon>
+        <description>Trondheim kommune er en meget stor arbeidsplass med ca. 15 000 ansatte og alle byens innbyggere som tjenestemottakere. Det kreves derfor et velsmurt maskineri for å administrere selve organisasjonen Trondheim kommune.
+
+Medarbeiderne i organisasjonsdirektørens stab og de interne tjenestene har som sin vesentligste arbeidsoppgave å bidra til en mest mulig effektiv drift og å tilby gode administrative støttetjenester til tjenesteenhetene.</description>
         <rdfs:label xml:lang="no">Organisasjon</rdfs:label>
+        <rdfs:seeAlso>https://www.trondheim.kommune.no/aktuelt/om-kommunen/organisasjonen/organisasjon/</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2652,6 +2668,7 @@ TK-sak</integrationdescription>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Municipality"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityBusinessArea"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
+        <schema:icon>https://cdn-icons-png.flaticon.com/512/2961/2961643.png</schema:icon>
         <rdfs:label xml:lang="no">Næring, Samferdsel, Klima og Miljø</rdfs:label>
     </owl:NamedIndividual>
     

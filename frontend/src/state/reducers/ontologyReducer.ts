@@ -1,4 +1,4 @@
-import { CorrelationFilter, KpiFilter, Node } from '../../types/ontologyTypes';
+import { CorrelationFilter, KpiFilter, Node } from "../../types/ontologyTypes";
 import {
   CLEAR_SELECTED_NODE,
   OntologyState,
@@ -10,34 +10,42 @@ import {
   SetKpiFilterPayload,
   SET_CORRELATION_FILTER,
   SET_KPI_FILTER,
-} from '../../types/redux/ontologyTypes';
+} from "../../types/redux/ontologyTypes";
 
 const createNewCorrelationFilter = (
   current: CorrelationFilter,
-  payload: SetCorrelationFilterPayload,
+  payload: SetCorrelationFilterPayload
 ) => {
   const newFilter = current;
   if (payload.isPositive && payload.index === 0) newFilter.pLow = !current.pLow;
-  else if (payload.isPositive && payload.index === 1) newFilter.pMedium = !current.pMedium;
-  else if (payload.isPositive && payload.index === 2) newFilter.pHigh = !current.pHigh;
-  else if (!payload.isPositive && payload.index === 0) newFilter.nLow = !current.nLow;
-  else if (!payload.isPositive && payload.index === 1) newFilter.nMedium = !current.nMedium;
-  else if (!payload.isPositive && payload.index === 2) newFilter.nHigh = !current.nHigh;
+  else if (payload.isPositive && payload.index === 1)
+    newFilter.pMedium = !current.pMedium;
+  else if (payload.isPositive && payload.index === 2)
+    newFilter.pHigh = !current.pHigh;
+  else if (!payload.isPositive && payload.index === 0)
+    newFilter.nLow = !current.nLow;
+  else if (!payload.isPositive && payload.index === 1)
+    newFilter.nMedium = !current.nMedium;
+  else if (!payload.isPositive && payload.index === 2)
+    newFilter.nHigh = !current.nHigh;
   return newFilter;
 };
 
 // add new 'else if' condition when implementing new kpi set
-const createNewKpiFilter = (current: KpiFilter, payload: SetKpiFilterPayload) => {
+const createNewKpiFilter = (
+  current: KpiFilter,
+  payload: SetKpiFilterPayload
+) => {
   const newFilter = current;
-  if (payload.index === '1') {
+  if (payload.index === "1") {
     newFilter.u4ssc = true;
     newFilter.oecd = false;
     newFilter.unIndicator = false;
-  } else if (payload.index === '2') {
+  } else if (payload.index === "2") {
     newFilter.u4ssc = false;
     newFilter.oecd = true;
     newFilter.unIndicator = false;
-  } else if (payload.index === '3') {
+  } else if (payload.index === "3") {
     newFilter.u4ssc = false;
     newFilter.oecd = false;
     newFilter.unIndicator = true;
@@ -64,7 +72,7 @@ const defaultState: OntologyState = {
 
 const ontologyReducer = (
   state: OntologyState = defaultState,
-  action: OntologyStateAction,
+  action: OntologyStateAction
 ): OntologyState => {
   switch (action.type) {
     case SELECT_NODE:
@@ -77,7 +85,10 @@ const ontologyReducer = (
     case SET_CORRELATION_FILTER:
       return {
         ...state,
-        correlationFilter: createNewCorrelationFilter(state.correlationFilter, action.payload),
+        correlationFilter: createNewCorrelationFilter(
+          state.correlationFilter,
+          action.payload
+        ),
       };
     case SET_KPI_FILTER:
       return {
@@ -90,23 +101,25 @@ const ontologyReducer = (
 };
 
 export const selectNode = (node: Node): OntologyStateAction => ({
-  type: 'SELECT_NODE',
+  type: "SELECT_NODE",
   payload: node,
 });
 
 export const setCorrelationFilter = (
   isPositive: boolean,
-  index: number,
+  index: number
 ): SetCorrelationFilterAction => ({
-  type: 'SET_CORRELATION_FILTER',
+  type: "SET_CORRELATION_FILTER",
   payload: { isPositive, index },
 });
 
 export const setKpiFilter = (index: string): SetKpiFilterAction => ({
-  type: 'SET_KPI_FILTER',
+  type: "SET_KPI_FILTER",
   payload: { index },
 });
 
-export const clearSelectedNode = (): OntologyStateAction => ({ type: 'CLEAR_SELECTED_NODE' });
+export const clearSelectedNode = (): OntologyStateAction => ({
+  type: "CLEAR_SELECTED_NODE",
+});
 
 export default ontologyReducer;

@@ -1,31 +1,37 @@
-import { Router, Request, Response } from 'express';
-import _ from 'lodash';
+import { Router, Request, Response } from "express";
+import _ from "lodash";
 
-import { parseCSV, detectSeparator } from '../utils/csv';
-import { u4sscKpiMap, u4sscKpiDataseries, TKTransform } from '../database/u4sscKpiMap';
+import { parseCSV, detectSeparator } from "../utils/csv";
+import {
+  u4sscKpiMap,
+  u4sscKpiDataseries,
+  TKTransform,
+} from "../database/u4sscKpiMap";
 
-import setData from '../database/setData';
-import getDataSeriesForMunicipality from '../database/getDataSeriesForMunicipality';
-import getAvailableYears from '../database/getAvailableYears';
+import setData from "../database/setData";
+import getDataSeriesForMunicipality from "../database/getDataSeriesForMunicipality";
 
-import CheckMunicipalityByCode from '../database/CheckMunicipalityByCode';
+import CheckMunicipalityByCode from "../database/CheckMunicipalityByCode";
 
-import { ApiError } from '../types/errorTypes';
-import onError from './middleware/onError';
+import { ApiError } from "../types/errorTypes";
+import onError from "./middleware/onError";
 
-import { DataPoint } from '../types/ontologyTypes';
+import { DataPoint } from "../types/ontologyTypes";
 
 const router = Router();
 
 const insertData = async (req: Request, res: Response) => {
   try {
     const year = parseInt(req.body.year, 10);
-    if (Number.isNaN(year)) throw new ApiError(400, 'Year not an int.');
+    if (Number.isNaN(year)) throw new ApiError(400, "Year not an int.");
 
-    const isDummy = req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
-    const indicatorName: string | undefined = u4sscKpiMap.get(req.body.indicator);
-    if (indicatorName === undefined || !(typeof indicatorName === 'string'))
-      throw new ApiError(400, 'Unknown indicator');
+    const isDummy =
+      req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
+    const indicatorName: string | undefined = u4sscKpiMap.get(
+      req.body.indicator
+    );
+    if (indicatorName === undefined || !(typeof indicatorName === "string"))
+      throw new ApiError(400, "Unknown indicator");
 
     const newDataPoint = {
       indicatorId: req.body.indicator,
@@ -47,13 +53,15 @@ const insertData = async (req: Request, res: Response) => {
 
 const insertBulkData = async (req: Request, res: Response) => {
   try {
-    const isDummy = req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
+    const isDummy =
+      req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
     const { municipality } = req.body;
     const year = parseInt(req.body.year, 10);
-    if (Number.isNaN(year)) throw new ApiError(400, 'Year not an int.');
+    if (Number.isNaN(year)) throw new ApiError(400, "Year not an int.");
 
     const validMunicipality = await CheckMunicipalityByCode(municipality);
-    if (validMunicipality === 0) throw new ApiError(400, 'Invalid municipality id');
+    if (validMunicipality === 0)
+      throw new ApiError(400, "Invalid municipality id");
 
     const datapoints: DataPoint[] = [];
 
@@ -75,7 +83,6 @@ const insertBulkData = async (req: Request, res: Response) => {
       datapoints.push(datapoint);
     });
 
-
     res.json({});
   } catch (e: any) {
     onError(e, req, res);
@@ -94,28 +101,24 @@ const getAllData = async (req: Request, res: Response) => {
     // Group by kpiNumber and then potentially dataseriesVariant
     // Also removes all properties but value and year from the datapoints themselves
     data = _.chain(data)
-      .groupBy('kpiNumber')
+      .groupBy("kpiNumber")
       .map((value, key) => {
         if (value[0].dataseriesVariant === undefined) {
-          return { kpiNumber: key, data: value.map(({ kpiNumber, ...item }) => item) };
+          return {
+            kpiNumber: key,
+            data: value.map(({ kpiNumber, ...item }) => item),
+          };
         }
-        const data2 = _.groupBy(value, 'dataseriesVariant');
+        const data2 = _.groupBy(value, "dataseriesVariant");
 
         Object.keys(data2).forEach((key2) => {
-          data2[key2] = data2[key2].map(({ kpiNumber, dataseriesVariant, ...item }) => item);
+          data2[key2] = data2[key2].map(
+            ({ kpiNumber, dataseriesVariant, ...item }) => item
+          );
         });
         return { kpiNumber: key, data: data2 };
       })
       .value();
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
-const availableYears = async (req: Request, res: Response) => {
-  try {
-    const data = await getAvailableYears(req.params.municipality);
     res.json(data);
   } catch (e: any) {
     onError(e, req, res);
@@ -130,35 +133,40 @@ type CSVErrorMessage = {
 const dataUploadCSV = async (req: Request, res: Response) => {
   try {
     const { municipality } = req.body;
-    if (!municipality) throw new ApiError(401, 'Missing municipality');
+    if (!municipality) throw new ApiError(401, "Missing municipality");
 
     const validMunicipality = await CheckMunicipalityByCode(municipality);
-    if (validMunicipality === 0) throw new ApiError(400, 'Invalid municipality id');
+    if (validMunicipality === 0)
+      throw new ApiError(400, "Invalid municipality id");
 
     const year = parseInt(req.body.year, 10);
     if (Number.isNaN(year) || year <= 0)
-      throw new ApiError(401, 'Invalid year (must be a positive integer)');
+      throw new ApiError(401, "Invalid year (must be a positive integer)");
 
-    const isDummy = req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
+    const isDummy =
+      req.body.isDummy !== undefined && JSON.parse(req.body.isDummy);
 
     const { buffer } = (req as any).file;
     const str = buffer.toString();
 
-    const header = str.split('\n')[0].trim();
+    const header = str.split("\n")[0].trim();
     const separator = detectSeparator(header);
 
     // validate that headers are correct
     const fields = header.split(separator);
-    const requiredFields = new Set(['indicator', 'dataseries', 'data']);
+    const requiredFields = new Set(["indicator", "dataseries", "data"]);
     fields.forEach((field) => {
-      if (!requiredFields.has(field)) throw new ApiError(401, `Unrecognized CSV field: '${field}'`);
+      if (!requiredFields.has(field))
+        throw new ApiError(401, `Unrecognized CSV field: '${field}'`);
       else requiredFields.delete(field);
     });
 
     if (requiredFields.size !== 0)
       throw new ApiError(
         401,
-        `Missing required CSV fields: ${Array.from(requiredFields).map((f) => `${f}, `)}`,
+        `Missing required CSV fields: ${Array.from(requiredFields).map(
+          (f) => `${f}, `
+        )}`
       );
 
     const data = await parseCSV(buffer, { separator });
@@ -172,13 +180,20 @@ const dataUploadCSV = async (req: Request, res: Response) => {
       if (tkTransform) indicator = tkTransform;
 
       const indicatorName = u4sscKpiMap.get(indicator);
-      if (!indicatorName) errors.push({ data: dp, message: 'Unrecognized KPI' });
+      if (!indicatorName)
+        errors.push({ data: dp, message: "Unrecognized KPI" });
       else {
         const dataseries = u4sscKpiDataseries.get(indicator);
         if (dataseries && !dataseries.has(dp.dataseries)) {
-          errors.push({ data: dp, message: 'Missing / unrecognized required data series' });
-        } else if (!dataseries && dp.dataseries !== '') {
-          errors.push({ data: dp, message: 'Dataseries present in indicator not having one' });
+          errors.push({
+            data: dp,
+            message: "Missing / unrecognized required data series",
+          });
+        } else if (!dataseries && dp.dataseries !== "") {
+          errors.push({
+            data: dp,
+            message: "Dataseries present in indicator not having one",
+          });
         } else {
           const value = JSON.parse(dp.data);
           const valueAsNumber = Number(value);
@@ -195,7 +210,7 @@ const dataUploadCSV = async (req: Request, res: Response) => {
             data: valueAsNumber,
             year,
             isDummy,
-            dataseries: dp.dataseries === '' ? 'main' : dp.dataseries,
+            dataseries: dp.dataseries === "" ? "main" : dp.dataseries,
           };
 
           datapoints.push(datapoint);
@@ -212,6 +227,5 @@ const dataUploadCSV = async (req: Request, res: Response) => {
     onError(e, req, res);
   }
 };
-
 
 export default router;

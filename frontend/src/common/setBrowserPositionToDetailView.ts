@@ -1,7 +1,7 @@
 export default () => {
-  const detailView = document.getElementById('detailView');
+  const detailView = document.getElementById("detailView");
   if (!detailView) {
     return;
   }
-  detailView.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  detailView.scrollIntoView({ block: "start", behavior: "smooth" });
 };

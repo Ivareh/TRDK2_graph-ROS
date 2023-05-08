@@ -12,8 +12,14 @@
  * These are defined similarly to the Request definitions above.
  */
 
-import { Request, Response } from 'express';
-import { Annotation, Node, Ontology, DataPoint, SustainabilityGoal } from './ontologyTypes';
+import { Request, Response } from "express";
+import {
+  Annotation,
+  Node,
+  Ontology,
+  DataPoint,
+  SustainabilityGoal,
+} from "./ontologyTypes";
 
 type RegexQueryParams = {
   search?: string;

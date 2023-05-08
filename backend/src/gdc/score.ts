@@ -1,14 +1,21 @@
-import { IndicatorScore, Dataseries, Goal } from '../types/gdcTypes';
+import { IndicatorScore, Dataseries, Goal } from "../types/gdcTypes";
 
-const computeScore = (kpi: string, current: Dataseries, goal: Goal): IndicatorScore => {
+const computeScore = (
+  kpi: string,
+  current: Dataseries,
+  goal: Goal
+): IndicatorScore => {
   const baselineComp = Math.max(goal.baseline, 0.1); // Guard against division by 0. TODO: check for better solutions for this.
   const targetFraction = goal.target / baselineComp;
   const currentFraction = current.value / baselineComp;
 
-  const currentCAGR = currentFraction ** (1.0 / (current.year - goal.baselineYear)) - 1.0;
+  const currentCAGR =
+    currentFraction ** (1.0 / (current.year - goal.baselineYear)) - 1.0;
   const requiredCAGR =
-    (goal.target / current.value) ** (1.0 / (goal.deadline - current.year)) - 1.0;
-  const targetCAGR = targetFraction ** (1.0 / (goal.deadline - goal.baselineYear)) - 1.0;
+    (goal.target / current.value) ** (1.0 / (goal.deadline - current.year)) -
+    1.0;
+  const targetCAGR =
+    targetFraction ** (1.0 / (goal.deadline - goal.baselineYear)) - 1.0;
 
   const fractCompare = Math.abs(currentFraction);
 
@@ -60,7 +67,8 @@ const computeScore = (kpi: string, current: Dataseries, goal: Goal): IndicatorSc
 
   // TODO: handle case where goal.target == goal.startRange
   const indicatorScore =
-    (100.0 * (current.value - goal.startRange)) / (goal.target - goal.startRange);
+    (100.0 * (current.value - goal.startRange)) /
+    (goal.target - goal.startRange);
 
   // U4SSC indicator points for score:
   //  95+: 4
@@ -126,7 +134,7 @@ const computeScore = (kpi: string, current: Dataseries, goal: Goal): IndicatorSc
   if (
     fractCompare <= 1.0 + CMP_EPSILON ||
     indicatorScore <= 0.0 ||
-    goal.calculationMethod === 'BOOL'
+    goal.calculationMethod === "BOOL"
   ) {
     // One of:
     //  1.  Current value is baseline (either no progress, or values have returned to baseline).
@@ -142,7 +150,7 @@ const computeScore = (kpi: string, current: Dataseries, goal: Goal): IndicatorSc
     // Handle non-INV_... calculation predictions by giving up, as the model year-calculation doesn't really
     // support this, and will result in predictions of completion year before the baseline year, which doesn't
     // make any sense...
-    if (!goal.calculationMethod.startsWith('INV_')) {
+    if (!goal.calculationMethod.startsWith("INV_")) {
       return {
         kpi,
         dataseries: current.dataseries,
@@ -203,7 +211,8 @@ const computeScore = (kpi: string, current: Dataseries, goal: Goal): IndicatorSc
   }
 
   const willComplete =
-    projectedCompletion > 0 && projectedCompletion.toFixed(2) <= goal.deadline.toFixed(2);
+    projectedCompletion > 0 &&
+    projectedCompletion.toFixed(2) <= goal.deadline.toFixed(2);
 
   return {
     kpi,

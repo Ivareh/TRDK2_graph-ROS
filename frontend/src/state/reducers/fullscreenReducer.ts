@@ -2,7 +2,7 @@ import {
   FullscreenState,
   ToggleFullscreenStateAction,
   SET_FULLSCREEN,
-} from '../../types/redux/fullscreenTypes';
+} from "../../types/redux/fullscreenTypes";
 
 const defaultState: FullscreenState = {
   isFullscreen: false,
@@ -10,7 +10,7 @@ const defaultState: FullscreenState = {
 
 const fullscreenReducer = (
   state: FullscreenState = defaultState,
-  action: ToggleFullscreenStateAction,
+  action: ToggleFullscreenStateAction
 ) => {
   switch (action.type) {
     case SET_FULLSCREEN:
@@ -23,7 +23,7 @@ const fullscreenReducer = (
 };
 
 export const toggleFullscreen = (): ToggleFullscreenStateAction => ({
-  type: 'TOGGLE_FULLSCREEN',
+  type: "TOGGLE_FULLSCREEN",
 });
 
 export default fullscreenReducer;

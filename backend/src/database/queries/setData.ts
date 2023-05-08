@@ -1,22 +1,24 @@
-import { DataPoint } from 'types/ontologyTypes';
-import { parsePrefixesToQuery } from '../../common/database';
-import { PREFIXES } from '../index';
+import { DataPoint } from "types/ontologyTypes";
+import { parsePrefixesToQuery } from "../../common/database";
+import { PREFIXES } from "../index";
 
 export default (obj: DataPoint): string => {
   const prefixString = parsePrefixesToQuery(
     PREFIXES.RDF,
     PREFIXES.OWL,
-    PREFIXES.TRDK2,
+    PREFIXES.TRDK2
   );
-  const dummyDataString = obj.isDummy ? '?uri TRDK2:isDummyData true.' : '';
+  const dummyDataString = obj.isDummy ? "?uri TRDK2:isDummyData true." : "";
   const dataseriesVariant =
-    obj.dataseries === undefined || obj.dataseries === 'main'
-      ? ''
+    obj.dataseries === undefined || obj.dataseries === "main"
+      ? ""
       : `?dataseries TRDK2:dataseriesVariant "${obj.dataseries}".`;
 
   const dataseries =
     obj.indicatorName +
-    (obj.dataseries === undefined || obj.dataseries === 'main' ? '' : `.${obj.dataseries}`);
+    (obj.dataseries === undefined || obj.dataseries === "main"
+      ? ""
+      : `.${obj.dataseries}`);
 
   return `
     ${prefixString}

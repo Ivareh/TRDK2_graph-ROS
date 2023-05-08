@@ -73,27 +73,6 @@ export default function Navbar() {
                     <Avatar size={"2xl"} src={"image.png"} />
                   </Center>
                   <br />
-
-                  {/* if user is logged in, show email, if not show Guest */}
-                  {/* {user ? (
-                    <Center>
-                      <p>{user.email}</p>
-                    </Center>
-                  ) : (
-                    <Center>
-                      <p>Guest</p>
-                    </Center>
-                  )}
-                  <br />
-                  <MenuDivider />
-                  */}
-
-                  {/* if user exists, show logout button */}
-                  {/*{user ? (
-                    <MenuItem onClick={onLogout}>Logout</MenuItem>
-                  ) : (
-                    <MenuItem onClick={onLogin}>Login</MenuItem>
-                  )} */}
                 </MenuList>
               </Menu>
             </Stack>

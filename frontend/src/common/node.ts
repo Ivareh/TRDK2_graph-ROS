@@ -7,14 +7,14 @@ import {
   BusinessArea,
   CorrelationFilter,
   KpiFilter,
-} from '../types/ontologyTypes';
-import { D3Edge } from '../types/d3/simulation';
+} from "../types/ontologyTypes";
+import { D3Edge } from "../types/d3/simulation";
 
 export const mapPrefixNameToNode = (
   prefix: string,
   name: string,
   correlation?: number,
-  type?: string,
+  type?: string
 ): Node => ({
   prefix: {
     prefix,
@@ -23,13 +23,13 @@ export const mapPrefixNameToNode = (
   name,
   id: `http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023/${prefix}#${name}`,
   correlation: correlation || -1,
-  type: type || 'undefined',
+  type: type || "undefined",
 });
 
 export const parseNameFromClassId = (id: string): string => {
   const regex = /^[^_]*#/;
-  const name = id.replace(regex, '');
-  if (!name || name === id) return '';
+  const name = id.replace(regex, "");
+  if (!name || name === id) return "";
   return name;
 };
 
@@ -48,7 +48,11 @@ export const parsePrefixFromClassId = (id: string): Prefix | null => {
   };
 };
 
-export const mapIdToNode = (id: string, correlation?: number, type?: string): Node | null => {
+export const mapIdToNode = (
+  id: string,
+  correlation?: number,
+  type?: string
+): Node | null => {
   const prefix = parsePrefixFromClassId(id);
   const name = parseNameFromClassId(id);
   if (!prefix || !name) return null;
@@ -57,7 +61,7 @@ export const mapIdToNode = (id: string, correlation?: number, type?: string): No
     name,
     id,
     correlation: correlation || -1,
-    type: type || 'undefined',
+    type: type || "undefined",
   };
 };
 
@@ -84,32 +88,32 @@ export const mapIdToEdge = (id: string, correlation: number): Edge | null => {
 export const mapCorrelationToName = (correlation: number) => {
   switch (correlation) {
     case 3:
-      return 'høy';
+      return "høy";
     case 2:
-      return 'moderat';
+      return "moderat";
     case 1:
-      return 'lav';
+      return "lav";
     default:
-      return '';
+      return "";
   }
 };
 
 export const mapCorrelationToColor = (correlation: number) => {
   switch (correlation) {
     case 3:
-      return '.800';
+      return ".800";
     case 2:
-      return '.700';
+      return ".700";
     case 1:
-      return '.600';
+      return ".600";
     default:
-      return '.600';
+      return ".600";
   }
 };
 
 export const isWithinCorrelationLimit = (
   edge: D3Edge | GraphEdge,
-  filter: CorrelationFilter,
+  filter: CorrelationFilter
 ): boolean => {
   if (edge.correlation === 1 && filter.pLow) return true;
   if (edge.correlation === 2 && filter.pMedium) return true;
