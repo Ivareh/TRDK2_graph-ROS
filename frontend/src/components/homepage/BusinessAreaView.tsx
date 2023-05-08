@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { SimpleGrid, Stack } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getBusinessAreas } from "../../api/ontologies";

@@ -25,7 +25,7 @@ const InsecurityView = () => {
   const DI: Array<InsecureRelation> = DummyInsecurities();
   const [insecureRelations, setInsecuritieRelations] = useState(DI);
   /* 
-  some borrowed and inspired by TRDK2s SubGoaldsGrid and DetailView
+  some borrowed and inspired by SDGs SubGoaldsGrid and DetailView https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
   const [insecureRelations, setInsecuritieRelations] = useState<Array<InsecureRelation>>([]); 
   
   const loadInsecurities = async () => {
@@ -76,13 +76,14 @@ const InsecurityView = () => {
               /* marginRight={25}
               marginLeft={"20%"}  */
             >
-              {insecureRelations.map((i: InsecureRelation) => (
+              {insecureRelations.map((insecure: InsecureRelation, k) => (
                 <InsecurityList
-                  instance1={i.instance1}
-                  instance2={i.instance2}
-                  insecurityLabel={i.label}
-                  insecurityDetails={i.details}
-                  insecuritySeverity={i.severity}
+                  key={k}
+                  instance1={insecure.instance1}
+                  instance2={insecure.instance2}
+                  insecurityLabel={insecure.label}
+                  insecurityDetails={insecure.details}
+                  insecuritySeverity={insecure.severity}
                 />
               ))}
             </List>

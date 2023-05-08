@@ -12,6 +12,7 @@ import { RootState } from "../../state/store";
 import { GraphEdgeFilter, GraphNodeFilter } from "../../types/d3/simulation";
 import { GraphNode } from "../../types/ontologyTypes";
 
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer
 type GraphProps = {
   nodeFilter: GraphNodeFilter;
   edgeFilter: GraphEdgeFilter;

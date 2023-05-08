@@ -2,7 +2,6 @@ import {
   Center,
   Heading,
 } from "@chakra-ui/react";
-// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (

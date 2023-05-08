@@ -86,12 +86,12 @@ export const search = async (
   }
 };
 
-export const getDevelopmentArea = async (
+export const getIntegrations = async (
   nodeId: string
 ): Promise<Array<Node>> => {
   try {
     const data: Array<Node> = await api.GET(
-      `ontologies/developmentarea/${encodeURIComponent(nodeId)}`
+      `ontologies/integrations/${encodeURIComponent(nodeId)}`
     );
     return data;
   } catch (e) {

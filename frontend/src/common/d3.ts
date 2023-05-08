@@ -9,6 +9,8 @@ import {
 import { mapIdToEdge } from "./node";
 import { camelCaseToText } from "./other";
 
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
+
 export const mapOntologyToGraphEdge = (ontology: Ontology): GraphEdge => {
   const edge = mapIdToEdge(
     ontology.Predicate.id,
@@ -84,23 +86,11 @@ export const makePredicateUnique = (ontology: Ontology): Ontology => ({
 
 export const changeColorBasedOnType = (type: string) => {
   let nodeColor = "#63B3ED";
-  if (type.includes("TRDK2")) nodeColor = "#D6BCFA";
-  if (type.includes("Trippel bunnlinje")) nodeColor = "#68D391";
-  if (type.includes("Delmål")) nodeColor = "#FBD38D";
-  if (type.includes("Utviklingsområde")) nodeColor = "#FC8181";
-  if (type.includes("Kategori")) nodeColor = "#00BB00";
-  if (type.includes("U4SSC KPI")) nodeColor = "#F4A460";
-  if (type.includes("OECD KPI")) nodeColor = "#F4A460";
-  // The follong 3 line is for UN Indicators
-  if (type.includes("Indicador")) nodeColor = "#F4A460";
-  if (type.includes("Indicator")) nodeColor = "#F4A460";
-  if (type.includes("Indicateur")) nodeColor = "#F4A460";
+  if (type.includes("Virksomhetsområde")) nodeColor = "#D6BCFA";
+  if (type.includes("System eller tjenester")) nodeColor = "#FBD38D";
+  if (type.includes("Integrasjoner")) nodeColor = "#FC8181";
 
-  // ----------------------------------------------------------------
-  // in order for the following line to work, nodes need accept being of multiple types.
-  // ----------------------------------------------------------------
-  // if (type.includes('U4SSC KPI') && type.includes('Utviklingsområde')) nodeColor = '#ABB2B9';
-  if (type.includes("Direktørområde")) nodeColor = "#03dffc";
+
   if (type.includes("Enhetsområde")) nodeColor = "#00D1D1";
   return nodeColor;
 };

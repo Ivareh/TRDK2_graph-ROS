@@ -1,18 +1,12 @@
-import { Router, Request } from "express";
+import { Router } from "express";
 import { verifyRequestQueryParams } from "../common/router";
 import getAnnotations from "../database/getAnnotations";
 import getClassesByString from "../database/getClassesByString";
-import getContributions from "../database/getContributions";
-import getDevelopmentArea from "../database/getDevelopmentArea";
 import getRelations from "../database/getRelations";
 import getSubclasses from "../database/getSubclasses";
-import getSubGoals from "../database/getSubGoals";
 import getBusinessAreas from "../database/getBusinessAreas";
-import getTradeOff from "../database/getTradeOffTo";
-import CheckMunicipalityByCode from "../database/CheckMunicipalityByCode";
 import {
   AnnotationResponse,
-  AnyResponse,
   ClassIdRequest,
   EmptyRequest,
   NodeArrayResponse,
@@ -73,51 +67,6 @@ const getBusinessAreasFromOntology = async (
   }
 };
 
-const getContributionsToNodes = async (
-  req: ClassIdRequest,
-  res: NodeArrayResponse
-) => {
-  try {
-    const data = await getContributions(req.params.classId);
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
-const getTradeOffToNodes = async (
-  req: ClassIdRequest,
-  res: NodeArrayResponse
-) => {
-  try {
-    const data = await getTradeOff(req.params.classId);
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
-const getDevelopmentAreaToNodes = async (
-  req: ClassIdRequest,
-  res: NodeArrayResponse
-) => {
-  try {
-    const data = await getDevelopmentArea(req.params.classId);
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
-const getSubGoalsfromTRDK2 = async (req: Request, res: NodeArrayResponse) => {
-  try {
-    const data = await getSubGoals(req.params.classId);
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
 const regexSearch = async (req: RegexRequest, res: NodeArrayResponse) => {
   try {
     const searchTerm = req.query.search;
@@ -130,24 +79,10 @@ const regexSearch = async (req: RegexRequest, res: NodeArrayResponse) => {
   }
 };
 
-const checkMunicipalityByCode = async (req: Request, res: AnyResponse) => {
-  try {
-    const data = await CheckMunicipalityByCode(req.body.municipalityCode);
-    res.json(data);
-  } catch (e: any) {
-    onError(e, req, res);
-  }
-};
-
 router.get("/relations/:classId", getRelationsFromClass);
 router.get("/subclasses/:classId", getSubclassesFromClass);
 router.get("/annotations/:classId", getAnnotationsFromClass);
 router.get("/businessAreas", getBusinessAreasFromOntology);
 router.get("/search", regexSearch);
-router.get("/contributions/:classId", getContributionsToNodes);
-router.get("/tradeoff/:classId", getTradeOffToNodes);
-router.get("/developmentarea/:classId", getDevelopmentAreaToNodes);
-router.get("/subgoals/:classId", getSubGoalsfromTRDK2);
-router.get("/checkMunicipalityByCode", checkMunicipalityByCode);
 
 export default router;

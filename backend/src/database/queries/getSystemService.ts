@@ -16,6 +16,8 @@ export default (nodeId: string): string => {
     PREFIXES.RDFS
   );
 
+
+    // Not tested
   return `
       ${prefixString}
       SELECT ?Subject ?SubjectLabel ?description

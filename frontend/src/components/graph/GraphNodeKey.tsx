@@ -3,6 +3,8 @@ import { Flex, Icon, Text } from "@chakra-ui/react";
 import { GoPrimitiveDot } from "react-icons/go";
 import { changeColorBasedOnType } from "../../common/d3";
 
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
+
 type GraphNodeKeyProps = {
   description: string;
 };

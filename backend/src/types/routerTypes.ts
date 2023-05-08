@@ -17,8 +17,7 @@ import {
   Annotation,
   Node,
   Ontology,
-  DataPoint,
-  SustainabilityGoal,
+  BusinessArea,
 } from "./ontologyTypes";
 
 type RegexQueryParams = {
@@ -28,10 +27,6 @@ type RegexQueryParams = {
 
 type ClassIdParams = {
   classId: string;
-};
-
-type DataSeriesParams = {
-  kpiNumber: string;
 };
 
 export type EmptyRequest = Request;
@@ -45,18 +40,14 @@ export type RegexRequest = Request<{}, {}, {}, RegexQueryParams>;
 
 export type ClassIdRequest = Request<ClassIdParams>;
 
-export type DataSeriesRequest = Request<DataSeriesParams>;
-
 export type NodeArrayResponse = Response<Array<Node>>;
 
-export type BusinessAreaArrayResponse = Response<Array<SustainabilityGoal>>;
+export type BusinessAreaArrayResponse = Response<Array<BusinessArea>>;
 
 export type OntologyArrayResponse = Response<Array<Ontology>>;
 
 export type SingleOntologyResponse = Response<Ontology>;
 
 export type AnnotationResponse = Response<Annotation>;
-
-export type DataPointRequest = Request<DataPoint>;
 
 export type SetResponse = Response<string>;

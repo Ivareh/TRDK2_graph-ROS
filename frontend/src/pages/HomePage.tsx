@@ -2,16 +2,12 @@ import React from "react";
 import {
   Heading,
   Stack,
-  Image,
   Flex,
-  Box,
-  Text,
   VStack,
   HStack,
 } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
 import BusinessAreaView from "../components/homepage/BusinessAreaView";
-import Navbar from "../components/Navbar";
 
 const HomePage: React.FC = () => (
   <Stack spacing="3" backgroundColor="#F5F9FF">

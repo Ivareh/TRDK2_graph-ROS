@@ -10,6 +10,7 @@ export default (): string => {
     PREFIXES.RDFS
   );
 
+  // Not tested
   return `
       ${prefixString}
       SELECT ?instancesOf ?label 

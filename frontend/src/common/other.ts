@@ -1,3 +1,5 @@
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
+
 export const nextFrame = () =>
   new Promise<void>((resolve) => {
     requestAnimationFrame(() => {

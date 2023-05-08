@@ -7,13 +7,6 @@ import {
   Edge,
 } from "../types/ontologyTypes";
 
-const getCorrelationIndexFromRecord = (record: Record): number => {
-  if (record.High) return 3;
-  if (record.Moderate) return 2;
-  if (record.Low) return 1;
-  return 0;
-};
-
 export const parseNameFromClassId = (id: string): string => {
   const regex = /^[^_]*#/;
   const name = id.replace(regex, "");
@@ -106,8 +99,7 @@ export const mapRecordToOntology = (record: Record): Ontology => {
 };
 
 export const mapRecordToObject = (record: Record): Node | null => {
-  const correlation = getCorrelationIndexFromRecord(record);
-  let object = record.Object ? mapIdToNode(record.Object, correlation) : null;
+  let object = record.Object ? mapIdToNode(record.Object) : null;
   if (object && record.ObjectLabel) {
     object = { ...object, name: record.ObjectLabel };
   }

@@ -2,6 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import React from "react";
 import GraphNodeKey from "./GraphNodeKey";
 
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
 interface GraphDescriptionsProps {
   float: boolean;
 }
@@ -18,13 +19,10 @@ const GraphDescriptions: React.FC<GraphDescriptionsProps> = ({
     rounded="lg"
   >
     <GraphNodeKey description="Standardfarge/Startnode" />
-    <GraphNodeKey description="TRDK2 (Bærekraftsmål)" />
-    <GraphNodeKey description="Delmål til bærekraftsmål" />
-    <GraphNodeKey description="Trippel bunnlinje" />
-    <GraphNodeKey description="Utviklingsområde" />
-    <GraphNodeKey description="Kategori" />
-    <GraphNodeKey description="Indicator" />
-    <GraphNodeKey description="Direktørområde" />
+    <GraphNodeKey description="Virksomhetsområde" />
+    <GraphNodeKey description="System eller tjeneste" />
+    <GraphNodeKey description="Integrasjon" />
+    <GraphNodeKey description="Indikator" />
     <GraphNodeKey description="Enhetsområde" />
   </Stack>
 );

@@ -6,12 +6,11 @@ import { RootState } from "../../state/store";
 import { D3Edge } from "../../types/d3/simulation";
 import { GraphEdge, GraphNode } from "../../types/ontologyTypes";
 import Graph from "./Graph";
-import GraphToolBar from "./GraphToolbar";
 import GraphDescriptions from "./GraphDescriptions";
 
-// component wrapping the Graph, Graphtoolbar and GraphDescriptions. Also creates nodeFilter and edgeFilter callbacks
+// component wrapping the Graph, Graphtoolbar and GraphDescriptions. Also creates nodeFilter and edgeFilter callbacks. From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
 const GraphContainer: React.FC = () => {
-  const [showSubgoals, setShowSubgoals] = useState<boolean>(false);
+  const [showSystemService, setShowSystemService] = useState<boolean>(false);
   const [unlockNodes, setUnlockNodes] = useState<boolean>(false);
   const [edgeLabelsVisible, setEdgeLabelsVisible] = useState<boolean>(true);
   const { isFullscreen } = useSelector(
@@ -22,8 +21,8 @@ const GraphContainer: React.FC = () => {
   );
   const { kpiFilter } = useSelector((state: RootState) => state.ontology);
 
-  const filterSubgoals = () => {
-    setShowSubgoals(!showSubgoals);
+  const filterSystemServices = () => {
+    setShowSystemService(!showSystemService);
   };
 
   const filterKPISetSelection = useCallback(
@@ -37,7 +36,7 @@ const GraphContainer: React.FC = () => {
     (node: GraphNode): boolean => {
       return true;
     },
-    [showSubgoals]
+    [showSystemService]
   );
 
   const edgeFilter = useCallback(
@@ -62,11 +61,6 @@ const GraphContainer: React.FC = () => {
       w={isFullscreen ? "100vw" : ""}
       position={isFullscreen ? "absolute" : "static"}
     >
-      <GraphToolBar
-        onSubgoalFilter={filterSubgoals}
-        onUnlockNodes={setUnlockNodes}
-        onEdgeLabelsVisible={setEdgeLabelsVisible}
-      />
       <Flex h="100%" justify="space-between">
         <Graph
           nodeFilter={nodeFilter}

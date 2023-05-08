@@ -1,6 +1,5 @@
 import {
   Edge,
-  GraphNode,
   GraphEdge,
   Node,
   Prefix,
@@ -9,6 +8,8 @@ import {
   KpiFilter,
 } from "../types/ontologyTypes";
 import { D3Edge } from "../types/d3/simulation";
+
+// From https://github.com/TDT4290-SDG-Ontology/SDG-ontology-visualizer/
 
 export const mapPrefixNameToNode = (
   prefix: string,
