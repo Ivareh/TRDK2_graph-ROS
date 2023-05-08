@@ -22,20 +22,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Uncertainty">
-        <rdfs:comment>General uncertainties without a type of uncertainty provided. For instance, if there is a questionmark &apos;?&apos; somewhere in the data which implies there exists uncertainty related to this data, we could use this annotation</rdfs:comment>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertaintyAmount"/>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment -->
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#comment">
@@ -82,6 +68,14 @@
 
     <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#outdatedData">
         <rdfs:comment>If some data is suspect to be outdated</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#uncertainty">
+        <rdfs:comment>General uncertainty description. For instance, if there is only a questionmark &apos;?&apos; somewhere in the data which implies there exists uncertainty related to this data, we could use this annotation</rdfs:comment>
     </owl:AnnotationProperty>
     
 
@@ -341,6 +335,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceManager">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceManagerOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
     </owl:ObjectProperty>
@@ -352,9 +347,9 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceOwner">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isDataResponsibleOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceOwnerOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
         <rdfs:label xml:lang="no">harTjenesteEier</rdfs:label>
     </owl:ObjectProperty>
@@ -382,9 +377,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty -->
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo">
         <rdfs:comment>If entities have uncertainty types between each other, it can be indicated with this property</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -444,11 +439,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isSameAsUncertainty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isSameAsUncertainty">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment>If two entities has similar names but there are uncertainty if they are the same entity. Note that this relation is symmetric.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceManagerOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceManagerOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceOwnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceOwnerOf"/>
     
 
 
@@ -476,22 +487,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:comment>If two entities has similar names but there are uncertainty if they are the same entity. Note that this relation is symmetric.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemNROfApplication -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemNROfApplication"/>
@@ -509,12 +504,12 @@
 
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
         <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -616,6 +611,27 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasImageInAttachement">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>If there exists an image in the attachement it came from, this indicates it</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If individual entities has uncertainty. Float between 0 and 1 (percent)</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -734,11 +750,17 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:comment>Contains all instances with &quot;hasUncertainty&quot; property between instances. For instance, uncertainSameAs</rdfs:comment>
     </owl:Class>
@@ -901,18 +923,6 @@ closed)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
-                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#belongsToAttachement"/>
-                <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="no">Person</rdfs:label>
     </owl:Class>
     
@@ -928,7 +938,7 @@ closed)</rdfs:comment>
                 <owl:hasValue rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Dataset_overview_2018"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>How precise (reliable) is the dataset?</rdfs:comment>
+        <rdfs:comment>How precise (reliable) is the data?</rdfs:comment>
     </owl:Class>
     
 
@@ -976,7 +986,7 @@ closed)</rdfs:comment>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#UncertainSystemService"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isSameAsUncertainty"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -990,20 +1000,25 @@ closed)</rdfs:comment>
     <!-- http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceManager -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceManager">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ServiceOwner"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceManager"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceManagerOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:label xml:lang="no">Tjenesteforvalter</rdfs:label>
     </owl:Class>
     
@@ -1017,14 +1032,20 @@ closed)</rdfs:comment>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasServiceManager"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isServiceOwnerOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Application"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Program"/>
         <rdfs:label xml:lang="no">Tjenesteeier</rdfs:label>
     </owl:Class>
     
@@ -1136,7 +1157,7 @@ word, etc.)</rdfs:comment>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#SystemService"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertainty"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#hasUncertaintyTo"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -1603,8 +1624,6 @@ word, etc.)</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Tone_Schjei_Bjørnes">
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Person"/>
-        <belongsToAttachement rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#ROS.Programoversikt"/>
-        <belongsToAttachement rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TIP.Applikasjonsliste_2018"/>
         <isServiceManagerOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#program.ACOS_BARNEVERN"/>
     </owl:NamedIndividual>
     
@@ -1907,6 +1926,7 @@ On-prem AD beskrives under katalogtjenester TKA/TKE.</description>
         <hasIntegration rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.MIM_(Microsoft_Identity_Manager)"/>
         <isIntegrationOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#systemservice.Autentiseringstjenester"/>
         <isSystemServiceOf rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#trondheim.vo.Organisasjon"/>
+        <hasUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.44</hasUncertainty>
         <description>Google Apps Password Sync (GAPS) for Trondheim kommune Ansatte (TKA)
 er en passordsynk for synk til Google (API fra Google til Azure AD). Ansatte har en konto i TKA AD som går i synk. Man kan ikke ha to GAPS i to domener i samme domenekontroller, derfor er det separate synkroniseringer for TKE og TKA. Tjenesten benytter MIM.</description>
         <integrationdescription>API mellom Google og AD.</integrationdescription>
@@ -2656,14 +2676,14 @@ TK-sak</integrationdescription>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityUnit"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-        <hasUncertainty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
+        <hasUncertaintyTo rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
+        <isSameAsUncertainty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
     </owl:NamedIndividual>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#isSameAsUncertainty"/>
         <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <Uncertainty>Idrett&amp;Friluftsliv could be the same dataset owner as Idrett&amp;FriluftslivMiljøpakken</Uncertainty>
+        <uncertainty>Idrett&amp;Friluftsliv could be the same dataset owner as Idrett&amp;FriluftslivMiljøpakken</uncertainty>
     </owl:Axiom>
     
 
@@ -2676,15 +2696,8 @@ TK-sak</integrationdescription>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#MunicipalityUnit"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#Organization"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#TrondheimMunicipalityUnit"/>
-        <hasUncertainty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <sameAs rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
+        <hasUncertaintyTo rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
     </owl:NamedIndividual>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;FriluftslivMiljøpakken"/>
-        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#sameAs"/>
-        <owl:annotatedTarget rdf:resource="http://www.semanticweb.org/TRDK2_graph-ROS/ontologies/2023#unit.trondheim.Idrett&amp;Friluftsliv"/>
-        <UncertaintyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</UncertaintyAmount>
-    </owl:Axiom>
     
 
 
