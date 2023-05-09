@@ -69,7 +69,7 @@ export default function Navbar() {
                     }}
                   >
                     {" "}
-                    Form{" "}
+                    Skjema{" "}
                   </Text>
                 </RouterLink>
               </HStack>

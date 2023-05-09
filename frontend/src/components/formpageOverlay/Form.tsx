@@ -103,20 +103,20 @@ const Form: React.FC = () => {
           </NumberInput>
         </FormControl>
         <FormControl mb={4}>
-          <FormLabel>Software modell for BA?:</FormLabel>
+          <FormLabel>Tjeneste modell for BA?:</FormLabel>
           <Checkbox
             name="isYes"
             isChecked={formData.isYes}
             onChange={handleChange}
           >
-            Yes
+            Ja
           </Checkbox>
           <Checkbox
             name="isNo"
             isChecked={formData.isNo}
             onChange={handleChange}
           >
-            No
+            Nei
           </Checkbox>
         </FormControl>
         <FormControl mb={4}>
@@ -155,18 +155,18 @@ const Form: React.FC = () => {
         </FormControl>
 
         <FormControl mb={4}>
-          <FormLabel>Upload File:</FormLabel>
-          <Input type="file" name="file" onChange={handleChange} />
+          <FormLabel>Last opp fil:</FormLabel>
+          <Input placeholder="Velg fil" type="file" name="file" onChange={handleChange}/> 
         </FormControl>
 
         <Button type="submit" colorScheme="blue" mr={4}>
-          Add
+          Legg til
         </Button>
         <Button colorScheme="green" mr={4} onClick={handleUpdate}>
-          Update
+          Oppdater
         </Button>
         <Button colorScheme="red" onClick={handleDelete}>
-          Delete
+          Slett
         </Button>
       </Box>
     </Box>
