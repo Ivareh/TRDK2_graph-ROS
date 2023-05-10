@@ -1,6 +1,20 @@
 ## TRDK2_graph-ROS
 
-A tool to get a better overview of Trondheim Municipality's internal IT systems
+This is a tool to get a better overview of Trondheim Municipality's internal IT systems. The tool was created within a project called TRDK2_graph-ROS.
+
+### Project description
+
+In large organisations, keeping track of internal IT systems and their connections can be a daunting
+task. It is not uncommon for these systems to produce vast amounts of data, which can be difficult
+to interpret and analyse. This can lead to missing or outdated information, and errors in the data
+that describes these systems.
+
+To address these challenges, the project TRDK2 graph-ROS aimed to develop a product that
+can visualise data and provide a better understanding of how the internal systems of Trondheim
+Municipality are connected. By creating a visual representation of the data using GraphDB, 
+it would be easier to identify patterns and trends, as well as
+potential areas for improvement. The goal was to help improve the efficiency and effectiveness of
+work inside the organisation
 
 ### Installation (Docker & GraphDB users)
 
@@ -41,6 +55,17 @@ Frontend:
 2. ` npm install `
 3. ` npm start `
 4. Now the frontend should be running at http://localhost:3000/ 
+
+
+### Motivation 
+
+The motivation behind the project is to structure the data about the internal systems within
+Trondheim Municipality. Though the need for this systematisation has been present for some time,
+the Parliamentary report nr.22 [4] is a trigger behind taking this action. By the Parliamentary
+report, the public sector is pushed towards using data for efficiency and value creation, and making
+the data more accessible towards both the private sector and other parts of the public. For this to
+be achievable, the data must be restructured in such a way that it is clear and manageable without
+the need for extensive prior knowledge.
 
 
 Here is a link to our report for this project: https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:ac99afb6-b049-4a65-83b1-396c63a9d430
