@@ -57,15 +57,5 @@ Frontend:
 4. Now the frontend should be running at http://localhost:3000/ 
 
 
-### Motivation 
-
-The motivation behind the project is to structure the data about the internal systems within
-Trondheim Municipality. Though the need for this systematisation has been present for some time,
-the Parliamentary report nr.22 [4] is a trigger behind taking this action. By the Parliamentary
-report, the public sector is pushed towards using data for efficiency and value creation, and making
-the data more accessible towards both the private sector and other parts of the public. For this to
-be achievable, the data must be restructured in such a way that it is clear and manageable without
-the need for extensive prior knowledge.
-
 
 Here is a link to our report for this project: https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:ac99afb6-b049-4a65-83b1-396c63a9d430
