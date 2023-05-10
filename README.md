@@ -41,3 +41,6 @@ Frontend:
 2. ` npm install `
 3. ` npm start `
 4. Now the frontend should be running at http://localhost:3000/ 
+
+
+Here is a link to our report for this project: https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:ac99afb6-b049-4a65-83b1-396c63a9d430
