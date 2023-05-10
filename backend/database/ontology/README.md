@@ -7,11 +7,11 @@ The TRDK2_graph-ROS.owl file represents the ontology. It is possible to alter th
 The goal of developing this ontology was to capture the content from provided documents. The ontology was built upon the "Business areas" within Trondheim Municipality, which are represented in the ROS documents. The ontology aimed to gain a better understanding of these documents containing information about internal IT systems. These are the documents provided:
 
 
-"Applikasjonsliste - 2018.xlsx" (Not ROS)
+"Applikasjonsliste - 2018.xlsx" (Excel)
 
-"Dataset overview - 2018.xlsx" (Not ROS)
+"Dataset overview - 2018.xlsx" (Excel)
 
-"Programoversikt.xlsx" (Not ROS)
+"Programoversikt.xlsx" (Excel)
 
 "Vedlegg A - Organisasjon.docx" (ROS)
 
