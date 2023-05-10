@@ -37,7 +37,7 @@ Most of the concepts that exists in the documents has been defined. However, the
 
 The data came with problems which made it chaotic. There was issues regarding names and terms, data format, values of attributes and if some entities are equal or not.
 
-These problems were captured and defined as the concept *Uncertainty* in the ontology. We defined uncertainty as "something unknown that needs to be checked to create certainty". However, if we know there is an uncertainty, is it truly uncertain? By this logic, we came up with two types of uncertainty: *known* and *unknown* uncertainties. 
+These problems were defined as the concept *Uncertainty* in the ontology. We defined uncertainty as "something unknown that needs to be checked to create certainty". However, if we know there is an uncertainty, is it truly uncertain? By this logic, we came up with two types of uncertainty: *known* and *unknown* uncertainties. 
 
 *Known* uncertainties is data directly labeled as uncertain. Since it is labeled as uncertain, it is known to be uncertain. This type of uncertainty is easy to inference, since they are labeled with a data property. Exists in the developed ontology as the data property "hasUncertainty" for individual entities. For relational uncertainty, there is an object property "hasUncertaintyTo" which could be used if there are relational uncertainties. 
 
